@@ -1,0 +1,110 @@
+{
+  "Australia": {
+    "path": "assets/teams/aus.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/cricket-australia",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1702310491/prd/assets/member_association/AUS.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Bangladesh": {
+    "path": "assets/teams/ban.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/bangladesh-cricket-board",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701863304/prd/assets/member_association/BAN.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Canada": {
+    "path": "assets/teams/can.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/canada",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701448629/prd/assets/member_association/CAN.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "England": {
+    "path": "assets/teams/eng.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/england-wales",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701452578/prd/assets/member_association/ENG.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "India": {
+    "path": "assets/teams/ind.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/board-of-control-for-cricket-in-india",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701863481/prd/assets/member_association/IND.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Kenya": {
+    "path": "assets/teams/ken.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/cricket-kenya",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701355635/prd/assets/member_association/KEN.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Namibia": {
+    "path": "assets/teams/nam.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/cricket-namibia",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701708582/prd/assets/member_association/NAM.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Netherlands": {
+    "path": "assets/teams/ntl.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/kncb-royal-dutch-cricket-association",
+    "imageUrl": "https://images.icc-cricket.com/image/private/t_q-best/v1701452564/prd/assets/member_association/NED.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "New Zealand": {
+    "path": "assets/teams/nzl.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/new-zealand-cricket",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1702311084/prd/assets/member_association/NZ.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Pakistan": {
+    "path": "assets/teams/pak.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/pakistan-cricket-board",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701863631/prd/assets/member_association/PAK.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "South Africa": {
+    "path": "assets/teams/saf.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/cricket-south-africa",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701170306/prd/assets/member_association/SA.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Sri Lanka": {
+    "path": "assets/teams/sri.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/sri-lanka-cricket",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701863804/prd/assets/member_association/SL.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "West Indies": {
+    "path": "assets/teams/win.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/west-indies",
+    "imageUrl": "https://images.icc-cricket.com/icc-web/image/private/t_q-best/v1701449910/prd/assets/member_association/WI.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Zimbabwe": {
+    "path": "assets/teams/zim.png",
+    "source": "https://en.wikipedia.org/wiki/Zimbabwe_Cricket",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/4/48/Zimbabwe_Cricket_%28logo%29.svg/250px-Zimbabwe_Cricket_%28logo%29.svg.png",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Scotland": {
+    "path": "assets/teams/sco.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/cricket-scotland",
+    "imageUrl": "https://images.icc-cricket.com/image/private/t_q-best/v1701452561/prd/assets/member_association/SCO.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "United States of America": {
+    "path": "assets/teams/usa.png",
+    "source": "https://en.wikipedia.org/wiki/USA_Cricket",
+    "imageUrl": "https://upload.wikimedia.org/wikipedia/en/thumb/7/7e/USA_Cricket_logo.svg/250px-USA_Cricket_logo.svg.png",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Bermuda": {
+    "path": "assets/teams/ber.png",
+    "source": "https://cricketbermuda.com/",
+    "imageUrl": "https://cricketbermuda.com/wp-content/uploads/2020/07/BCB-logo-1.png",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  },
+  "Ireland": {
+    "path": "assets/teams/ire.png",
+    "source": "https://www.icc-cricket.com/about/members/associate/cricket-ireland",
+    "imageUrl": "https://images.icc-cricket.com/image/private/t_q-best/v1701452569/prd/assets/member_association/IRE.jpg",
+    "rights": "Team/board trademarks. Source attribution retained for this game modification; no ownership or endorsement claimed."
+  }
+}

@@ -11,10 +11,10 @@ body{max-width:1100px;margin:auto;padding:36px 24px}a{color:#6de1b0}header{displ
 </style>
 </head>
 <body>
-<header><span class="eyebrow">Cricket 07 / Revamp 01</span><a href="./">Game launcher ↗</a></header>
+<header><span class="eyebrow">Cricket 07 / Revamp 01</span><a href="/play/">Play locally ↗</a></header>
 <h1>Today's players. Recent form.</h1>
 <p>Explore international player pools and experimental ratings built from recent matches.</p>
-<div class="notice"><strong>Data preview only.</strong> In-game roster integration is pending your Cricket 07 files and a compiled browser build. These ratings do not change gameplay yet.</div>
+<div class="notice"><strong>Original game teams only.</strong> Choose the roster format in the local game launcher, then press Play Solo. Players and form refresh before the game starts. Team badges are installed once.</div>
 <p id="status" role="status" aria-live="polite">Loading roster snapshot…</p>
 <p id="error" role="alert" hidden></p>
 <div class="toolbar">
@@ -23,7 +23,7 @@ body{max-width:1100px;margin:auto;padding:36px 24px}a{color:#6de1b0}header{displ
 <label>Snapshot<button id="reload" type="button">Reload snapshot</button></label>
 </div>
 <section class="card" aria-label="Selected team">
-<div class="summary"><h2 id="team-title">Players</h2><span id="freshness" class="badge"></span></div>
+<div class="summary"><img id="team-logo" alt="" width="64" height="64" style="object-fit:contain" hidden><h2 id="team-title">Players</h2><span id="freshness" class="badge"></span></div>
 <p class="small" id="team-meta"></p>
 <p id="empty" hidden>No recent players available for this format.</p>
 <div class="table-wrap"><table><thead><tr><th scope="col">Player</th><th scope="col">Batting / 99</th><th scope="col">Bowling / 99</th><th scope="col">Matches</th><th scope="col">Runs</th><th scope="col">Wickets</th><th scope="col">Last played</th><th scope="col">Sample</th></tr></thead><tbody id="players"></tbody></table></div>

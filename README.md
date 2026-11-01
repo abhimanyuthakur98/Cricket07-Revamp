@@ -1,6 +1,6 @@
 # Cricket 07 in the browser
 
-**Cricket07 Revamp:** start with `python -m roster.server` and open `http://localhost:8007/rosters.html` to preview recent teams and player ratings from Cricsheet. See [roster setup](ROSTER_SETUP.md). This first increment supplies the data API and preview; it does not yet patch the game's database. Playing the original game still requires your game files and a compiled build as described below.
+**Cricket07 Revamp:** run `python -m roster.server` and open `http://localhost:8007/play/` to test the local game. Play Solo refreshes recent players and form before launch, using only the 18 national teams already in the game. Updated team badges are cached once. See [local setup](LOCAL_PLAY.md) for the runtime download, dependencies and limitations. The original build instructions below remain available for compiling from your own game copy.
 
 EA Sports Cricket 07 (2006, Windows) running in a browser tab, with game controllers and online 1v1
 multiplayer. This repo has no game files and no game code, so you need your own copy of the game.

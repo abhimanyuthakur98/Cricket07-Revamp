@@ -17,4 +17,5 @@ ghidra_project/
 .dev.vars
 .wrangler/
 node_modules/
+local_runtime/
 .claude/

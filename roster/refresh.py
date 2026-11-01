@@ -11,6 +11,7 @@ from pathlib import Path
 import tempfile
 import urllib.request
 import zipfile
+from .teams import TEAMS
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "web" / "data" / "rosters.json"
@@ -108,7 +109,7 @@ def ratings(samples, as_of, format_name):
         bowling = clamp(50 + (raw - 50) * legal / (legal + 120))
     return {"batting": batting, "bowling": bowling,
             "confidence": "established" if max(balls, legal) >= 120 else "limited",
-            "scale": "1–99 (game mapping pending)"}
+            "scale": "1–99; mapped to 1–62 in the game"}
 
 
 def build_format(matches, format_name, as_of):
@@ -131,6 +132,8 @@ def build_format(matches, format_name, as_of):
         stats = summarize(match)
         registry = info.get("registry", {}).get("people", {})
         for team, squad in info["players"].items():
+            if team not in TEAMS:
+                continue
             latest[team] = max(latest.get(team, played), played)
             for name in squad:
                 # Require stable source IDs; never merge people just by their name.
@@ -152,7 +155,9 @@ def build_format(matches, format_name, as_of):
     result = []
     for team in sorted(teams):
         players = sorted(teams[team], key=lambda p: (p["lastPlayed"], p["matches"], p["id"]), reverse=True)[:20]
-        result.append({"name": team, "latestMatch": latest[team].isoformat(),
+        result.append({"name": team, "gameTeamId": TEAMS[team][0],
+                       "logo": 'assets/teams/' + TEAMS[team][1] + '.png',
+                       "latestMatch": latest[team].isoformat(),
                        "stale": (as_of - latest[team]).days > 30,
                        "players": players})
     if not result:
@@ -173,7 +178,7 @@ def refresh(output=OUTPUT, as_of=None, provider=download_matches):
                            "licenseUrl": "https://cricsheet.org/licensing/"},
                 "squadPolicy": "Up to 20 most recently seen players per team/format, active in the last 180 days. Not official selected squads; retirements and injuries are not verified.",
                 "ratingPolicy": "Last 20 appearances within 365 days; 60-day decay; small samples regress to 50. Batting uses average and strike rate; bowling uses wickets and economy. Missing skills remain unknown. These are experimental ratings, not ICC ratings.",
-                "gameIntegration": "pending-game-files-and-build",
+                "gameIntegration": "local-launch-patch",
                 "formats": formats}
     # All formats must succeed before replacing a known-good snapshot.
     atomic_json(output, snapshot)

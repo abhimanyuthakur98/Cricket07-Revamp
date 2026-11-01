@@ -1,0 +1,10 @@
+{
+  "Namibia": {
+    "source": "https://www.cricket.com.au/players/CA%3A3040/zane-green",
+    "players": [{"name":"Zane Green","first":"Zane","last":"Green","scoreboard":"ZE Green","role":"wk","bat_hand":"L","bowl_arm":null,"bowl_style":null}]
+  },
+  "United States of America": {
+    "source": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/22/players/70336/monank-patel",
+    "players": [{"name":"Monank Patel","first":"Monank","last":"Patel","scoreboard":"Monank Patel","role":"wk","bat_hand":"R","bowl_arm":null,"bowl_style":null}]
+  }
+}

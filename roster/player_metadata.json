@@ -1,0 +1,5505 @@
+{
+  "Australia": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/australia.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Australian_cricket_team_in_South_Africa_in_2026%E2%80%9327",
+      "https://www.khaleejtimes.com/sports/cricket/maxwell-konstas-axed-as-cricket-australia-unveil-contract-list",
+      "https://www.cricket.com.au/news/4520568/joel-davies-nikhil-chaudhary-australia-international-debuts-first-t20i-v-bangladesh-chattogram-marsh-connolly-inglis-spencer-johnson",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/test"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Pat Cummins",
+        "first": "Pat",
+        "last": "Cummins",
+        "scoreboard": "Cummins",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [
+          "Test"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Steve Smith",
+        "first": "Steve",
+        "last": "Smith",
+        "scoreboard": "Smith",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Travis Head",
+        "first": "Travis",
+        "last": "Head",
+        "scoreboard": "Head",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Marnus Labuschagne",
+        "first": "Marnus",
+        "last": "Labuschagne",
+        "scoreboard": "Labuschagne",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Matt Renshaw",
+        "first": "Matt",
+        "last": "Renshaw",
+        "scoreboard": "Renshaw",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Cameron Green",
+        "first": "Cameron",
+        "last": "Green",
+        "scoreboard": "Green",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Alex Carey",
+        "first": "Alex",
+        "last": "Carey",
+        "scoreboard": "Carey",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "Test",
+          "ODI"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Josh Inglis",
+        "first": "Josh",
+        "last": "Inglis",
+        "scoreboard": "Inglis",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "T20I"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Mitchell Marsh",
+        "first": "Mitchell",
+        "last": "Marsh",
+        "scoreboard": "M Marsh",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "ODI",
+          "T20I"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Tim David",
+        "first": "Tim",
+        "last": "David",
+        "scoreboard": "Tim David",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Beau Webster",
+        "first": "Beau",
+        "last": "Webster",
+        "scoreboard": "Webster",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Cooper Connolly",
+        "first": "Cooper",
+        "last": "Connolly",
+        "scoreboard": "Connolly",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Michael Neser",
+        "first": "Michael",
+        "last": "Neser",
+        "scoreboard": "Neser",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Mitchell Starc",
+        "first": "Mitchell",
+        "last": "Starc",
+        "scoreboard": "Starc",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Josh Hazlewood",
+        "first": "Josh",
+        "last": "Hazlewood",
+        "scoreboard": "Hazlewood",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Scott Boland",
+        "first": "Scott",
+        "last": "Boland",
+        "scoreboard": "Boland",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Nathan Lyon",
+        "first": "Nathan",
+        "last": "Lyon",
+        "scoreboard": "Lyon",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Matthew Kuhnemann",
+        "first": "Matthew",
+        "last": "Kuhnemann",
+        "scoreboard": "Kuhnemann",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Adam Zampa",
+        "first": "Adam",
+        "last": "Zampa",
+        "scoreboard": "Zampa",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Nathan Ellis",
+        "first": "Nathan",
+        "last": "Ellis",
+        "scoreboard": "Ellis",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Xavier Bartlett",
+        "first": "Xavier",
+        "last": "Bartlett",
+        "scoreboard": "Bartlett",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      }
+    ]
+  },
+  "Bangladesh": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/bangladesh.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Bangladeshi_cricket_team_against_Afghanistan_in_the_UAE_in_2026%E2%80%9327",
+      "https://en.wikipedia.org/wiki/2026_Afghanistan_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/Bangladeshi_cricket_team_in_Australia_in_2026",
+      "https://en.wikipedia.org/wiki/Bangladeshi_cricket_team_in_Zimbabwe_in_2026",
+      "https://en.wikipedia.org/wiki/Australian_cricket_team_in_Bangladesh_in_2026",
+      "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_Bangladesh_in_2026",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Najmul Hossain Shanto",
+        "first": "Najmul",
+        "last": "Hossain Shanto",
+        "scoreboard": "Shanto",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mehidy Hasan Miraz",
+        "first": "Mehidy",
+        "last": "Hasan Miraz",
+        "scoreboard": "Mehidy",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Litton Das",
+        "first": "Litton",
+        "last": "Das",
+        "scoreboard": "Litton",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mushfiqur Rahim",
+        "first": "Mushfiqur",
+        "last": "Rahim",
+        "scoreboard": "Mushfiqur",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mominul Haque",
+        "first": "Mominul",
+        "last": "Haque",
+        "scoreboard": "Mominul",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shadman Islam",
+        "first": "Shadman",
+        "last": "Islam",
+        "scoreboard": "Shadman",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tanzid Hasan",
+        "first": "Tanzid",
+        "last": "Hasan",
+        "scoreboard": "Tanzid",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Saif Hassan",
+        "first": "Saif",
+        "last": "Hassan",
+        "scoreboard": "Saif",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tawhid Hridoy",
+        "first": "Tawhid",
+        "last": "Hridoy",
+        "scoreboard": "Hridoy",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Soumya Sarkar",
+        "first": "Soumya",
+        "last": "Sarkar",
+        "scoreboard": "Sarkar",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Jaker Ali",
+        "first": "Jaker",
+        "last": "Ali",
+        "scoreboard": "Jaker",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Parvez Hossain Emon",
+        "first": "Parvez",
+        "last": "Hossain Emon",
+        "scoreboard": "Emon",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Taijul Islam",
+        "first": "Taijul",
+        "last": "Islam",
+        "scoreboard": "Taijul",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Rishad Hossain",
+        "first": "Rishad",
+        "last": "Hossain",
+        "scoreboard": "Rishad",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Nasum Ahmed",
+        "first": "Nasum",
+        "last": "Ahmed",
+        "scoreboard": "Nasum",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mahedi Hasan",
+        "first": "Mahedi",
+        "last": "Hasan",
+        "scoreboard": "Mahedi",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Taskin Ahmed",
+        "first": "Taskin",
+        "last": "Ahmed",
+        "scoreboard": "Taskin",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Nahid Rana",
+        "first": "Nahid",
+        "last": "Rana",
+        "scoreboard": "Nahid Rana",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mustafizur Rahman",
+        "first": "Mustafizur",
+        "last": "Rahman",
+        "scoreboard": "Mustafizur",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shoriful Islam",
+        "first": "Shoriful",
+        "last": "Islam",
+        "scoreboard": "Shoriful",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Hasan Mahmud",
+        "first": "Hasan",
+        "last": "Mahmud",
+        "scoreboard": "Hasan Mahmud",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ebadot Hossain",
+        "first": "Ebadot",
+        "last": "Hossain",
+        "scoreboard": "Ebadot",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "Canada": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/canada.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_Oman_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/2026_Scotland_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/2026_Canada_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/2026_Men%27s_T20_World_Cup_squads",
+      "https://en.wikipedia.org/wiki/Canada_national_cricket_team",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Hamza Tariq",
+        "first": "Hamza",
+        "last": "Tariq",
+        "scoreboard": "Tariq",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shreyas Movva",
+        "first": "Shreyas",
+        "last": "Movva",
+        "scoreboard": "Movva",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Saad Bin Zafar",
+        "first": "Saad",
+        "last": "Bin Zafar",
+        "scoreboard": "Zafar",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Nicholas Kirton",
+        "first": "Nicholas",
+        "last": "Kirton",
+        "scoreboard": "Kirton",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dilpreet Bajwa",
+        "first": "Dilpreet",
+        "last": "Bajwa",
+        "scoreboard": "Bajwa",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Harsh Thaker",
+        "first": "Harsh",
+        "last": "Thaker",
+        "scoreboard": "Thaker",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Aaron Johnson",
+        "first": "Aaron",
+        "last": "Johnson",
+        "scoreboard": "Johnson",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Yuvraj Samra",
+        "first": "Yuvraj",
+        "last": "Samra",
+        "scoreboard": "Samra",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Pargat Singh",
+        "first": "Pargat",
+        "last": "Singh",
+        "scoreboard": "Singh",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ajayveer Hundal",
+        "first": "Ajayveer",
+        "last": "Hundal",
+        "scoreboard": "Hundal",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shivam Sharma",
+        "first": "Shivam",
+        "last": "Sharma",
+        "scoreboard": "Sharma",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kaleem Sana",
+        "first": "Kaleem",
+        "last": "Sana",
+        "scoreboard": "Sana",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dillon Heyliger",
+        "first": "Dillon",
+        "last": "Heyliger",
+        "scoreboard": "Heyliger",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ansh Patel",
+        "first": "Ansh",
+        "last": "Patel",
+        "scoreboard": "Patel",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm wrist",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Akhil Kumar",
+        "first": "Akhil",
+        "last": "Kumar",
+        "scoreboard": "Kumar",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Sukhjinder Singh",
+        "first": "Sukhjinder",
+        "last": "Singh",
+        "scoreboard": "Singh",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "England": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/england.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Pakistani_cricket_team_in_England_in_2026",
+      "https://www.aljazeera.com/sports/2026/7/30/england-appoint-root-and-fleming-as-test-cricket-captain-and-coach",
+      "https://wisden.com/series/pakistan-odi-tri-series-2026/cricket-news/pakistan-tri-series-2026-all-you-need-to-know-full-schedule-squads-venues-and-match-timings-for-the-odi-tri-series",
+      "https://deccanchronicle.com/sports/cricket/brook-to-lead-england-in-t20i-series-vs-india-james-coles-earns-maiden-call-up-1965599",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Joe Root",
+        "first": "Joe",
+        "last": "Root",
+        "scoreboard": "Root",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [
+          "Test"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Harry Brook",
+        "first": "Harry",
+        "last": "Brook",
+        "scoreboard": "Brook",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "ODI",
+          "T20I"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Ben Duckett",
+        "first": "Ben",
+        "last": "Duckett",
+        "scoreboard": "Duckett",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Ollie Pope",
+        "first": "Ollie",
+        "last": "Pope",
+        "scoreboard": "Pope",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Jacob Bethell",
+        "first": "Jacob",
+        "last": "Bethell",
+        "scoreboard": "Bethell",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Jamie Smith",
+        "first": "Jamie",
+        "last": "Smith",
+        "scoreboard": "J Smith",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "Test"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Jos Buttler",
+        "first": "Jos",
+        "last": "Buttler",
+        "scoreboard": "Buttler",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "ODI",
+          "T20I"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Phil Salt",
+        "first": "Phil",
+        "last": "Salt",
+        "scoreboard": "Salt",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Tom Banton",
+        "first": "Tom",
+        "last": "Banton",
+        "scoreboard": "Banton",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Jordan Cox",
+        "first": "Jordan",
+        "last": "Cox",
+        "scoreboard": "Cox",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Will Jacks",
+        "first": "Will",
+        "last": "Jacks",
+        "scoreboard": "Jacks",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Sam Curran",
+        "first": "Sam",
+        "last": "Curran",
+        "scoreboard": "S Curran",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Jamie Overton",
+        "first": "Jamie",
+        "last": "Overton",
+        "scoreboard": "J Overton",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Liam Dawson",
+        "first": "Liam",
+        "last": "Dawson",
+        "scoreboard": "Dawson",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Adil Rashid",
+        "first": "Adil",
+        "last": "Rashid",
+        "scoreboard": "Rashid",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Jofra Archer",
+        "first": "Jofra",
+        "last": "Archer",
+        "scoreboard": "Archer",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Gus Atkinson",
+        "first": "Gus",
+        "last": "Atkinson",
+        "scoreboard": "Atkinson",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Brydon Carse",
+        "first": "Brydon",
+        "last": "Carse",
+        "scoreboard": "Carse",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Josh Tongue",
+        "first": "Josh",
+        "last": "Tongue",
+        "scoreboard": "Tongue",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Ollie Robinson",
+        "first": "Ollie",
+        "last": "Robinson",
+        "scoreboard": "Robinson",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Shoaib Bashir",
+        "first": "Shoaib",
+        "last": "Bashir",
+        "scoreboard": "Bashir",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      }
+    ]
+  },
+  "India": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/india.json",
+    "sources": [
+      "https://cricketwebs.com/?p=47694",
+      "https://www.icc-cricket.com/news/fast-bowler-returns-as-india-name-new-zealand-t20i-squad",
+      "https://ianslive.in/shreyas-iyer-replaces-suryakumar-yadav-as-indias-new-t20i-captain--20260606131310",
+      "https://khelnow.com/cricket/why-hardik-pandya-not-india-nz-t20is-202610",
+      "https://www.icc-cricket.com/rankings/batting/mens/t20i",
+      "https://www.icc-cricket.com/rankings/bowling/mens/test"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Shubman Gill",
+        "first": "Shubman",
+        "last": "Gill",
+        "scoreboard": "Shubman Gill",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "Test",
+          "ODI"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Yashasvi Jaiswal",
+        "first": "Yashasvi",
+        "last": "Jaiswal",
+        "scoreboard": "Jaiswal",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Rohit Sharma",
+        "first": "Rohit",
+        "last": "Sharma",
+        "scoreboard": "Rohit Sharma",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Virat Kohli",
+        "first": "Virat",
+        "last": "Kohli",
+        "scoreboard": "Virat Kohli",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Shreyas Iyer",
+        "first": "Shreyas",
+        "last": "Iyer",
+        "scoreboard": "Shreyas Iyer",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "T20I"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "KL Rahul",
+        "first": "KL",
+        "last": "Rahul",
+        "scoreboard": "KL Rahul",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "ODI"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Rishabh Pant",
+        "first": "Rishabh",
+        "last": "Pant",
+        "scoreboard": "Pant",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "Test"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Ishan Kishan",
+        "first": "Ishan",
+        "last": "Kishan",
+        "scoreboard": "Ishan Kishan",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "T20I"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Sanju Samson",
+        "first": "Sanju",
+        "last": "Samson",
+        "scoreboard": "Samson",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Abhishek Sharma",
+        "first": "Abhishek",
+        "last": "Sharma",
+        "scoreboard": "Abhishek Sharma",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Tilak Varma",
+        "first": "Tilak",
+        "last": "Varma",
+        "scoreboard": "Tilak Varma",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Vaibhav Sooryavanshi",
+        "first": "Vaibhav",
+        "last": "Sooryavanshi",
+        "scoreboard": "Sooryavanshi",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Ravindra Jadeja",
+        "first": "Ravindra",
+        "last": "Jadeja",
+        "scoreboard": "Jadeja",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Axar Patel",
+        "first": "Axar",
+        "last": "Patel",
+        "scoreboard": "Axar Patel",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Washington Sundar",
+        "first": "Washington",
+        "last": "Sundar",
+        "scoreboard": "W Sundar",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Nitish Kumar Reddy",
+        "first": "Nitish",
+        "last": "Reddy",
+        "scoreboard": "Nitish Reddy",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Hardik Pandya",
+        "first": "Hardik",
+        "last": "Pandya",
+        "scoreboard": "Hardik Pandya",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Shivam Dube",
+        "first": "Shivam",
+        "last": "Dube",
+        "scoreboard": "Shivam Dube",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Jasprit Bumrah",
+        "first": "Jasprit",
+        "last": "Bumrah",
+        "scoreboard": "Bumrah",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Mohammed Siraj",
+        "first": "Mohammed",
+        "last": "Siraj",
+        "scoreboard": "Siraj",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Arshdeep Singh",
+        "first": "Arshdeep",
+        "last": "Singh",
+        "scoreboard": "Arshdeep Singh",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Prasidh Krishna",
+        "first": "Prasidh",
+        "last": "Krishna",
+        "scoreboard": "Prasidh Krishna",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Kuldeep Yadav",
+        "first": "Kuldeep",
+        "last": "Yadav",
+        "scoreboard": "Kuldeep Yadav",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm wrist",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Varun Chakaravarthy",
+        "first": "Varun",
+        "last": "Chakaravarthy",
+        "scoreboard": "Varun Chakaravarthy",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      }
+    ]
+  },
+  "Ireland": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/ireland.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Irish_cricket_team_in_Namibia_in_2026%E2%80%9327",
+      "https://en.wikipedia.org/wiki/Afghan_cricket_team_in_Ireland_in_2026",
+      "https://en.wikipedia.org/wiki/Indian_cricket_team_in_Ireland_in_2026",
+      "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_Ireland_in_2026",
+      "https://en.wikipedia.org/wiki/2026_Men%27s_T20_World_Cup_squads",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Paul Stirling",
+        "first": "Paul",
+        "last": "Stirling",
+        "scoreboard": "Stirling",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Andrew Balbirnie",
+        "first": "Andrew",
+        "last": "Balbirnie",
+        "scoreboard": "Balbirnie",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Lorcan Tucker",
+        "first": "Lorcan",
+        "last": "Tucker",
+        "scoreboard": "Tucker",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Harry Tector",
+        "first": "Harry",
+        "last": "Tector",
+        "scoreboard": "Tector",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Curtis Campher",
+        "first": "Curtis",
+        "last": "Campher",
+        "scoreboard": "Campher",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mark Adair",
+        "first": "Mark",
+        "last": "Adair",
+        "scoreboard": "M Adair",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Andy McBrine",
+        "first": "Andy",
+        "last": "McBrine",
+        "scoreboard": "McBrine",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "George Dockrell",
+        "first": "George",
+        "last": "Dockrell",
+        "scoreboard": "Dockrell",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Gareth Delany",
+        "first": "Gareth",
+        "last": "Delany",
+        "scoreboard": "Delany",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ross Adair",
+        "first": "Ross",
+        "last": "Adair",
+        "scoreboard": "R Adair",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Cade Carmichael",
+        "first": "Cade",
+        "last": "Carmichael",
+        "scoreboard": "Carmichael",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Stephen Doheny",
+        "first": "Stephen",
+        "last": "Doheny",
+        "scoreboard": "Doheny",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Matthew Humphreys",
+        "first": "Matthew",
+        "last": "Humphreys",
+        "scoreboard": "Humphreys",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Barry McCarthy",
+        "first": "Barry",
+        "last": "McCarthy",
+        "scoreboard": "B McCarthy",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Josh Little",
+        "first": "Josh",
+        "last": "Little",
+        "scoreboard": "Little",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Craig Young",
+        "first": "Craig",
+        "last": "Young",
+        "scoreboard": "Young",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Liam McCarthy",
+        "first": "Liam",
+        "last": "McCarthy",
+        "scoreboard": "L McCarthy",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Gavin Hoey",
+        "first": "Gavin",
+        "last": "Hoey",
+        "scoreboard": "Hoey",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ben White",
+        "first": "Ben",
+        "last": "White",
+        "scoreboard": "White",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "Kenya": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/kenya.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_Cricket_World_Cup_Challenge_League_A_(Kenya)",
+      "https://en.wikipedia.org/wiki/Kenya_national_cricket_team",
+      "https://sportscafe.in/cricket/live/list-a/icc-cricket-world-cup-challenge-league/ken-vs-den-6822732/match-details"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Dhiren Gondaria",
+        "first": "Dhiren",
+        "last": "Gondaria",
+        "scoreboard": "Gondaria",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Irfan Karim",
+        "first": "Irfan",
+        "last": "Karim",
+        "scoreboard": "Karim",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Sukhdeep Singh",
+        "first": "Sukhdeep",
+        "last": "Singh",
+        "scoreboard": "Singh",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Rakep Patel",
+        "first": "Rakep",
+        "last": "Patel",
+        "scoreboard": "R Patel",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Sachin Bhudia",
+        "first": "Sachin",
+        "last": "Bhudia",
+        "scoreboard": "Bhudia",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Pushkar Sharma",
+        "first": "Pushkar",
+        "last": "Sharma",
+        "scoreboard": "Sharma",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Rushab Patel",
+        "first": "Rushab",
+        "last": "Patel",
+        "scoreboard": "Ru Patel",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Sachin Gill",
+        "first": "Sachin",
+        "last": "Gill",
+        "scoreboard": "Gill",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Subham Patel",
+        "first": "Subham",
+        "last": "Patel",
+        "scoreboard": "S Patel",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Nelson Odhiambo",
+        "first": "Nelson",
+        "last": "Odhiambo",
+        "scoreboard": "Odhiambo",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shem Ngoche",
+        "first": "Shem",
+        "last": "Ngoche",
+        "scoreboard": "Ngoche",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Vraj Patel",
+        "first": "Vraj",
+        "last": "Patel",
+        "scoreboard": "V Patel",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Vishil Patel",
+        "first": "Vishil",
+        "last": "Patel",
+        "scoreboard": "Vi Patel",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Lucas Oluoch",
+        "first": "Lucas",
+        "last": "Oluoch",
+        "scoreboard": "Oluoch",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Peter Langat",
+        "first": "Peter",
+        "last": "Langat",
+        "scoreboard": "Langat",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Francis Mutua",
+        "first": "Francis",
+        "last": "Mutua",
+        "scoreboard": "Mutua",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "Netherlands": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/netherlands.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_United_Arab_Emirates_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/2026_Netherlands_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/2026_Canada_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/2026_Men%27s_T20_World_Cup_squads",
+      "https://www.icc-cricket.com/news/leadership-shift-for-netherlands-as-edwards-steps-down",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Bas de Leede",
+        "first": "Bas",
+        "last": "de Leede",
+        "scoreboard": "Leede",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Scott Edwards",
+        "first": "Scott",
+        "last": "Edwards",
+        "scoreboard": "Edwards",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Max O'Dowd",
+        "first": "Max",
+        "last": "O'Dowd",
+        "scoreboard": "O'Dowd",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Vikramjit Singh",
+        "first": "Vikramjit",
+        "last": "Singh",
+        "scoreboard": "Singh",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Michael Levitt",
+        "first": "Michael",
+        "last": "Levitt",
+        "scoreboard": "Levitt",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Colin Ackermann",
+        "first": "Colin",
+        "last": "Ackermann",
+        "scoreboard": "Ackermann",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Zach Lion-Cachet",
+        "first": "Zach",
+        "last": "Lion-Cachet",
+        "scoreboard": "Lion-Cachet",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Noah Croes",
+        "first": "Noah",
+        "last": "Croes",
+        "scoreboard": "Croes",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Logan van Beek",
+        "first": "Logan",
+        "last": "van Beek",
+        "scoreboard": "Beek",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Roelof van der Merwe",
+        "first": "Roelof",
+        "last": "van der Merwe",
+        "scoreboard": "Merwe",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Aryan Dutt",
+        "first": "Aryan",
+        "last": "Dutt",
+        "scoreboard": "Dutt",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Paul van Meekeren",
+        "first": "Paul",
+        "last": "van Meekeren",
+        "scoreboard": "Meekeren",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Fred Klaassen",
+        "first": "Fred",
+        "last": "Klaassen",
+        "scoreboard": "Klaassen",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kyle Klein",
+        "first": "Kyle",
+        "last": "Klein",
+        "scoreboard": "Klein",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Timm van der Gugten",
+        "first": "Timm",
+        "last": "van der Gugten",
+        "scoreboard": "Gugten",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Saqib Zulfiqar",
+        "first": "Saqib",
+        "last": "Zulfiqar",
+        "scoreboard": "Zulfiqar",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shariz Ahmad",
+        "first": "Shariz",
+        "last": "Ahmad",
+        "scoreboard": "Ahmad",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "New Zealand": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/new_zealand.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Indian_cricket_team_in_New_Zealand_in_2026%E2%80%9327",
+      "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_England_in_2026",
+      "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_West_Indies_in_2026",
+      "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_Ireland_in_2026",
+      "https://en.wikipedia.org/wiki/2026_Men%27s_T20_World_Cup_squads",
+      "https://www.nzc.nz/allen-ferguson-seifert-make-odi-comeback-ravindra-returns/",
+      "https://www.nzc.nz/blackcaps-unleash-pace-attack-milne-returns-ravindra-ruled-out/",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Mitchell Santner",
+        "first": "Mitchell",
+        "last": "Santner",
+        "scoreboard": "Santner",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tom Latham",
+        "first": "Tom",
+        "last": "Latham",
+        "scoreboard": "Latham",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tom Blundell",
+        "first": "Tom",
+        "last": "Blundell",
+        "scoreboard": "Blundell",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Devon Conway",
+        "first": "Devon",
+        "last": "Conway",
+        "scoreboard": "Conway",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kane Williamson",
+        "first": "Kane",
+        "last": "Williamson",
+        "scoreboard": "Williamson",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Rachin Ravindra",
+        "first": "Rachin",
+        "last": "Ravindra",
+        "scoreboard": "Ravindra",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Daryl Mitchell",
+        "first": "Daryl",
+        "last": "Mitchell",
+        "scoreboard": "Mitchell",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Glenn Phillips",
+        "first": "Glenn",
+        "last": "Phillips",
+        "scoreboard": "Phillips",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Will Young",
+        "first": "Will",
+        "last": "Young",
+        "scoreboard": "Young",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Henry Nicholls",
+        "first": "Henry",
+        "last": "Nicholls",
+        "scoreboard": "Nicholls",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Michael Bracewell",
+        "first": "Michael",
+        "last": "Bracewell",
+        "scoreboard": "Bracewell",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mark Chapman",
+        "first": "Mark",
+        "last": "Chapman",
+        "scoreboard": "Chapman",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tim Seifert",
+        "first": "Tim",
+        "last": "Seifert",
+        "scoreboard": "Seifert",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Finn Allen",
+        "first": "Finn",
+        "last": "Allen",
+        "scoreboard": "Allen",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Matt Henry",
+        "first": "Matt",
+        "last": "Henry",
+        "scoreboard": "Henry",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kyle Jamieson",
+        "first": "Kyle",
+        "last": "Jamieson",
+        "scoreboard": "Jamieson",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Will O'Rourke",
+        "first": "Will",
+        "last": "O'Rourke",
+        "scoreboard": "O'Rourke",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Nathan Smith",
+        "first": "Nathan",
+        "last": "Smith",
+        "scoreboard": "Smith",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Jacob Duffy",
+        "first": "Jacob",
+        "last": "Duffy",
+        "scoreboard": "Duffy",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Lockie Ferguson",
+        "first": "Lockie",
+        "last": "Ferguson",
+        "scoreboard": "Ferguson",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Zak Foulkes",
+        "first": "Zak",
+        "last": "Foulkes",
+        "scoreboard": "Foulkes",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ben Sears",
+        "first": "Ben",
+        "last": "Sears",
+        "scoreboard": "Sears",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "Pakistan": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/pakistan.json",
+    "sources": [
+      "https://tribune.com.pk/story/2633123/pakistan-unveil-t20i-and-odi-squads-for-home-series",
+      "https://wisden.com/series/pakistan-odi-tri-series-2026/cricket-news/pakistan-tri-series-2026-all-you-need-to-know-full-schedule-squads-venues-and-match-timings-for-the-odi-tri-series",
+      "https://en.wikipedia.org/wiki/Pakistani_cricket_team_in_England_in_2026",
+      "https://www.cricket.com.au/news/4532620/babar-azam-reinstated-as-pakistan-test-captain-replaces-shan-masood-west-indies-series",
+      "https://www.icc-cricket.com/rankings/batting/mens/odi",
+      "https://www.icc-cricket.com/rankings/bowling/mens/t20i",
+      "https://en.wikipedia.org/wiki/Ghazi_Ghori",
+      "https://en.wikipedia.org/wiki/Sufyan_Moqim",
+      "https://en.wikipedia.org/wiki/Hasan_Nawaz",
+      "https://en.wikipedia.org/wiki/Salman_Mirza"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Babar Azam",
+        "first": "Babar",
+        "last": "Azam",
+        "scoreboard": "Babar Azam",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "Test"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Saim Ayub",
+        "first": "Saim",
+        "last": "Ayub",
+        "scoreboard": "Saim Ayub",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Sahibzada Farhan",
+        "first": "Sahibzada",
+        "last": "Farhan",
+        "scoreboard": "S Farhan",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "T20I"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Fakhar Zaman",
+        "first": "Fakhar",
+        "last": "Zaman",
+        "scoreboard": "Fakhar Zaman",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Mohammad Rizwan",
+        "first": "Mohammad",
+        "last": "Rizwan",
+        "scoreboard": "Rizwan",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "Test",
+          "ODI"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Salman Ali Agha",
+        "first": "Salman",
+        "last": "Agha",
+        "scoreboard": "Salman Agha",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Saud Shakeel",
+        "first": "Saud",
+        "last": "Shakeel",
+        "scoreboard": "Saud Shakeel",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Abdullah Shafique",
+        "first": "Abdullah",
+        "last": "Shafique",
+        "scoreboard": "A Shafique",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Shan Masood",
+        "first": "Shan",
+        "last": "Masood",
+        "scoreboard": "Shan Masood",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Hasan Nawaz",
+        "first": "Hasan",
+        "last": "Nawaz",
+        "scoreboard": "Hasan Nawaz",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Muhammad Ghazi Ghori",
+        "first": "Ghazi",
+        "last": "Ghori",
+        "scoreboard": "Ghazi Ghori",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Shadab Khan",
+        "first": "Shadab",
+        "last": "Khan",
+        "scoreboard": "Shadab Khan",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Faheem Ashraf",
+        "first": "Faheem",
+        "last": "Ashraf",
+        "scoreboard": "Faheem Ashraf",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Mohammad Nawaz",
+        "first": "Mohammad",
+        "last": "Nawaz",
+        "scoreboard": "Mohammad Nawaz",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Shaheen Shah Afridi",
+        "first": "Shaheen",
+        "last": "Afridi",
+        "scoreboard": "Shaheen Afridi",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "ODI"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Naseem Shah",
+        "first": "Naseem",
+        "last": "Shah",
+        "scoreboard": "Naseem Shah",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Haris Rauf",
+        "first": "Haris",
+        "last": "Rauf",
+        "scoreboard": "Haris Rauf",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Abrar Ahmed",
+        "first": "Abrar",
+        "last": "Ahmed",
+        "scoreboard": "Abrar Ahmed",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Sufiyan Moqim",
+        "first": "Sufiyan",
+        "last": "Moqim",
+        "scoreboard": "Sufiyan Moqim",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm wrist",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Salman Mirza",
+        "first": "Salman",
+        "last": "Mirza",
+        "scoreboard": "Salman Mirza",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Noman Ali",
+        "first": "Noman",
+        "last": "Ali",
+        "scoreboard": "Noman Ali",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Sajid Khan",
+        "first": "Sajid",
+        "last": "Khan",
+        "scoreboard": "Sajid Khan",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Mohammad Abbas",
+        "first": "Mohammad",
+        "last": "Abbas",
+        "scoreboard": "Mohammad Abbas",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      }
+    ]
+  },
+  "Scotland": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/scotland.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/2026_Scotland_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/2026_Men%27s_T20_World_Cup_squads",
+      "https://en.wikipedia.org/wiki/Scotland_national_cricket_team",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Richie Berrington",
+        "first": "Richie",
+        "last": "Berrington",
+        "scoreboard": "Berrington",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "George Munsey",
+        "first": "George",
+        "last": "Munsey",
+        "scoreboard": "Munsey",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Brandon McMullen",
+        "first": "Brandon",
+        "last": "McMullen",
+        "scoreboard": "McMullen",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Matthew Cross",
+        "first": "Matthew",
+        "last": "Cross",
+        "scoreboard": "Cross",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Michael Leask",
+        "first": "Michael",
+        "last": "Leask",
+        "scoreboard": "Leask",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Mark Watt",
+        "first": "Mark",
+        "last": "Watt",
+        "scoreboard": "Watt",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Safyaan Sharif",
+        "first": "Safyaan",
+        "last": "Sharif",
+        "scoreboard": "Sharif",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Brad Currie",
+        "first": "Brad",
+        "last": "Currie",
+        "scoreboard": "Currie",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Chris Greaves",
+        "first": "Chris",
+        "last": "Greaves",
+        "scoreboard": "Greaves",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Michael Jones",
+        "first": "Michael",
+        "last": "Jones",
+        "scoreboard": "Jones",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Finlay McCreath",
+        "first": "Finlay",
+        "last": "McCreath",
+        "scoreboard": "McCreath",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Jack Jarvis",
+        "first": "Jack",
+        "last": "Jarvis",
+        "scoreboard": "Jarvis",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Jasper Davidson",
+        "first": "Jasper",
+        "last": "Davidson",
+        "scoreboard": "J Davidson",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Oliver Davidson",
+        "first": "Oliver",
+        "last": "Davidson",
+        "scoreboard": "O Davidson",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Brad Wheal",
+        "first": "Brad",
+        "last": "Wheal",
+        "scoreboard": "Wheal",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Zainullah Ihsan",
+        "first": "Zainullah",
+        "last": "Ihsan",
+        "scoreboard": "Ihsan",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tom Bruce",
+        "first": "Tom",
+        "last": "Bruce",
+        "scoreboard": "Bruce",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "South Africa": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/south_africa.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Australian_cricket_team_in_South_Africa_in_2026%E2%80%9327",
+      "https://www.sen.com.au/news/2026/10/08/cricket-2026-south-africa-names-their-xi-for-first-test-against-australia",
+      "https://www.icc-cricket.com/news/pacer-returns-as-south-africa-name-xi-for-first-australia-test",
+      "https://www.ofm.co.za/article/cricket/340119/proteas-squad-named-for-2026-t20-world-cup",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/allrounder/mens/test"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Temba Bavuma",
+        "first": "Temba",
+        "last": "Bavuma",
+        "scoreboard": "Bavuma",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [
+          "Test",
+          "ODI"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Aiden Markram",
+        "first": "Aiden",
+        "last": "Markram",
+        "scoreboard": "Markram",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [
+          "T20I"
+        ],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Ryan Rickelton",
+        "first": "Ryan",
+        "last": "Rickelton",
+        "scoreboard": "Rickelton",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Quinton de Kock",
+        "first": "Quinton",
+        "last": "de Kock",
+        "scoreboard": "de Kock",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "ODI",
+          "T20I"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Kyle Verreynne",
+        "first": "Kyle",
+        "last": "Verreynne",
+        "scoreboard": "Verreynne",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [
+          "Test"
+        ],
+        "first_choice_wk": true
+      },
+      {
+        "name": "Tristan Stubbs",
+        "first": "Tristan",
+        "last": "Stubbs",
+        "scoreboard": "Stubbs",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Dewald Brevis",
+        "first": "Dewald",
+        "last": "Brevis",
+        "scoreboard": "Brevis",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Matthew Breetzke",
+        "first": "Matthew",
+        "last": "Breetzke",
+        "scoreboard": "Breetzke",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Tony de Zorzi",
+        "first": "Tony",
+        "last": "de Zorzi",
+        "scoreboard": "de Zorzi",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "David Bedingham",
+        "first": "David",
+        "last": "Bedingham",
+        "scoreboard": "Bedingham",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "David Miller",
+        "first": "David",
+        "last": "Miller",
+        "scoreboard": "Miller",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Marco Jansen",
+        "first": "Marco",
+        "last": "Jansen",
+        "scoreboard": "Jansen",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Wiaan Mulder",
+        "first": "Wiaan",
+        "last": "Mulder",
+        "scoreboard": "Mulder",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Corbin Bosch",
+        "first": "Corbin",
+        "last": "Bosch",
+        "scoreboard": "Bosch",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Senuran Muthusamy",
+        "first": "Senuran",
+        "last": "Muthusamy",
+        "scoreboard": "Muthusamy",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Kagiso Rabada",
+        "first": "Kagiso",
+        "last": "Rabada",
+        "scoreboard": "Rabada",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Lungi Ngidi",
+        "first": "Lungi",
+        "last": "Ngidi",
+        "scoreboard": "Ngidi",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Keshav Maharaj",
+        "first": "Keshav",
+        "last": "Maharaj",
+        "scoreboard": "Maharaj",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Simon Harmer",
+        "first": "Simon",
+        "last": "Harmer",
+        "scoreboard": "Harmer",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Kwena Maphaka",
+        "first": "Kwena",
+        "last": "Maphaka",
+        "scoreboard": "Maphaka",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Anrich Nortje",
+        "first": "Anrich",
+        "last": "Nortje",
+        "scoreboard": "Nortje",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      },
+      {
+        "name": "Gerald Coetzee",
+        "first": "Gerald",
+        "last": "Coetzee",
+        "scoreboard": "Coetzee",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": [],
+        "wk_formats": [],
+        "first_choice_wk": false
+      }
+    ]
+  },
+  "Sri Lanka": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/sri_lanka.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Sri_Lankan_cricket_team_in_Pakistan_in_2026%E2%80%9327",
+      "https://en.wikipedia.org/wiki/2026%E2%80%9327_Pakistan_ODI_Tri-Series",
+      "https://en.wikipedia.org/wiki/Sri_Lankan_cricket_team_in_England_in_2026",
+      "https://en.wikipedia.org/wiki/Indian_cricket_team_in_Sri_Lanka_in_2026",
+      "https://en.wikipedia.org/wiki/Sri_Lankan_cricket_team_in_West_Indies_in_2026",
+      "https://www.icc-cricket.com/news/sri-lanka-reveal-squad-for-two-match-pakistan-test-series",
+      "https://srilankacricket.lk/2026/10/sri-lanka-test-squad-for-pakistan-tour-2026/",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Kusal Mendis",
+        "first": "Kusal",
+        "last": "Mendis",
+        "scoreboard": "Kusal Mendis",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Charith Asalanka",
+        "first": "Charith",
+        "last": "Asalanka",
+        "scoreboard": "Asalanka",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dhananjaya de Silva",
+        "first": "Dhananjaya",
+        "last": "de Silva",
+        "scoreboard": "Silva",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kamindu Mendis",
+        "first": "Kamindu",
+        "last": "Mendis",
+        "scoreboard": "Kamindu",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Pathum Nissanka",
+        "first": "Pathum",
+        "last": "Nissanka",
+        "scoreboard": "Nissanka",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dinesh Chandimal",
+        "first": "Dinesh",
+        "last": "Chandimal",
+        "scoreboard": "Chandimal",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Sonal Dinusha",
+        "first": "Sonal",
+        "last": "Dinusha",
+        "scoreboard": "Dinusha",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Pasindu Sooriyabandara",
+        "first": "Pasindu",
+        "last": "Sooriyabandara",
+        "scoreboard": "Sooriyabandara",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Janith Liyanage",
+        "first": "Janith",
+        "last": "Liyanage",
+        "scoreboard": "Liyanage",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kamil Mishara",
+        "first": "Kamil",
+        "last": "Mishara",
+        "scoreboard": "Mishara",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Pavan Rathnayake",
+        "first": "Pavan",
+        "last": "Rathnayake",
+        "scoreboard": "P Rathnayake",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dasun Shanaka",
+        "first": "Dasun",
+        "last": "Shanaka",
+        "scoreboard": "Shanaka",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Wanindu Hasaranga",
+        "first": "Wanindu",
+        "last": "Hasaranga",
+        "scoreboard": "Hasaranga",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Maheesh Theekshana",
+        "first": "Maheesh",
+        "last": "Theekshana",
+        "scoreboard": "Theekshana",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dunith Wellalage",
+        "first": "Dunith",
+        "last": "Wellalage",
+        "scoreboard": "Wellalage",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Prabath Jayasuriya",
+        "first": "Prabath",
+        "last": "Jayasuriya",
+        "scoreboard": "Jayasuriya",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Asitha Fernando",
+        "first": "Asitha",
+        "last": "Fernando",
+        "scoreboard": "Asitha",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dilshan Madushanka",
+        "first": "Dilshan",
+        "last": "Madushanka",
+        "scoreboard": "Madushanka",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dushmantha Chameera",
+        "first": "Dushmantha",
+        "last": "Chameera",
+        "scoreboard": "Chameera",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Eshan Malinga",
+        "first": "Eshan",
+        "last": "Malinga",
+        "scoreboard": "Malinga",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Lahiru Kumara",
+        "first": "Lahiru",
+        "last": "Kumara",
+        "scoreboard": "Kumara",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Milan Rathnayake",
+        "first": "Milan",
+        "last": "Rathnayake",
+        "scoreboard": "M Rathnayake",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "West Indies": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/west_indies.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/West_Indian_cricket_team_in_India_in_2026%E2%80%9327",
+      "https://en.wikipedia.org/wiki/West_Indian_cricket_team_in_Bangladesh_in_2026%E2%80%9327",
+      "https://en.wikipedia.org/wiki/Pakistani_cricket_team_in_the_West_Indies_in_2026",
+      "https://en.wikipedia.org/wiki/New_Zealand_cricket_team_in_West_Indies_in_2026",
+      "https://en.wikipedia.org/wiki/Sri_Lankan_cricket_team_in_West_Indies_in_2026",
+      "https://www.windiescricket.com/news/cricket-west-indies-announces-odi-squad-for-the-first-three-matches-against-new-zealand/",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Roston Chase",
+        "first": "Roston",
+        "last": "Chase",
+        "scoreboard": "Chase",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shai Hope",
+        "first": "Shai",
+        "last": "Hope",
+        "scoreboard": "Hope",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Jomel Warrican",
+        "first": "Jomel",
+        "last": "Warrican",
+        "scoreboard": "Warrican",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "John Campbell",
+        "first": "John",
+        "last": "Campbell",
+        "scoreboard": "Campbell",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Brandon King",
+        "first": "Brandon",
+        "last": "King",
+        "scoreboard": "King",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tagenarine Chanderpaul",
+        "first": "Tagenarine",
+        "last": "Chanderpaul",
+        "scoreboard": "Chanderpaul",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kavem Hodge",
+        "first": "Kavem",
+        "last": "Hodge",
+        "scoreboard": "Hodge",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Keacy Carty",
+        "first": "Keacy",
+        "last": "Carty",
+        "scoreboard": "Carty",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Joshua Da Silva",
+        "first": "Joshua",
+        "last": "Da Silva",
+        "scoreboard": "Silva",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Amir Jangoo",
+        "first": "Amir",
+        "last": "Jangoo",
+        "scoreboard": "Jangoo",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Justin Greaves",
+        "first": "Justin",
+        "last": "Greaves",
+        "scoreboard": "Greaves",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shimron Hetmyer",
+        "first": "Shimron",
+        "last": "Hetmyer",
+        "scoreboard": "Hetmyer",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Sherfane Rutherford",
+        "first": "Sherfane",
+        "last": "Rutherford",
+        "scoreboard": "Rutherford",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Rovman Powell",
+        "first": "Rovman",
+        "last": "Powell",
+        "scoreboard": "Powell",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Jason Holder",
+        "first": "Jason",
+        "last": "Holder",
+        "scoreboard": "Holder",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Romario Shepherd",
+        "first": "Romario",
+        "last": "Shepherd",
+        "scoreboard": "Shepherd",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Akeal Hosein",
+        "first": "Akeal",
+        "last": "Hosein",
+        "scoreboard": "Hosein",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Gudakesh Motie",
+        "first": "Gudakesh",
+        "last": "Motie",
+        "scoreboard": "Motie",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Alzarri Joseph",
+        "first": "Alzarri",
+        "last": "Joseph",
+        "scoreboard": "A Joseph",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Shamar Joseph",
+        "first": "Shamar",
+        "last": "Joseph",
+        "scoreboard": "S Joseph",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Jayden Seales",
+        "first": "Jayden",
+        "last": "Seales",
+        "scoreboard": "Seales",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Kemar Roach",
+        "first": "Kemar",
+        "last": "Roach",
+        "scoreboard": "Roach",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Matthew Forde",
+        "first": "Matthew",
+        "last": "Forde",
+        "scoreboard": "Forde",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  },
+  "Zimbabwe": {
+    "source": "https://raw.githubusercontent.com/syedharis14/cricket07-2026-squads/main/research/zimbabwe.json",
+    "sources": [
+      "https://en.wikipedia.org/wiki/Zimbabwean_cricket_team_against_Afghanistan_in_the_UAE_in_2026%E2%80%9327",
+      "https://en.wikipedia.org/wiki/2026_Afghanistan_Tri-Nation_Series",
+      "https://en.wikipedia.org/wiki/Australian_cricket_team_in_Zimbabwe_in_2026",
+      "https://en.wikipedia.org/wiki/Indian_cricket_team_in_Zimbabwe_in_2026",
+      "https://en.wikipedia.org/wiki/Bangladeshi_cricket_team_in_Zimbabwe_in_2026",
+      "https://www.zimlive.com/zimbabwe-cricket-confirm-future-captains-across-all-formats/",
+      "https://www.icc-cricket.com/rankings/batting/mens/test",
+      "https://www.icc-cricket.com/rankings/bowling/mens/odi",
+      "https://www.icc-cricket.com/rankings/all-rounder/mens/t20i"
+    ],
+    "asOf": "2026-10",
+    "players": [
+      {
+        "name": "Richard Ngarava",
+        "first": "Richard",
+        "last": "Ngarava",
+        "scoreboard": "Ngarava",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Sikandar Raza",
+        "first": "Sikandar",
+        "last": "Raza",
+        "scoreboard": "Raza",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Craig Ervine",
+        "first": "Craig",
+        "last": "Ervine",
+        "scoreboard": "Ervine",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Brian Bennett",
+        "first": "Brian",
+        "last": "Bennett",
+        "scoreboard": "Bennett",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ben Curran",
+        "first": "Ben",
+        "last": "Curran",
+        "scoreboard": "Curran",
+        "role": "bat",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Brendan Taylor",
+        "first": "Brendan",
+        "last": "Taylor",
+        "scoreboard": "Taylor",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Innocent Kaia",
+        "first": "Innocent",
+        "last": "Kaia",
+        "scoreboard": "Kaia",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Wessly Madhevere",
+        "first": "Wessly",
+        "last": "Madhevere",
+        "scoreboard": "Madhevere",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "offspin",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tadiwanashe Marumani",
+        "first": "Tadiwanashe",
+        "last": "Marumani",
+        "scoreboard": "Marumani",
+        "role": "wk",
+        "bat_hand": "L",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tafadzwa Tsiga",
+        "first": "Tafadzwa",
+        "last": "Tsiga",
+        "scoreboard": "Tsiga",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "Test",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Clive Madande",
+        "first": "Clive",
+        "last": "Madande",
+        "scoreboard": "Madande",
+        "role": "wk",
+        "bat_hand": "R",
+        "bowl_arm": null,
+        "bowl_style": null,
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Ryan Burl",
+        "first": "Ryan",
+        "last": "Burl",
+        "scoreboard": "Burl",
+        "role": "allround",
+        "bat_hand": "L",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Dion Myers",
+        "first": "Dion",
+        "last": "Myers",
+        "scoreboard": "Myers",
+        "role": "bat",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Brad Evans",
+        "first": "Brad",
+        "last": "Evans",
+        "scoreboard": "Evans",
+        "role": "allround",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Blessing Muzarabani",
+        "first": "Blessing",
+        "last": "Muzarabani",
+        "scoreboard": "Muzarabani",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Wellington Masakadza",
+        "first": "Wellington",
+        "last": "Masakadza",
+        "scoreboard": "Masakadza",
+        "role": "bowl",
+        "bat_hand": "L",
+        "bowl_arm": "L",
+        "bowl_style": "left-arm orthodox",
+        "formats": [
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Newman Nyamhuri",
+        "first": "Newman",
+        "last": "Nyamhuri",
+        "scoreboard": "Nyamhuri",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "L",
+        "bowl_style": "fast-medium",
+        "formats": [
+          "Test",
+          "ODI",
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Tanaka Chivanga",
+        "first": "Tanaka",
+        "last": "Chivanga",
+        "scoreboard": "Chivanga",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "fast",
+        "formats": [
+          "Test"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Graeme Cremer",
+        "first": "Graeme",
+        "last": "Cremer",
+        "scoreboard": "Cremer",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "Test",
+          "ODI"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      },
+      {
+        "name": "Vincent Masekesa",
+        "first": "Vincent",
+        "last": "Masekesa",
+        "scoreboard": "Masekesa",
+        "role": "bowl",
+        "bat_hand": "R",
+        "bowl_arm": "R",
+        "bowl_style": "legspin",
+        "formats": [
+          "T20I"
+        ],
+        "captain_formats": null,
+        "wk_formats": null,
+        "first_choice_wk": null
+      }
+    ]
+  }
+}

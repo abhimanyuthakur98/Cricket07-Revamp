@@ -8,6 +8,8 @@
     element('players').replaceChildren();
     element('empty').hidden = !!team;
     element('team-title').textContent = team?.name || 'Players';
+    element('team-logo').hidden = !team?.logo;
+    if (team?.logo) element('team-logo').src = team.logo;
     element('freshness').textContent = team?.stale ? 'Latest match over 30 days old' : '';
     element('team-meta').textContent = team ? `${team.players.length} recent players · Latest source match ${team.latestMatch}` : '';
     for (const player of team?.players || []) {
