@@ -6,6 +6,7 @@ from pathlib import Path
 import sys
 import threading
 import urllib.parse
+import socket
 
 from .refresh import OUTPUT, ROOT, refresh
 
@@ -15,6 +16,16 @@ from http.server import ThreadingHTTPServer  # noqa: E402
 
 LAUNCH_LOCK = threading.Lock()
 LOCAL = ROOT / 'local_runtime'
+
+
+class LocalServer(ThreadingHTTPServer):
+    # On Windows, SO_REUSEADDR permits competing listeners rather than just restart reuse.
+    allow_reuse_address = False
+
+    def server_bind(self):
+        if hasattr(socket, 'SO_EXCLUSIVEADDRUSE'):
+            self.socket.setsockopt(socket.SOL_SOCKET, socket.SO_EXCLUSIVEADDRUSE, 1)
+        super().server_bind()
 
 
 class Handler(GameHandler):
@@ -64,6 +75,29 @@ class Handler(GameHandler):
 
     def do_GET(self):
         path = urllib.parse.urlsplit(self.path).path
+        if path.startswith('/assets/teams/') and path.endswith('.png'):
+            slug = path[len('/assets/teams/'):-4]
+            from .teams import TEAMS
+            if slug not in {code for _,code in TEAMS.values()}:
+                self.send_error(404)
+                return
+            from PIL import Image
+            from .logos import transparent_background
+            import io
+            target = ROOT / 'web/assets/teams' / (slug + '.png')
+            if not target.exists():
+                self.send_error(404)
+                return
+            output = io.BytesIO()
+            with Image.open(target) as source:
+                transparent_background(source).save(output, format='PNG')
+            body = output.getvalue()
+            self.send_response(200)
+            self.send_header('Content-Type','image/png')
+            self.send_header('Content-Length',str(len(body)))
+            self.end_headers()
+            self.wfile.write(body)
+            return
         if path in ('/play/', '/play/index.html', '/play/c07.js'):
             target = LOCAL / 'web' / ('c07.js' if path.endswith('c07.js') else 'index.html')
             if not target.exists():
@@ -129,7 +163,7 @@ def main():
             refresh()
         except Exception as error:
             print(f"Refresh failed; keeping previous snapshot if available: {error}", flush=True)
-    server = ThreadingHTTPServer(("127.0.0.1", args.port), Handler)
+    server = LocalServer(("127.0.0.1", args.port), Handler)
     print(f"Roster preview: http://localhost:{args.port}/rosters.html", flush=True)
     print(f"Play locally: http://localhost:{args.port}/play/", flush=True)
     server.serve_forever()

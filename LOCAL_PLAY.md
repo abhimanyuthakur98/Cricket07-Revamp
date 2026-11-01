@@ -42,7 +42,7 @@ The pristine archive is never edited. Each launch rebuilds `local_runtime/prepar
 
 All 18 badges are bundled under `web/assets/teams/`. `sources.json` records ICC member profiles for most boards, Bermuda's official board and published USA/Zimbabwe marks. Trademarks remain with their owners.
 
-The patch preserves resource names and unrelated county badges, replacing national menu textures and small flags. Converted FSH files are cached locally and invalidate only when the bundled PNGs change. No logo downloads occur during launch. `python tools/setup_reference.py` deliberately refreshes reference assets.
+The patch preserves resource names and unrelated county badges, replacing national menu textures and small flags. Edge-connected white matte is treated as transparent during encoding; enclosed white artwork and the original source pixels are preserved. The local preview applies the same alpha conversion. Converted FSH files are cached and invalidate when the PNGs or conversion version change. No logo downloads occur during launch. `python tools/setup_reference.py` deliberately refreshes reference assets.
 
 ## Checks
 

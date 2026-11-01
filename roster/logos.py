@@ -3,8 +3,36 @@ import hashlib
 import json
 import re
 import struct
+from collections import deque
 from .refresh import ROOT
 from .teams import TEAMS
+
+
+def transparent_background(image):
+    """Interpret edge-connected white matte as transparent during texture encoding.
+
+    Source artwork stays unchanged. Enclosed white stars, lettering, tiger fur and
+    shield details remain opaque; already-transparent artwork is preserved.
+    """
+    image = image.convert('RGBA').copy()
+    width, height = image.size
+    pixels = image.load()
+    visited = set()
+    queue = deque((x,y) for x in range(width) for y in (0,height-1))
+    queue.extend((x,y) for y in range(height) for x in (0,width-1))
+    while queue:
+        x,y = queue.popleft()
+        if (x,y) in visited:
+            continue
+        visited.add((x,y))
+        r,g,b,a = pixels[x,y]
+        if a > 0 and not (min(r,g,b) >= 220 and max(r,g,b)-min(r,g,b) <= 30):
+            continue
+        pixels[x,y] = (r,g,b,0)
+        for nx,ny in ((x-1,y),(x+1,y),(x,y-1),(x,y+1)):
+            if 0 <= nx < width and 0 <= ny < height and (nx,ny) not in visited:
+                queue.append((nx,ny))
+    return image
 
 
 def logo_replacements(archive):
@@ -14,7 +42,7 @@ def logo_replacements(archive):
     missing = [slug for slug, path in paths.items() if not path.exists()]
     if missing:
         raise ValueError('Missing logo assets: ' + ', '.join(missing))
-    fingerprint = hashlib.sha256(b''.join(paths[k].read_bytes() for k in sorted(paths))).hexdigest()
+    fingerprint = hashlib.sha256(b'edge-matte-alpha-v1' + b''.join(paths[k].read_bytes() for k in sorted(paths))).hexdigest()
     cache = ROOT / 'local_runtime/badges'
     cache.mkdir(parents=True, exist_ok=True)
     index = cache / 'index.json'
@@ -23,7 +51,7 @@ def logo_replacements(archive):
         if saved['fingerprint'] == fingerprint:
             return {name: (cache / name).read_bytes() for name in saved['files']}
     result = {}
-    images = {slug: Image.open(path).convert('RGBA') for slug,path in paths.items()}
+    images = {slug: transparent_background(Image.open(path)) for slug,path in paths.items()}
     for name in archive.entries:
         if not name.endswith('.fsh'):
             continue
