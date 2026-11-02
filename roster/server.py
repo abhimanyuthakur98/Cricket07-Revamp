@@ -45,7 +45,7 @@ class Handler(GameHandler):
             if size < 1 or size > 1024:
                 raise ValueError('Invalid launch request')
             options = json.loads(self.rfile.read(size))
-            format_name = options.get('format', 'ODI')
+            format_name = options.get('format', 'T20')
             if format_name not in ('Test', 'ODI', 'T20'):
                 raise ValueError('Unknown format')
             warning = None
@@ -57,7 +57,16 @@ class Handler(GameHandler):
                 snapshot = json.loads(OUTPUT.read_text(encoding='utf-8'))
                 warning = f'Live refresh failed; using snapshot {snapshot["asOf"]}. {error}'
             from .game_patch import prepare
+            try:
+                from .profiles import update, enrich
+                update(snapshot)
+                enrich(snapshot)
+            except Exception as error:
+                warning = (warning + ' ' if warning else '') + 'Player bio refresh unavailable; cached bios retained.'
             result = prepare(snapshot, format_name)
+            for other in ('T20', 'ODI', 'Test'):
+                if other != format_name:
+                    prepare(snapshot, other, database_only=True)
             result['warning'] = warning
             self.reply_json(200, result)
         except Exception as error:
@@ -105,12 +114,16 @@ class Handler(GameHandler):
                 return
             source = target.read_text(encoding='utf-8')
             if path.endswith('c07.js'):
+                source = source.replace('window.c07 = M;', 'window.c07 = M; window.revampAttach(M);')
                 source = source.replace("async function run(session) {", "async function run(session) {\n  if (window.revampLaunching) return;\n  window.revampLaunching = true;\n  if (session) throw new Error('Local roster testing supports solo play.');\n  $('play').disabled = true;\n  try { await window.revampBeforeLaunch(); } catch (error) { window.revampLaunching = false; $('play').disabled = false; throw error; }")
             else:
-                controls = '<div style="position:fixed;top:12px;left:12px;z-index:30;background:#111c16;padding:10px;border-radius:8px"><label>Roster format <select id="revamp-format"><option>Test</option><option selected>ODI</option><option>T20</option></select></label> <a href="/rosters.html" style="color:#6de1b0">Player preview</a><p id="revamp-message" style="font-size:12px">Live roster refresh runs when you press Play Solo.</p></div>'
+                controls = '<div style="position:fixed;top:12px;left:12px;z-index:30;background:#111c16;padding:10px;border-radius:8px"><a href="/rosters.html" style="color:#6de1b0">Player preview</a><p id="revamp-message" style="font-size:12px">Rosters follow your in-game overs selection.</p></div>'
                 source = source.replace('<body>', '<body>' + controls)
                 source = source.replace('<span id="visits">2,693,467 visits</span>', '')
                 import re
+                source = re.sub(r'<div id="hire".*?</script>', '', source, flags=re.S)
+                source = re.sub(r'<p class="credit">.*?</p>', '<p class="credit">Cricket 07 Revamp · Original game copyright of EA Sports</p>', source, flags=re.S)
+                source = source.replace('<title>Cricket 07</title>', '<title>Cricket 07 Revamp</title>')
                 source = re.sub(r'<script type="module" src="https://static.cloudflareinsights.com/[^>]+></script>', '', source)
                 source = source.replace('<script src="c07.js"></script>', '<script src="/local-launch.js"></script><script src="c07.js"></script>')
             body = source.encode('utf-8')

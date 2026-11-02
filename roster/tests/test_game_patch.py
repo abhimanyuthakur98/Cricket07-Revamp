@@ -4,12 +4,22 @@ import struct
 import tempfile
 import unittest
 from roster.archive import BigArchive, expand
-from roster.game_patch import game_name, skills, write_skills
+from roster.game_patch import game_name, skills, write_skills, player_type
 from roster.refresh import ROOT
 from roster.teams import TEAMS
 
 
 class PatchTests(unittest.TestCase):
+    def test_native_role_codes(self):
+        self.assertEqual(player_type('wk', 1), 7)
+        self.assertEqual(player_type('wk', 5), 8)
+        self.assertEqual(player_type('bat', 4, bowls=True), 1)
+        self.assertEqual(player_type('bat', 1), 2)
+        self.assertEqual(player_type('bowl', 10, opening=True), 10)
+        self.assertEqual(player_type('bowl', 10, spin=True), 4)
+        self.assertEqual(player_type('allround', 6, spin=True), 5)
+        self.assertEqual(player_type('allround', 6), 9)
+
     def test_literal_refpack(self):
         self.assertEqual(expand(bytes.fromhex('10fb000005e041424344fd45')), b'ABCDE')
 
@@ -22,11 +32,11 @@ class PatchTests(unittest.TestCase):
 
     def test_rating_words_preserve_reserved_bits(self):
         record = bytearray(360)
-        struct.pack_into('<I', record, 108, 0xc0000000)
+        struct.pack_into('<I', record, 100, 0xc0000000)
         values = [(i + 1) % 63 for i in range(40)]
         write_skills(record, values)
         self.assertEqual(skills(record), values)
-        self.assertEqual(struct.unpack_from('<I',record,108)[0] & 0xc0000000, 0xc0000000)
+        self.assertEqual(struct.unpack_from('<I',record,100)[0] & 0xc0000000, 0xc0000000)
 
     def test_name_does_not_overrun_record(self):
         self.assertEqual(len(game_name('Nithish Kumar Reddy')),16)

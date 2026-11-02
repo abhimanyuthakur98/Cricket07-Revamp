@@ -1,4 +1,4 @@
-"""Download the public site's Lite runtime for local testing. Assets stay untracked."""
+"""Download the browser runtime with complete audio. Assets stay untracked."""
 from concurrent.futures import ThreadPoolExecutor
 import gzip
 import hashlib
@@ -32,8 +32,10 @@ def main():
         print('Runtime:', name, flush=True)
         target.write_bytes(fetch(SITE + name))
     manifest = json.loads(fetch(SITE + 'game/manifest.json'))
-    selected = [f for f in manifest['files'] if not f.get('mode') or f['mode'] == 'lite']
-    print('Installing Lite files:', sum(f['size'] for f in selected) // 1_000_000, 'MB', flush=True)
+    selected = [f for f in manifest['files'] if
+                (f['path'].lower() in ('audio/music.big', 'audio/pbp.big') and f.get('mode') == 'full') or
+                (f['path'].lower() not in ('audio/music.big', 'audio/pbp.big') and (not f.get('mode') or f['mode'] == 'lite'))]
+    print('Installing game files with full audio:', sum(f['size'] for f in selected) // 1_000_000, 'MB', flush=True)
     def install(entry):
         target = ROOT / 'game' / entry['path']
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -66,11 +68,12 @@ def main():
     with ThreadPoolExecutor(max_workers=4) as executor:
         list(executor.map(install, selected))
     local_manifest = dict(manifest)
+    local_manifest['version'] = str(manifest['version']) + '-full-audio-v2'
     local_manifest.pop('base', None)
     local_manifest['files'] = [{k: v for k, v in f.items() if k in ('path', 'size', 'hash')}
                                for f in selected]
     (ROOT / 'game' / 'manifest.json').write_text(json.dumps(local_manifest), encoding='utf-8')
-    print('Local Lite runtime ready.', flush=True)
+    print('Local runtime with full music and commentary ready.', flush=True)
 
 
 if __name__ == '__main__':

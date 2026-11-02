@@ -52,7 +52,8 @@ def match_date(match):
 
 def new_stats():
     return dict(runs=0, ballsFaced=0, dismissals=0, legalBalls=0,
-                conceded=0, wickets=0, catches=0, stumpings=0)
+                conceded=0, wickets=0, catches=0, stumpings=0,
+                battingInnings=0, battingPositionTotal=0, openingSpells=0)
 
 
 def summarize(match):
@@ -61,8 +62,17 @@ def summarize(match):
     for innings in match.get("innings", []):
         if innings.get("super_over"):
             continue
+        order, opening_bowlers = [], set()
         for over in innings.get("overs", []):
             for ball in over["deliveries"]:
+                for name in (ball['batter'], ball.get('non_striker')):
+                    if name and name not in order:
+                        order.append(name)
+                        result[name]['battingInnings'] += 1
+                        result[name]['battingPositionTotal'] += len(order)
+                if over.get('over', 99) < 2 and ball['bowler'] not in opening_bowlers:
+                    opening_bowlers.add(ball['bowler'])
+                    result[ball['bowler']]['openingSpells'] += 1
                 bat, bowl = result[ball["batter"]], result[ball["bowler"]]
                 extras = ball.get("extras", {})
                 bat["runs"] += ball["runs"]["batter"]
@@ -114,7 +124,7 @@ def ratings(samples, as_of, format_name):
 
 def build_format(matches, format_name, as_of):
     history = defaultdict(list)
-    names, latest, seen = {}, {}, set()
+    names, latest, seen, latest_xi = {}, {}, set(), {}
     for match_id, match in matches:
         info = match["info"]
         if info.get("gender") != "male" or info.get("team_type") != "international":
@@ -122,43 +132,53 @@ def build_format(matches, format_name, as_of):
         if info.get("match_type") != format_name:
             continue
         played = match_date(match)
-        if not as_of - timedelta(days=365) <= played <= as_of:
+        if played > as_of:
             continue
         if match_id in seen:
             continue
         seen.add(match_id)
         if not match.get("innings"):
             continue
-        stats = summarize(match)
+        stats = summarize(match) if played >= as_of - timedelta(days=365) else None
         registry = info.get("registry", {}).get("people", {})
         for team, squad in info["players"].items():
             if team not in TEAMS:
                 continue
-            latest[team] = max(latest.get(team, played), played)
+            # Deterministic tie-break for multiple matches on the same date.
+            candidate = (played, str(match_id))
+            if candidate > latest.get(team, (date.min, '')):
+                latest[team] = candidate
+                latest_xi[team] = [registry[n] for n in squad]
             for name in squad:
                 # Require stable source IDs; never merge people just by their name.
                 player_id = registry[name]
                 key = (team, player_id)
                 names[key] = name
-                history[key].append((played, stats.get(name, new_stats())))
+                if stats is not None:
+                    history[key].append((played, stats.get(name, new_stats())))
     teams = defaultdict(list)
     for (team, player_id), samples in history.items():
         samples.sort(key=lambda item: item[0], reverse=True)
         last_played = samples[0][0]
-        if (as_of - last_played).days > 180:
-            continue
         samples = samples[:20]
         totals = {key: sum(s[key] for _, s in samples) for key in new_stats()}
         teams[team].append({"id": player_id, "name": names[(team, player_id)],
                             "lastPlayed": last_played.isoformat(), "matches": len(samples),
                             "stats": totals, "ratings": ratings(samples, as_of, format_name)})
     result = []
-    for team in sorted(teams):
-        players = sorted(teams[team], key=lambda p: (p["lastPlayed"], p["matches"], p["id"]), reverse=True)[:20]
+    for team in sorted(latest):
+        by_id = {p['id']: p for p in teams[team]}
+        for player_id in latest_xi[team]:
+            if player_id not in by_id:
+                by_id[player_id] = {'id': player_id, 'name': names[(team, player_id)],
+                                    'lastPlayed': latest[team][0].isoformat(), 'matches': 0,
+                                    'stats': new_stats(), 'ratings': ratings([], as_of, format_name)}
+        players = [by_id[i] for i in latest_xi[team] if i in by_id]
         result.append({"name": team, "gameTeamId": TEAMS[team][0],
                        "logo": 'assets/teams/' + TEAMS[team][1] + '.png',
-                       "latestMatch": latest[team].isoformat(),
-                       "stale": (as_of - latest[team]).days > 30,
+                       "latestMatch": latest[team][0].isoformat(),
+                       "latestMatchId": latest[team][1],
+                       "stale": (as_of - latest[team][0]).days > 30,
                        "players": players})
     if not result:
         raise ValueError(f"No recent international {format_name} matches; keeping previous snapshot")
@@ -176,7 +196,7 @@ def refresh(output=OUTPUT, as_of=None, provider=download_matches):
                 "source": {"name": "Cricsheet", "url": "https://cricsheet.org/",
                            "license": "Open Data Commons Attribution License",
                            "licenseUrl": "https://cricsheet.org/licensing/"},
-                "squadPolicy": "Up to 20 most recently seen players per team/format, active in the last 180 days. Not official selected squads; retirements and injuries are not verified.",
+                "squadPolicy": "Players named in each team's latest available international match in this format. No form-based XI selection. Source coverage may lag real matches.",
                 "ratingPolicy": "Last 20 appearances within 365 days; 60-day decay; small samples regress to 50. Batting uses average and strike rate; bowling uses wickets and economy. Missing skills remain unknown. These are experimental ratings, not ICC ratings.",
                 "gameIntegration": "local-launch-patch",
                 "formats": formats}

@@ -3,8 +3,40 @@
     "source": "https://www.cricket.com.au/players/CA%3A3040/zane-green",
     "players": [{"name":"Zane Green","first":"Zane","last":"Green","scoreboard":"ZE Green","role":"wk","bat_hand":"L","bowl_arm":null,"bowl_style":null}]
   },
+  "Kenya": {
+    "source": "https://www.cricketkenya.or.ke/index.php/junior-men",
+    "players": [
+      {"name":"Brian Likavu","first":"Brian","last":"Likavu","scoreboard":"B Likavu","role":"wk","bat_hand":"R","bowl_arm":null,"bowl_style":null},
+      {"name":"Elijah Otieno","first":"Elijah","last":"Otieno","scoreboard":"E Otieno","role":"bowl","bat_hand":"R","bowl_arm":"R","bowl_style":"fast-medium","source":"https://en.wikipedia.org/wiki/Elijah_Otieno"}
+    ]
+  },
+  "Scotland": {
+    "source": "https://cricketaddictor.com/player/christopher-mcbride/",
+    "players": [{"name":"Christopher McBride","first":"Christopher","last":"McBride","scoreboard":"CM McBride","role":"bat","bat_hand":"R","bowl_arm":"R","bowl_style":"medium"}]
+  },
+  "Netherlands": {
+    "source": "https://www.voorburgcc.nl/wp-content/uploads/JV-2019-TEXT-ALLES_V1-1.pdf",
+    "players": [{"name":"Noah Croes","first":"Noah","last":"Croes","scoreboard":"NRJ Croes","role":"wk"}]
+  },
+  "Bermuda": {
+    "source": "https://www.icc-cricket.com/rankings/64387/derrick-lorenzo-brangman",
+    "players": [
+      {"name":"Derrick Brangman","first":"Derrick","last":"Brangman","scoreboard":"DL Brangman","role":"allround","bat_hand":"L","bowl_arm":"L","bowl_style":"left-arm orthodox"},
+      {"name":"Jekon Edness","first":"Jekon","last":"Edness","scoreboard":"J Edness","role":"wk","source":"https://parliament.bm/admin/uploads/hansards/ebc88c4fdfed4b7218e5e3214859d698.pdf"},
+      {"name":"Ryan Steede","first":"Ryan","last":"Steede","scoreboard":"RD Steede","role":"bowl","bat_hand":"R","bowl_arm":"R","bowl_style":"fast-medium","source":"https://www.indiatoday.in/live-score/cricket/ryan-steede-profile-3813"},
+      {"name":"Isaiah O'Brien","first":"Isaiah","last":"O'Brien","scoreboard":"Isaiah O'Brien","role":"bat","bat_hand":"R","bowl_arm":"R","bowl_style":"medium","source":"https://www.icc-cricket.com/rankings/110749/isaiah-o"},
+      {"name":"Kwaisi James","first":"Kwaisi","last":"James","scoreboard":"KS James","role":"allround","bat_hand":"R","bowl_arm":"R","bowl_style":"medium","source":"https://www.cricbuzz.com/profiles/1479747/kwaisi-james"},
+      {"name":"Kamau Leverock","first":"Kamau","last":"Leverock","scoreboard":"KS Leverock","role":"allround","bat_hand":"L","bowl_arm":"R","bowl_style":"fast-medium","source":"https://www.icc-cricket.com/rankings/57767/kamau-leverock"},
+      {"name":"Dominic Sabir","first":"Dominic","last":"Sabir","scoreboard":"D Sabir","role":"allround","source":"https://cricketbermuda.com/dominic-sabir-appointed-captain-of-somerset-league-team/"},
+      {"name":"Charles Trott","first":"Charles","last":"Trott","scoreboard":"C Trott","role":"bat","bat_hand":"L","bowl_arm":"L","bowl_style":"medium","source":"https://www.fancode.com/cricket/players/charles-trott/27893"},
+      {"name":"Zeri Tomlinson","first":"Zeri","last":"Tomlinson","scoreboard":"Z Tomlinson","role":"wk","source":"https://www.royalgazette.com/cricket/sport/article/20250529/new-bermuda-under-19-captain-zeri-tomlinson-ready-to-lead-from-front/"}
+    ]
+  },
   "United States of America": {
     "source": "https://www.icc-cricket.com/tournaments/mens-t20-world-cup-2026/teams/22/players/70336/monank-patel",
-    "players": [{"name":"Monank Patel","first":"Monank","last":"Patel","scoreboard":"Monank Patel","role":"wk","bat_hand":"R","bowl_arm":null,"bowl_style":null}]
+    "players": [
+      {"name":"Monank Patel","first":"Monank","last":"Patel","scoreboard":"Monank Patel","role":"wk","bat_hand":"R","bowl_arm":null,"bowl_style":null},
+      {"name":"Ali Khan","first":"Ali","last":"Khan","scoreboard":"Ali Khan","role":"bowl","bat_hand":"R","bowl_arm":"R","bowl_style":"fast-medium","source":"https://www.icc-cricket.com/rankings/66244/ali-khan"}
+    ]
   }
 }

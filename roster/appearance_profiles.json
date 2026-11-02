@@ -1,0 +1,629 @@
+{
+  "03806cf8": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      220,
+      162,
+      145
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/288284.png",
+    "name": "Josh Reginald Hazlewood"
+  },
+  "0a8fce53": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      179,
+      116,
+      96
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/330902.png",
+    "name": "Mustafizur Rahman"
+  },
+  "12b610c2": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      213,
+      150,
+      140
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/530011.png",
+    "name": "Travis Michael Head"
+  },
+  "14f96089": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      200,
+      142,
+      134
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/379504.png",
+    "name": "Adam Zampa"
+  },
+  "1777c020": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      188,
+      123,
+      86
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/512191.png",
+    "name": "Fakhar Zaman"
+  },
+  "210b05cb": {
+    "skinPalette": 15,
+    "portraitSampleRGB": [
+      160,
+      93,
+      53
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/547092.png",
+    "name": "Ehsan Adil"
+  },
+  "249d60c9": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      161,
+      106,
+      84
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/244497.png",
+    "name": "Adil Usman Rashid"
+  },
+  "26d041c4": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      170,
+      134,
+      117
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/299572.png",
+    "name": "Sikandar Raza Butt"
+  },
+  "2e171977": {
+    "skinPalette": 15,
+    "portraitSampleRGB": [
+      144,
+      82,
+      55
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/554691.png",
+    "name": "Axar Rajeshbhai Patel"
+  },
+  "2e81a32d": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      184,
+      112,
+      79
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/326016.png",
+    "name": "Bhuvneshwar Kumar Singh"
+  },
+  "2f49c897": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      179,
+      125,
+      100
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/940973.png",
+    "name": "Mohammed Siraj"
+  },
+  "30a45b23": {
+    "skinPalette": 2,
+    "portraitSampleRGB": [
+      228,
+      170,
+      158
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/267192.png",
+    "name": "Steven Peter Devereux Smith"
+  },
+  "372455c4": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      162,
+      112,
+      105
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/379143.png",
+    "name": "Quinton de Kock"
+  },
+  "3d8feaf8": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      192,
+      132,
+      120
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/272450.png",
+    "name": "Mitchell Ross Marsh"
+  },
+  "3fb19989": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      172,
+      108,
+      87
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/311592.png",
+    "name": "Mitchell Aaron Starc"
+  },
+  "3ff033bb": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      189,
+      126,
+      108
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/437316.png",
+    "name": "Madagamagamage Dasun Shanaka"
+  },
+  "449f4e3c": {
+    "skinPalette": 18,
+    "portraitSampleRGB": [
+      114,
+      78,
+      58
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/827051.png",
+    "name": "Blessing Muzarabani"
+  },
+  "45963d9e": {
+    "skinPalette": 15,
+    "portraitSampleRGB": [
+      158,
+      93,
+      75
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/429754.png",
+    "name": "Dickwella Patabendige Dilantha Niroshan Dickwella"
+  },
+  "4a461c24": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      228,
+      167,
+      154
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/211855.png",
+    "name": "Liam Andrew Dawson"
+  },
+  "4d9f9686": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      195,
+      136,
+      113
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/436677.png",
+    "name": "Soumya Sarkar"
+  },
+  "53597be1": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      181,
+      119,
+      106
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/55814.png",
+    "name": "Brendan Ross Murray Taylor"
+  },
+  "5d1e7582": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      183,
+      115,
+      97
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/629074.png",
+    "name": "Balapuwaduge Kusal Gimhan Mendis"
+  },
+  "6a26221c": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      172,
+      122,
+      111
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/600498.png",
+    "name": "Aiden Kyle Markram"
+  },
+  "78eb4223": {
+    "skinPalette": 18,
+    "portraitSampleRGB": [
+      117,
+      67,
+      47
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/230553.png",
+    "name": "Kemar Andre Jamal Roach"
+  },
+  "8919756f": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      181,
+      122,
+      100
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/550133.png",
+    "name": "Mosaddek Hossain Saikat"
+  },
+  "8a75e999": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      190,
+      126,
+      89
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/348144.png",
+    "name": "Mohammad Babar Azam"
+  },
+  "8b261d84": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      223,
+      162,
+      139
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/417268.png",
+    "name": "Matthew Henry Cross"
+  },
+  "8d2c70ad": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      195,
+      130,
+      99
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/559235.png",
+    "name": "Kuldeep Yadav"
+  },
+  "99b75528": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      200,
+      133,
+      108
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/308967.png",
+    "name": "Joseph Charles Buttler"
+  },
+  "99cddc5e": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      188,
+      141,
+      132
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/348034.png",
+    "name": "George Henry Dockrell"
+  },
+  "9d1d34bd": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      179,
+      106,
+      66
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/401057.png",
+    "name": "Taijul Islam"
+  },
+  "9de62878": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      192,
+      126,
+      91
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/922943.png",
+    "name": "Shadab Khan"
+  },
+  "9ffd1ac1": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      188,
+      129,
+      101
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/372116.png",
+    "name": "Temba Bavuma"
+  },
+  "a089f93f": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      172,
+      103,
+      73
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/389666.png",
+    "name": "Mohammad Abbas"
+  },
+  "a343262c": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      204,
+      160,
+      130
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/303669.png",
+    "name": "Joseph Edward Root"
+  },
+  "b17e2f24": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      189,
+      121,
+      81
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/422108.png",
+    "name": "Kannaur Lokesh Rahul"
+  },
+  "b4b99816": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      214,
+      147,
+      120
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/1070173.png",
+    "name": "Shubman Gill"
+  },
+  "ba607b88": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      190,
+      130,
+      106
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/253802.png",
+    "name": "Virat Kohli"
+  },
+  "c58b0108": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      176,
+      111,
+      89
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/629063.png",
+    "name": "Mehidy Hasan Miraz"
+  },
+  "cf494ffe": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      190,
+      138,
+      130
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/303427.png",
+    "name": "Paul Robert Stirling"
+  },
+  "de0a3209": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      168,
+      100,
+      64
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/373696.png",
+    "name": "Mominul Haque"
+  },
+  "ded9240e": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      193,
+      131,
+      107
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/489889.png",
+    "name": "Patrick James Cummins"
+  },
+  "e21bc7f3": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      221,
+      158,
+      128
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/25490.png",
+    "name": "Richard Douglas Berrington"
+  },
+  "e4a0deae": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      158,
+      101,
+      81
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/502714.png",
+    "name": "Mitchell Josef Santner"
+  },
+  "e62dd25d": {
+    "skinPalette": 15,
+    "portraitSampleRGB": [
+      127,
+      89,
+      70
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/550215.png",
+    "name": "Kagiso Rabada"
+  },
+  "e824e6ee": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      161,
+      103,
+      84
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/388802.png",
+    "name": "Thomas William Maxwell Latham"
+  },
+  "e84ac20c": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      205,
+      143,
+      120
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/506612.png",
+    "name": "Matthew James Henry"
+  },
+  "e94915e6": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      191,
+      121,
+      94
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/662973.png",
+    "name": "Samuel Matthew Curran"
+  },
+  "e957b38f": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      193,
+      143,
+      130
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/417381.png",
+    "name": "Andrew Robert McBrine"
+  },
+  "ef18b66e": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      184,
+      127,
+      107
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/538506.png",
+    "name": "Taskin Ahmed"
+  },
+  "f43dd8c2": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      182,
+      125,
+      76
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/414970.png",
+    "name": "Safyaan Mohammed Sharif"
+  },
+  "fe93fd9d": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      190,
+      124,
+      93
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/234675.png",
+    "name": "Ravindrasinh Anirudhsinh Jadeja"
+  },
+  "6ef13460": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      199,
+      159,
+      146
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/303423.png",
+    "name": "Andrew Balbirnie"
+  },
+  "740742ef": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      192,
+      124,
+      90
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/34102.png",
+    "name": "Rohit Gurunath Sharma"
+  },
+  "a94e08ea": {
+    "skinPalette": 12,
+    "portraitSampleRGB": [
+      178,
+      115,
+      92
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/56029.png",
+    "name": "Mohammad Mushfiqur Rahim"
+  },
+  "c96311d4": {
+    "skinPalette": 9,
+    "portraitSampleRGB": [
+      190,
+      145,
+      125
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/55412.png",
+    "name": "Craig Richard Ervine"
+  },
+  "28131839": {
+    "skinPalette": 5,
+    "portraitSampleRGB": [
+      222,
+      164,
+      140
+    ],
+    "method": "Approximate generic palette from portrait cheek region; lighting affects accuracy.",
+    "source": "https://a.espncdn.com/i/headshots/cricket/players/full/414966.png",
+    "name": "Michael Alexander Leask"
+  }
+}

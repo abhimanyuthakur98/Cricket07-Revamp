@@ -23,6 +23,10 @@ jobs:
           python-version: '3.12'
       - run: python -m pip install -r requirements-local.txt
       - run: python -m unittest discover -s roster/tests -v
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node roster/tests/runtime_rosters.mjs
       - run: python -m roster.refresh
       - name: Save successful snapshot
         run: |

@@ -23,6 +23,26 @@ def fixture():
 
 
 class StatsTests(unittest.TestCase):
+    def test_squad_is_latest_match_not_form_pool(self):
+        old = fixture()
+        new = copy.deepcopy(old)
+        new['info']['dates'] = ['2026-11-01']
+        new['info']['players']['India'] = ['New Player']
+        new['info']['registry']['people']['New Player'] = 'new-id'
+        data = build_format([('old', old), ('new', new)], 'ODI', date(2026,11,2))
+        india = next(t for t in data['teams'] if t['name']=='India')
+        self.assertEqual([p['id'] for p in india['players']], ['new-id'])
+        self.assertEqual(india['latestMatchId'], 'new')
+
+    def test_last_available_squad_can_be_old_without_invented_form(self):
+        match = fixture()
+        match['info']['dates'] = ['2020-01-01']
+        data = build_format([('old', match)], 'ODI', date(2026,11,2))
+        india = next(t for t in data['teams'] if t['name']=='India')
+        self.assertEqual(len(india['players']), 2)
+        self.assertTrue(india['stale'])
+        self.assertIsNone(india['players'][0]['ratings']['batting'])
+
     def test_extras_and_run_out(self):
         stats = summarize(fixture())
         self.assertEqual(stats["A Batter"]["runs"], 5)
@@ -82,11 +102,12 @@ class StatsTests(unittest.TestCase):
                 refresh(target, date(2026, 11, 2), unavailable)
             self.assertEqual(json.loads(target.read_text()), {"previous": True})
 
-    def test_inactive_players_are_excluded(self):
+    def test_last_match_is_retained_when_team_has_not_played_recently(self):
         match = fixture()
         match["info"]["dates"] = ["2026-01-01"]
-        with self.assertRaises(ValueError):
-            build_format([("old", match)], "ODI", date(2026, 11, 2))
+        result = build_format([("old", match)], "ODI", date(2026, 11, 2))
+        self.assertTrue(all(team['stale'] for team in result['teams']))
+        self.assertEqual(result['latestMatch'], '2026-01-01')
 
 
 if __name__ == "__main__":
