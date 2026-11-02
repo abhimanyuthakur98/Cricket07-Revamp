@@ -44,7 +44,12 @@ def main():
     try:
         import PIL
     except ImportError:
-        subprocess.run([sys.executable,'-m','pip','install','-r',str(ROOT/'requirements-local.txt')],check=True)
+        environment=ROOT/'local_runtime/build-venv'
+        subprocess.run([sys.executable,'-m','venv',str(environment)],check=True)
+        python=environment/('Scripts/python.exe' if sys.platform=='win32' else 'bin/python')
+        subprocess.run([str(python),'-m','pip','install','-r',str(ROOT/'requirements-local.txt')],check=True)
+        subprocess.run([str(python),str(Path(__file__).resolve())],check=True)
+        return
     from tools.setup_local import main as setup
     setup()
     from roster.refresh import refresh
@@ -120,3 +125,4 @@ def main():
 
 
 if __name__=='__main__':main()
+
