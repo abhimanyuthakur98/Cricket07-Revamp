@@ -23,6 +23,14 @@ def fixture():
 
 
 class StatsTests(unittest.TestCase):
+    def test_actual_batting_order_overrides_unordered_player_list(self):
+        match = fixture()
+        match['info']['players']['India'] = ['B Bowler', 'A Batter']
+        match['innings'][0]['team'] = 'India'
+        data = build_format([('match', match)], 'ODI', date(2026, 11, 2))
+        india = next(t for t in data['teams'] if t['name'] == 'India')
+        self.assertEqual(india['startingXI'], ['a', 'b'])
+
     def test_squad_is_latest_match_not_form_pool(self):
         old = fixture()
         new = copy.deepcopy(old)
@@ -130,4 +138,3 @@ class StatsTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
-

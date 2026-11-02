@@ -55,7 +55,7 @@ def main():
     from roster.refresh import refresh
     from roster.game_patch import prepare
     from roster.ui_engine import prepare as engine
-    snapshot=refresh()
+    snapshot=json.loads((ROOT/'web/data/rosters.json').read_text(encoding='utf-8'))
     result=prepare(snapshot,'T20',broadcast_ui=True)
     for f in ('ODI','Test'):
         prepare(snapshot,f,database_only=True,broadcast_ui=True)
@@ -125,4 +125,3 @@ def main():
 
 
 if __name__=='__main__':main()
-

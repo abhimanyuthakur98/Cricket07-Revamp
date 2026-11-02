@@ -148,7 +148,20 @@ def build_format(matches, format_name, as_of):
             candidate = (played, str(match_id))
             if candidate > latest.get(team, (date.min, '')):
                 latest[team] = candidate
-                latest_xi[team] = [registry[n] for n in squad]
+                # Player lists are not guaranteed to be batting order. Use the
+                # first innings' actual appearances, then uncalled batters.
+                order = []
+                for innings in match.get('innings', []):
+                    if innings.get('team') != team or innings.get('super_over'):
+                        continue
+                    for over in innings.get('overs', []):
+                        for ball in over['deliveries']:
+                            for n in (ball['batter'], ball.get('non_striker')):
+                                if n in squad and n not in order:
+                                    order.append(n)
+                    break
+                order.extend(n for n in squad if n not in order)
+                latest_xi[team] = [registry[n] for n in order]
             for name in squad:
                 # Require stable source IDs; never merge people just by their name.
                 player_id = registry[name]
@@ -196,11 +209,6 @@ def build_format(matches, format_name, as_of):
 
 
 def refresh(output=OUTPUT, as_of=None, provider=download_matches):
-    from .custom import PATH, snapshot as custom_snapshot
-    if provider is download_matches and PATH.exists():
-        snapshot = custom_snapshot()
-        atomic_json(output, snapshot)
-        return snapshot
     as_of = as_of or datetime.now(timezone.utc).date()
     formats = {}
     for name in SOURCES:
@@ -225,4 +233,3 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=OUTPUT)
     args = parser.parse_args()
     refresh(args.output)
-
