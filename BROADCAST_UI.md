@@ -20,8 +20,8 @@ overs and the current over's deliveries on the right. Country SVGs flank it.
 The native scorebox window renderer skips the old strip in the UI build;
 its original position/animation state emits the visibility pulse for the new
 ticker. It therefore does not stay on screen throughout intros, menus or
-replays. The six legacy delivery dots are skipped in the graphic renderer while
-the bowling meter itself remains. Every illegal delivery adds an extra chip;
+replays. The legacy ball-history window is skipped while the bowling meter,
+delivery selection controls and radar remain. Every illegal delivery adds an extra chip;
 six legal deliveries are still required, and long overs wrap onto extra rows.
 England and Scotland flags are simple local SVGs; West Indies has a maroon WI
 regional marker, since it is not a single country. Other national flags are

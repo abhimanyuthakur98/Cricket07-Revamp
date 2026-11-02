@@ -12,7 +12,7 @@ from .engine_patch import (ROOT, SUPPORTED_SHA256, patch, sections, function_nam
 
 RING = 0xb01000
 ENABLE = 0xb00080
-VERSION = 'broadcast-replacement-v7'
+VERSION = 'broadcast-replacement-v8'
 
 
 def delivery_hook():
@@ -61,20 +61,10 @@ def render_hook(first_local, graphic=False):
     b+=get(base)+get(scene)+ADD+load(4,0x2f)+c(1)+b'\x46'+IF
     b+=get(base)+get(0)+load(4)+ADD+put(node)
     b+=get(node)+load(4,0x2f)+put(ident)
-    if not graphic:
-        b+=get(base)+c(0xb00094)+ADD+get(ident)+store()
-        b+=get(base)+c(ENABLE+2)+ADD+load(op=0x2d)+IF
-        b+=get(ident)+c(4096)+b'\x49'+IF
-        b+=get(base)+c(0xb04000)+ADD+get(ident)+c(8)+MUL+ADD+get(node)+get(base)+b'\x6b'+store()
-        b+=get(base)+c(0xb04004)+ADD+get(ident)+c(8)+MUL+ADD+get(node)+load(8)+store()
-        b+=END+END
-    ids=(1000,1002,1003,1004,1005,1006) if graphic else (10,420)
+    ids=(10,330,420)
     condition=b''
     for i in ids:
         condition+=get(ident)+c(i)+b'\x46'+(b'\x72' if condition else b'')
-    if graphic:
-        condition+=get(base)+c(0xb00094)+ADD+load()+c(20)+b'\x46'
-        condition+=get(ident)+c(4)+b'\x4f'+AND+get(ident)+c(9)+b'\x4d'+AND+b'\x72'
     b+=condition+IF
     if not graphic:
         b+=get(ident)+c(10)+b'\x46'+IF
@@ -94,7 +84,7 @@ def patch_delivery(data):
     target=names['f_00472690']-imported_functions(next(p for k,p in parts if k==2))
     reset_target=names['f_004ee350']-imported_functions(next(p for k,p in parts if k==2))
     render_targets={names[n]-imported_functions(next(p for k,p in parts if k==2)): graphic
-                    for n,graphic in [('f_00723160',False),('f_007234e0',False),('f_00711e60',True)]}
+                    for n,graphic in [('f_00723160',False),('f_007234e0',False)]}
     output=bytearray(data[:8])
     for kind,payload in parts:
         if kind==10:

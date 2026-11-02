@@ -15,7 +15,6 @@ export function attachBroadcast(M){
   const set=(k,v)=>{if(fields[k].textContent!==String(v))fields[k].textContent=v;};
   let last='',warned=false;
   let initialized=false;
-  const debug=new URLSearchParams(location.search).has('huddebug');
   let pulse=0,lastPulse=-Infinity;
   function tick(){
     try{
@@ -27,27 +26,6 @@ export function attachBroadcast(M){
       }
       const match=readMatch(buffer,base);
       if(base>0)new Uint8Array(buffer)[base+0xb00081]=match&&!(M._c07_in_menu&&M._c07_in_menu())?1:0;
-      if(base>0&&debug){
-        new Uint8Array(buffer)[base+0xb00082]=1;
-        const windows=[];
-        const tree=[];
-        for(let i=0;i<4096;i++){
-          const p=base+0xb04000+i*8,win=v.getUint32(p,true);
-          if(!win)continue;
-          windows.push([i,v.getFloat32(p+4,true)]);
-          const items=[];let list=v.getUint32(base+win+0x34,true),seen=new Set();
-          for(let j=0;j<100&&list&&!seen.has(list)&&base+list+24<buffer.byteLength;j++){
-            seen.add(list);const item=v.getUint32(base+list+8,true);
-            if(item&&base+item+128<buffer.byteLength)items.push([v.getUint16(base+item+4,true),v.getFloat32(base+item+8,true),v.getFloat32(base+item+12,true),v.getUint32(base+item,true).toString(16)]);
-            list=v.getUint32(base+list+16,true);
-          }
-          tree.push([i,items]);
-        }
-        bar.dataset.nativeWindows=JSON.stringify(windows);
-        bar.dataset.nativeTree=JSON.stringify(tree);
-        const root=v.getUint32(base+0x95bfe8,true);
-        bar.dataset.nativeScene=root&&base+root+8<buffer.byteLength?String(v.getUint16(base+root+4,true)):'none';
-      }
       const nextPulse=base>0?v.getUint32(base+0xb00084,true):0;
       if(nextPulse!==pulse){pulse=nextPulse;lastPulse=performance.now();}
       // The native strip's own render lifecycle controls the replacement.

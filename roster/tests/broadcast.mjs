@@ -40,13 +40,13 @@ assert.equal(overCells(extraEvents).length,8,'Two illegal deliveries require eig
 assert.equal(overCells([...extraEvents,...Array.from({length:6},()=>({over:0,flags:0,kind:1}))]).filter(Boolean).length,8);
 assert.equal(overCells([...extraEvents,{over:1,flags:0,kind:1}]).length,6,'New over resets extra slots');
 assert.equal(overCells(Array.from({length:20},()=>({over:0,flags:2,kind:2}))).length,26,'No truncation of extra balls');
-for(const graphic of [false,true]){
+for(const graphic of [false]){
  const wasm=execFileSync('python',['-c',`from roster.tests.test_ui import render_fixture; import sys; sys.stdout.buffer.write(render_fixture(${graphic?'True':'False'}))`]);
  const {instance:draw}=await WebAssembly.instantiate(wasm,{env:{memory}});
  const cpu=0x1000,scene=0x400100,node=0x400200;
  v.setUint32(0x95bfe8,scene,true);v.setUint16(scene+4,1,true);v.setUint32(cpu+4,node,true);b[0xb00081]=1;
  v.setUint32(0xb00094,20,true);
- for(const [id,hidden] of (graphic?[[1000,true],[1002,true],[1006,true],[4,true],[9,true],[1001,false],[70,false]]:[[10,true],[420,true],[20,false],[50,false]])){
+ for(const [id,hidden] of [[10,true],[330,true],[420,true],[20,false],[40,false],[50,false]]){
   v.setUint16(node+4,id,true);v.setFloat32(node+8,-92,true);v.setUint32(cpu+16,0x500000,true);v.setUint32(0xb000a0,0,true);
   const pulse=v.getUint32(0xb00084,true);draw.exports.run(cpu);
   assert.equal(v.getUint32(0xb000a0,true),hidden?0:1,`Native draw gate ${id}`);
