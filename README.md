@@ -1,6 +1,6 @@
 # Cricket 07 in the browser
 
-**Cricket07 Revamp:** run `python -m roster.server` and open `http://localhost:8007/play/` to test locally. Play Solo refreshes each original national team's latest available international XI and form. Rosters follow confirmed in-game settings: up to 20 overs = T20 international, 50 overs = ODI, unlimited = Test. There is no launcher roster selector. The local setup includes complete music/commentary and one-time updated badges. See [local setup](LOCAL_PLAY.md) for dependencies and player-model limitations. Original build instructions remain below.
+**Cricket07 Revamp:** run `python -m roster.server` and open `http://localhost:8007/play/` to test locally. Play Solo refreshes each original national team's latest available international XI, batting order, recent reserves and form. Rosters follow confirmed in-game settings: up to 20 overs = T20 international, 50 overs = ODI, unlimited = Test. There is no launcher roster selector. The local setup includes complete music/commentary and one-time updated badges. See [local setup](LOCAL_PLAY.md) for dependencies and player-model limitations. Original build instructions remain below.
 
 EA Sports Cricket 07 (2006, Windows) running in a browser tab, with game controllers and online 1v1
 multiplayer. This repo has no game files and no game code, so you need your own copy of the game.
@@ -84,3 +84,4 @@ match need the same build and the same game files.
 
 MIT licensed. Cricket 07 and EA Sports are trademarks of Electronic Arts, which is not involved with
 this project.
+

@@ -124,7 +124,7 @@ def ratings(samples, as_of, format_name):
 
 def build_format(matches, format_name, as_of):
     history = defaultdict(list)
-    names, latest, seen, latest_xi = {}, {}, set(), {}
+    names, latest, seen, latest_xi, appearances = {}, {}, set(), {}, {}
     for match_id, match in matches:
         info = match["info"]
         if info.get("gender") != "male" or info.get("team_type") != "international":
@@ -153,7 +153,9 @@ def build_format(matches, format_name, as_of):
                 # Require stable source IDs; never merge people just by their name.
                 player_id = registry[name]
                 key = (team, player_id)
-                names[key] = name
+                if played >= appearances.get(key, date.min):
+                    names[key] = name
+                appearances[key] = max(appearances.get(key, date.min), played)
                 if stats is not None:
                     history[key].append((played, stats.get(name, new_stats())))
     teams = defaultdict(list)
@@ -168,16 +170,24 @@ def build_format(matches, format_name, as_of):
     result = []
     for team in sorted(latest):
         by_id = {p['id']: p for p in teams[team]}
-        for player_id in latest_xi[team]:
+        starters = latest_xi[team][:11]
+        bench = sorted((i for (country,i), played in appearances.items()
+                        if country == team and i not in starters
+                        and played >= latest[team][0] - timedelta(days=180)),
+                       key=lambda i: (appearances[(team,i)], i), reverse=True)
+        selected = starters + bench[:20-len(starters)]
+        for player_id in selected:
             if player_id not in by_id:
                 by_id[player_id] = {'id': player_id, 'name': names[(team, player_id)],
-                                    'lastPlayed': latest[team][0].isoformat(), 'matches': 0,
+                                    'lastPlayed': appearances[(team,player_id)].isoformat(), 'matches': 0,
                                     'stats': new_stats(), 'ratings': ratings([], as_of, format_name)}
-        players = [by_id[i] for i in latest_xi[team] if i in by_id]
+        players = [{**by_id[i], 'startingXI': i in starters,
+                    'battingOrder': starters.index(i)+1 if i in starters else None} for i in selected]
         result.append({"name": team, "gameTeamId": TEAMS[team][0],
                        "logo": 'assets/teams/' + TEAMS[team][1] + '.png',
                        "latestMatch": latest[team][0].isoformat(),
                        "latestMatchId": latest[team][1],
+                       "startingXI": starters,
                        "stale": (as_of - latest[team][0]).days > 30,
                        "players": players})
     if not result:
@@ -186,6 +196,11 @@ def build_format(matches, format_name, as_of):
 
 
 def refresh(output=OUTPUT, as_of=None, provider=download_matches):
+    from .custom import PATH, snapshot as custom_snapshot
+    if provider is download_matches and PATH.exists():
+        snapshot = custom_snapshot()
+        atomic_json(output, snapshot)
+        return snapshot
     as_of = as_of or datetime.now(timezone.utc).date()
     formats = {}
     for name in SOURCES:
@@ -196,7 +211,7 @@ def refresh(output=OUTPUT, as_of=None, provider=download_matches):
                 "source": {"name": "Cricsheet", "url": "https://cricsheet.org/",
                            "license": "Open Data Commons Attribution License",
                            "licenseUrl": "https://cricsheet.org/licensing/"},
-                "squadPolicy": "Players named in each team's latest available international match in this format. No form-based XI selection. Source coverage may lag real matches.",
+                "squadPolicy": "Starting XI and batting order from the latest available international match. Up to nine reserves from the same format's participants within 180 days of that match; reserves are not an official call-up list. Source coverage may lag real matches.",
                 "ratingPolicy": "Last 20 appearances within 365 days; 60-day decay; small samples regress to 50. Batting uses average and strike rate; bowling uses wickets and economy. Missing skills remain unknown. These are experimental ratings, not ICC ratings.",
                 "gameIntegration": "local-launch-patch",
                 "formats": formats}
@@ -210,3 +225,4 @@ if __name__ == "__main__":
     parser.add_argument("--output", type=Path, default=OUTPUT)
     args = parser.parse_args()
     refresh(args.output)
+

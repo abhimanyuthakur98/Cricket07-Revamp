@@ -39,6 +39,11 @@ export function attach(M) {
     if (anchor>=432004 || view.getUint16(base+0x845c30+anchor-4,true)!==dataView.getUint16(anchor,true)) return;
     memory.set(database.subarray(4,432004),base+0x845c30);
     memory.set(database.subarray(432004),base+0x817d48);
+    // Enable the native ordered-XI hook only for the original national teams.
+    memory.fill(0,base+0xb00000,base+0xb00000+67);
+    for (const id of [0,1,3,7,13,15,20,21,23,27,30,32,39,43,57,58,59,60,61,62]) {
+      memory[base+0xb00000+id]=1;
+    }
     // Team selection has already cached both squads. Refresh IDs/captain before
     // the game constructs its XI, keeper and bowling assignments.
     for (const cached of [0x92f8c0,0x9303b8]) {
@@ -56,3 +61,4 @@ export function attach(M) {
   tick();
   return ()=>clearInterval(timer);
 }
+

@@ -31,8 +31,26 @@ class StatsTests(unittest.TestCase):
         new['info']['registry']['people']['New Player'] = 'new-id'
         data = build_format([('old', old), ('new', new)], 'ODI', date(2026,11,2))
         india = next(t for t in data['teams'] if t['name']=='India')
-        self.assertEqual([p['id'] for p in india['players']], ['new-id'])
+        self.assertEqual([p['id'] for p in india['players'] if p['startingXI']], ['new-id'])
+        self.assertEqual({p['id'] for p in india['players'] if not p['startingXI']}, {'a','b'})
         self.assertEqual(india['latestMatchId'], 'new')
+
+    def test_latest_batting_order_is_preserved_ahead_of_reserves(self):
+        match=fixture()
+        order=['Opener Two','Opener One']+['Player '+str(i) for i in range(3,12)]
+        match['info']['players']['India']=order
+        match['info']['registry']['people'].update({n:n for n in order})
+        old=copy.deepcopy(match)
+        old['info']['dates']=['2026-10-01']
+        reserves=['Reserve '+str(i) for i in range(12)]
+        old['info']['players']['India']=reserves
+        old['info']['registry']['people'].update({n:n for n in reserves})
+        data=build_format([('old',old),('latest',match)],'ODI',date(2026,11,2))
+        india=next(t for t in data['teams'] if t['name']=='India')
+        self.assertEqual([p['name'] for p in india['players'][:11]],order)
+        self.assertEqual([p['battingOrder'] for p in india['players'][:11]],list(range(1,12)))
+        self.assertEqual(len(india['players']),20)
+        self.assertTrue(all(not p['startingXI'] for p in india['players'][11:]))
 
     def test_last_available_squad_can_be_old_without_invented_form(self):
         match = fixture()
@@ -112,3 +130,4 @@ class StatsTests(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+

@@ -121,6 +121,9 @@ def prepare(snapshot, format_name, *, database_only=False):
         facts = {p['id']: next((fact for alias in [p['name']] + aliases.get(p['id'], [])
                                if (fact := role_for(alias, name, metadata))), None) for p in squad}
         for player in squad:
+            if player.get('customProfile'):
+                facts[player['id']] = player['customProfile']
+                continue
             profile = profiles.get(player['id'], {})
             if (facts[player['id']] or {}).get('verifiedOverride'):
                 facts[player['id']] = {**{k:v for k,v in profile.items() if v is not None},
@@ -135,9 +138,12 @@ def prepare(snapshot, format_name, *, database_only=False):
             fact = facts[p['id']]
             return fact.get('role') in ('bowl', 'allround') if fact and fact.get('role') else p['stats']['legalBalls'] >= 60
         def position(p):
+            if p.get('battingOrder') is not None:
+                return p['battingOrder']
             stats = p['stats']
             return stats.get('battingPositionTotal', 0) / max(1, stats.get('battingInnings', 0)) if stats.get('battingInnings') else 7
-        squad.sort(key=lambda p: (position(p), -(p['ratings']['batting'] or 0)))
+        # The source already supplies the latest XI in scorecard batting order,
+        # followed by reserves. Never sort it by form or average career position.
         entries = []
         for slot, player in zip(slots, squad):
             offset, pristine = records[slot]
@@ -172,13 +178,14 @@ def prepare(snapshot, format_name, *, database_only=False):
             role = player_type('wk' if is_keeper else fact.get('role') if fact else None,
                                position(player), bowling(player), spin, player['stats'].get('openingSpells', 0))
             record[351] = (record[351] & 0xf0) | role
-            appearance = appearances.get(player['id'])
+            appearance = player.get('customAppearance') or appearances.get(player['id'])
             if appearance:
                 record[209] = appearance['skinPalette']
             record[4:20] = game_name(player['name'])
             record[20:100] = bytes(80)  # Do not present the donor's career as the new player's.
             struct.pack_into('<H', record, 2, 0xffff)  # No incorrect 2006 commentary name.
-            values = skills(record)
+            values = player.get('rawSkillValues') or skills(record)
+            values = list(values)
             for field, indices in (('batting', range(14)), ('bowling', range(18, 23))):
                 rating = player['ratings'][field]
                 if rating is not None:
@@ -190,14 +197,15 @@ def prepare(snapshot, format_name, *, database_only=False):
                             'displayName': record[4:20].split(b'\0')[0].decode('latin1'),
                             'ratings': player['ratings'], 'roleMetadata': bool(fact), 'keeper': is_keeper,
                             'gameRole': role, 'battingPosition': position(player),
+                            'startingXI': player.get('startingXI', len(entries)<11),
                             'roleSource': fact.get('source') if fact else 'Scorecard workload inference',
                             'appearance': appearance or {'method': 'Generic appearance; no portrait reference available'},
-                            'heightCm': profiles.get(player['id'], {}).get('heightCm'),
-                            'weightKg': None})
+                            'heightCm': player.get('heightCm', profiles.get(player['id'], {}).get('heightCm')),
+                            'weightKg': player.get('weightKg')})
         # Original reserves must not remain in a current squad with fewer than 20 players.
         active_slots = slots[:len(squad)]
         padded = active_slots + [0] * (20 - len(active_slots))
-        captain_index = next((i for i,p in enumerate(squad) if facts[p['id']] and
+        captain_index = next((i for i,p in enumerate(squad[:11]) if facts[p['id']] and
                               ('T20I' if format_name == 'T20' else format_name) in (facts[p['id']].get('captain_formats') or [])), 0)
         for copy_id in [team_id] + ({57: [61], 60: [62]}.get(team_id, [])):
             base = 432004 + copy_id * 2808
@@ -229,3 +237,4 @@ def prepare(snapshot, format_name, *, database_only=False):
     digest = hashlib.sha256(target.read_bytes()).hexdigest()[:16]
     atomic_json(ROOT / 'local_runtime/prepared/report.json', {'format': format_name, 'asOf': snapshot['asOf'], 'teams': report, 'hash': digest})
     return {'hash': digest, 'players': len(changed), 'format': format_name, 'asOf': snapshot['asOf']}
+

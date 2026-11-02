@@ -30,11 +30,13 @@ The allowlist was checked against the actual game's team metadata: Australia, Ba
 
 ## Updates and limits
 
-Each team uses the players named in its **latest available international match in that format**. No recent-player pool or form-based selection adds different players. Form still uses up to 20 appearances within one year with a 60-day half-life. Older last-known squads are retained with a stale date and unknown recent form. Cricsheet coverage can lag actual matches; the preview records the match date and ID.
+Each team's **starting XI and batting order** come from its latest available international match in that format. Up to nine **reserves** are appended from players who appeared in that same format during the 180 days preceding the source match. These reserve choices are recent participants, not an official call-up list. Form still uses up to 20 appearances within one year with a 60-day half-life. Older last-known squads are retained with a stale date and unknown recent form. Cricsheet coverage can lag actual matches; the preview records the match date and ID.
 
 Experimental 1–99 batting and bowling ratings map to the game's 1–62 skill fields. Names fit its 15-character limit. IDs are reused, donor career statistics are cleared and old star face/speed overrides are removed. Kits and animations remain original. The full original soundtrack and commentary are restored; new player names do not have newly recorded commentary clips.
 
-Player bios are joined by stable Cricsheet IDs to public ESPN profiles; linked biographies, cached research and explicit sourced overrides provide fallbacks. The actual native role enum is written for every player, including keeper, opening batsman, pace/spin bowler and pace/spin all-rounder. A batter's occasional bowling no longer automatically changes his role to bowler. Unverified roles use labeled scorecard-workload inference. The game can arrange the XI itself; the membership remains the latest source match. Captain selection uses available format metadata, otherwise the first player.
+Player bios are joined by stable Cricsheet IDs to public ESPN profiles; linked biographies, cached research and explicit sourced overrides provide fallbacks. The actual native role enum is written for every player, including keeper, opening batsman, pace/spin bowler and pace/spin all-rounder. A batter's occasional bowling no longer automatically changes his role to bowler. Unverified roles use labeled scorecard-workload inference. Captain selection uses available format metadata among the starting XI, otherwise the first player.
+
+The server builds a local patched browser engine from the verified supported runtime. Its native auto-selector is limited to the supplied starting XI while it assigns keeper and bowling duties; the supplied order and reserve panel are restored **before** the selection screen is drawn. Manual swaps and reordering still work afterward. The original engine file stays untouched. The patch is gated to original national teams and rejects unsupported engine versions rather than guessing offsets. No game binary is committed to the repository.
 
 `roster/player_profiles.json` records source URLs and missing measurements explicitly. Create Player supports facial features and skin palettes, **not numeric height or weight**. No measurements are invented or claimed to alter the model. A one-time `python tools/cache_player_appearance.py` uses available public portraits to approximate the generic skin palette, with lighting limitations recorded per player. This is not an exact face scan or player likeness. Unavailable portraits retain generic appearances. There is no inference from a player's name or nationality.
 
@@ -51,6 +53,23 @@ The patch preserves resource names and unrelated county badges, replacing nation
 ```powershell
 python -m unittest discover -s roster/tests -v
 node roster/tests/runtime_rosters.mjs
+node roster/tests/engine_hook.mjs
 ```
 
 Tests cover match statistics, refresh failures, filtering, archive preservation, RefPack decoding, packed ratings and badge completeness. Browser verification reached the original game, showed updated badges on team selection and current player names on squad selection.
+### Curated player file
+
+`roster/custom_players.json` is the user-supplied 270-player roster. When present,
+launch and scheduled refresh use this file instead of replacing selections with
+Cricsheet data. Each format keeps its supplied XI in batting order, followed by
+its reserves. Team IDs and player slots are allocated from the installed game;
+the file's slot numbers are not trusted as database addresses. Roles, hands,
+bowling styles, skin palettes and format ratings are applied. Its 40 raw skills
+are the baseline before applying format-specific batting and bowling ratings.
+Height and weight are retained as metadata, not model dimensions. Supplied
+statistics are retained in the preview; they are not written as native career
+records. Custom Unlimited Overs squads are game selections, not a claim that
+every included country plays official Test cricket. Invalid XIs, including an XI
+without a wicketkeeper, fail validation before replacing the active snapshot.
+
+

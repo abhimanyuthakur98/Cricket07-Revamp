@@ -59,8 +59,9 @@ class Handler(GameHandler):
             from .game_patch import prepare
             try:
                 from .profiles import update, enrich
-                update(snapshot)
-                enrich(snapshot)
+                if not snapshot.get('customRoster'):
+                    update(snapshot)
+                    enrich(snapshot)
             except Exception as error:
                 warning = (warning + ' ' if warning else '') + 'Player bio refresh unavailable; cached bios retained.'
             result = prepare(snapshot, format_name)
@@ -149,7 +150,9 @@ class Handler(GameHandler):
     def translate_path(self, path):
         # Keep static requests inside the selected public root.
         p = urllib.parse.unquote(urllib.parse.urlsplit(path).path)
-        if p.startswith('/play/game/'):
+        if p == '/play/build/cricket07.wasm':
+            target = LOCAL / 'prepared/cricket07.wasm'
+        elif p.startswith('/play/game/'):
             target = LOCAL / 'game' / p[len('/play/game/'):]
         elif p.startswith('/local-game/'):
             target = LOCAL / 'prepared' / p[len('/local-game/'):]
@@ -169,6 +172,9 @@ def main():
     parser.add_argument("--port", type=int, default=8007)
     parser.add_argument("--no-refresh", action="store_true")
     args = parser.parse_args()
+    if (LOCAL / 'web/build/cricket07.wasm').exists():
+        from .engine_patch import prepare as prepare_engine
+        prepare_engine()
     # Starting the server can use the saved preview. Play Solo always refreshes.
     needs_refresh = not OUTPUT.exists()
     if needs_refresh and not args.no_refresh:
@@ -184,3 +190,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
