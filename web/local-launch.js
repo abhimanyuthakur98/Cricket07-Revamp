@@ -24,4 +24,8 @@ window.revampBeforeLaunch = async function () {
 window.revampAttach = async function (M) {
   const {attach}=await import('/roster-runtime.js');
   window.revampStop=attach(M);
+  if (document.body.dataset.broadcastUi === 'true') {
+    const {attachBroadcast}=await import('/broadcast.js');
+    window.revampStopBroadcast=attachBroadcast(M);
+  }
 };

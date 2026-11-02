@@ -28,6 +28,7 @@ jobs:
           node-version: '22'
       - run: node roster/tests/runtime_rosters.mjs
       - run: node roster/tests/engine_hook.mjs
+      - run: node roster/tests/broadcast.mjs
       - run: python -m roster.refresh
       - name: Save successful snapshot
         run: |
@@ -38,4 +39,3 @@ jobs:
             git commit -m "Refresh recent cricket players and form"
             git push
           fi
-

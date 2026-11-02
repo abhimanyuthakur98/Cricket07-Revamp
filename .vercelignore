@@ -1,0 +1,13 @@
+local_runtime
+dist-vercel
+.git
+.venv
+node_modules
+__pycache__
+build
+build_web
+out
+out_all
+out_trace
+third_party
+userdata

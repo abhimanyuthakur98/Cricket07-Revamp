@@ -64,10 +64,10 @@ class Handler(GameHandler):
                     enrich(snapshot)
             except Exception as error:
                 warning = (warning + ' ' if warning else '') + 'Player bio refresh unavailable; cached bios retained.'
-            result = prepare(snapshot, format_name)
+            result = prepare(snapshot, format_name, broadcast_ui=self.server.broadcast_ui)
             for other in ('T20', 'ODI', 'Test'):
                 if other != format_name:
-                    prepare(snapshot, other, database_only=True)
+                    prepare(snapshot, other, database_only=True, broadcast_ui=self.server.broadcast_ui)
             result['warning'] = warning
             self.reply_json(200, result)
         except Exception as error:
@@ -118,8 +118,12 @@ class Handler(GameHandler):
                 source = source.replace('window.c07 = M;', 'window.c07 = M; window.revampAttach(M);')
                 source = source.replace("async function run(session) {", "async function run(session) {\n  if (window.revampLaunching) return;\n  window.revampLaunching = true;\n  if (session) throw new Error('Local roster testing supports solo play.');\n  $('play').disabled = true;\n  try { await window.revampBeforeLaunch(); } catch (error) { window.revampLaunching = false; $('play').disabled = false; throw error; }")
             else:
+                if self.server.broadcast_ui:
+                    source = source.replace('</head>', '<link rel="stylesheet" href="/broadcast.css"></head>')
                 controls = '<div style="position:fixed;top:12px;left:12px;z-index:30;background:#111c16;padding:10px;border-radius:8px"><a href="/rosters.html" style="color:#6de1b0">Player preview</a><p id="revamp-message" style="font-size:12px">Rosters follow your in-game overs selection.</p></div>'
                 source = source.replace('<body>', '<body>' + controls)
+                if self.server.broadcast_ui:
+                    source = source.replace('<body>', '<body data-broadcast-ui="true">')
                 source = source.replace('<span id="visits">2,693,467 visits</span>', '')
                 import re
                 source = re.sub(r'<div id="hire".*?</script>', '', source, flags=re.S)
@@ -151,17 +155,17 @@ class Handler(GameHandler):
         # Keep static requests inside the selected public root.
         p = urllib.parse.unquote(urllib.parse.urlsplit(path).path)
         if p == '/play/build/cricket07.wasm':
-            target = LOCAL / 'prepared/cricket07.wasm'
+            target = LOCAL / ('prepared-ui' if self.server.broadcast_ui else 'prepared') / 'cricket07.wasm'
         elif p.startswith('/play/game/'):
             target = LOCAL / 'game' / p[len('/play/game/'):]
         elif p.startswith('/local-game/'):
-            target = LOCAL / 'prepared' / p[len('/local-game/'):]
+            target = LOCAL / ('prepared-ui' if self.server.broadcast_ui else 'prepared') / p[len('/local-game/'):]
         elif p.startswith('/play/'):
             target = LOCAL / 'web' / p[len('/play/'):]
         else:
             target = Path(super().translate_path(path))
         target = target.resolve()
-        roots = (ROOT / "web", ROOT / "build_web" / "www", LOCAL / 'web', LOCAL / 'game', LOCAL / 'prepared')
+        roots = (ROOT / "web", ROOT / "build_web" / "www", LOCAL / 'web', LOCAL / 'game', LOCAL / 'prepared', LOCAL / 'prepared-ui')
         if not any(target.is_relative_to(root.resolve()) for root in roots):
             return str(ROOT / "web" / ".not-found")
         return str(target)
@@ -171,9 +175,13 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--port", type=int, default=8007)
     parser.add_argument("--no-refresh", action="store_true")
+    parser.add_argument("--broadcast-ui", action="store_true", help="Enable experimental broadcast UI on this server only")
     args = parser.parse_args()
     if (LOCAL / 'web/build/cricket07.wasm').exists():
-        from .engine_patch import prepare as prepare_engine
+        if args.broadcast_ui:
+            from .ui_engine import prepare as prepare_engine
+        else:
+            from .engine_patch import prepare as prepare_engine
         prepare_engine()
     # Starting the server can use the saved preview. Play Solo always refreshes.
     needs_refresh = not OUTPUT.exists()
@@ -183,6 +191,7 @@ def main():
         except Exception as error:
             print(f"Refresh failed; keeping previous snapshot if available: {error}", flush=True)
     server = LocalServer(("127.0.0.1", args.port), Handler)
+    server.broadcast_ui = args.broadcast_ui
     print(f"Roster preview: http://localhost:{args.port}/rosters.html", flush=True)
     print(f"Play locally: http://localhost:{args.port}/play/", flush=True)
     server.serve_forever()
@@ -190,4 +199,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-

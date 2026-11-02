@@ -80,7 +80,7 @@ def player_type(role, position, bowls=False, spin=False, opening=False):
     return 2 if position <= 2.5 else 1
 
 
-def prepare(snapshot, format_name, *, database_only=False):
+def prepare(snapshot, format_name, *, database_only=False, broadcast_ui=False):
     original = ROOT / 'local_runtime/game/Data/data.gob'
     archive = BigArchive(original)
     database = bytearray(archive.read(DATABASE))
@@ -213,7 +213,8 @@ def prepare(snapshot, format_name, *, database_only=False):
             struct.pack_into('<H', database, base + 46, slots[captain_index])
         report[name] = entries
     replacements[DATABASE] = bytes(database)
-    output = ROOT / 'local_runtime/prepared' / (format_name + '.cdf')
+    prepared = ROOT / 'local_runtime' / ('prepared-ui' if broadcast_ui else 'prepared')
+    output = prepared / (format_name + '.cdf')
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_bytes(database)
     atomic_json(output.with_suffix('.json'), report)
@@ -229,12 +230,11 @@ def prepare(snapshot, format_name, *, database_only=False):
                                  lambda m: b'' if int(m[1]) in changed else m[0], speeds)
     from .logos import logo_replacements
     replacements.update(logo_replacements(archive))
-    target = ROOT / 'local_runtime/prepared/Data/data.gob'
+    target = prepared / 'Data/data.gob'
     target.parent.mkdir(parents=True, exist_ok=True)
     temporary = target.with_suffix('.tmp')
     archive.replace_into(temporary, replacements)
     temporary.replace(target)
     digest = hashlib.sha256(target.read_bytes()).hexdigest()[:16]
-    atomic_json(ROOT / 'local_runtime/prepared/report.json', {'format': format_name, 'asOf': snapshot['asOf'], 'teams': report, 'hash': digest})
+    atomic_json(prepared / 'report.json', {'format': format_name, 'asOf': snapshot['asOf'], 'teams': report, 'hash': digest})
     return {'hash': digest, 'players': len(changed), 'format': format_name, 'asOf': snapshot['asOf']}
-
