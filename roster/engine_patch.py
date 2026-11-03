@@ -8,9 +8,9 @@ reserves and the supplied batting order. No polling of a partly drawn UI.
 import hashlib
 import json
 from .refresh import ROOT
+from .engine_layout import LEGACY_BASE_POINTER, guest_base_pointer
 
-SUPPORTED_SHA256 = '8f04a1da726f2fea836aafb3a9eb5b73853b467d765798218932a59156574fdf'
-VERSION = 'ordered-xi-reserves-v1'
+VERSION = 'ordered-xi-reserves-v2'
 FLAGS = 0x00b00000  # Unallocated guest-address gap after PE image, below guest heap.
 TARGET = 'f_00417330'
 FINALIZE = 'f_00414950'
@@ -126,11 +126,11 @@ COPY, FILL = b'\xfc\x0a\0\0', b'\xfc\x0b\0'
 IF, END = b'\x04\x40', b'\x0b'
 
 
-def hooks():
+def hooks(base_pointer=LEGACY_BASE_POINTER):
     # Original locals 1..12 are untouched. New locals:
     # 13 guest base, 14 team ID, 15 side, 16 team pointer, 17 enabled,
     # 18 app pointer, 19 reserve count, 20/21 saved i64s, 22 saved u16.
-    entry = c(559428)+load()+put(13)
+    entry = c(base_pointer)+load()+put(13)
     this = get(13)+get(0)+load(4)+ADD
     entry += this+load(56)+put(14)+this+load(52)+put(15)
     entry += get(13)+c(0x817d48)+ADD+get(14)+c(2808)+MUL+ADD+put(16)
@@ -161,14 +161,13 @@ def hooks():
 
 
 def patch(data):
-    if hashlib.sha256(data).hexdigest() != SUPPORTED_SHA256:
-        raise ValueError('Unsupported browser engine for ordered XIs; keep the supported local runtime')
+    base_pointer = guest_base_pointer(data)
     parts = sections(data)
     names = function_names(parts)
     imported = imported_functions(next(p for k,p in parts if k == 2))
     target = names[TARGET]-imported
     call = b'\x10'+uint(names[FINALIZE])
-    entry, final = hooks()
+    entry, final = hooks(base_pointer)
     output = bytearray(data[:8])
     for kind, payload in parts:
         if kind == 10:
@@ -198,12 +197,13 @@ def prepare():
     target = ROOT/'local_runtime/prepared/cricket07.wasm'
     stamp = target.with_suffix('.version')
     original = source.read_bytes()
-    if hashlib.sha256(original).hexdigest() != SUPPORTED_SHA256:
-        raise ValueError('Unsupported browser engine for ordered XIs; keep the supported local runtime')
+    guest_base_pointer(original)
+    source_hash = hashlib.sha256(original).hexdigest()
     if target.exists() and stamp.exists():
         try:
             saved = json.loads(stamp.read_text())
-            if saved.get('version') == VERSION and saved.get('sha256') == hashlib.sha256(target.read_bytes()).hexdigest():
+            if (saved.get('version') == VERSION and saved.get('sourceSha256') == source_hash
+                    and saved.get('sha256') == hashlib.sha256(target.read_bytes()).hexdigest()):
                 return target
         except ValueError:
             pass
@@ -212,7 +212,8 @@ def prepare():
     temporary = target.with_suffix('.tmp')
     temporary.write_bytes(data)
     temporary.replace(target)
-    stamp.write_text(json.dumps({'version': VERSION, 'sha256': hashlib.sha256(data).hexdigest()}))
+    stamp.write_text(json.dumps({'version': VERSION, 'sourceSha256': source_hash,
+                                 'sha256': hashlib.sha256(data).hexdigest()}))
     return target
 
 

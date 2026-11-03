@@ -19,8 +19,8 @@ window.revampBeforeLaunch=async function(){
 window.revampAttach=async function(M){
   const {attach}=await import('/roster-runtime.js');window.revampStop=attach(M);
   window.revampStopSquadRatings?.();
-  const {attachSquadRatings}=await import('/squad-ratings.mjs?v=wide-broadcast-v16');
+  const {attachSquadRatings}=await import('/squad-ratings.mjs?v=engine-compat-v19');
   window.revampStopSquadRatings=attachSquadRatings(M,window.revampSquadRatings);
   window.revampStopBroadcast?.();
-  const {attachBroadcast}=await import('/broadcast.js?v=result-feedback-v18');window.revampStopBroadcast=attachBroadcast(M);
+  const {attachBroadcast}=await import('/broadcast.js?v=engine-compat-v19');window.revampStopBroadcast=attachBroadcast(M);
 };

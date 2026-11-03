@@ -2,6 +2,7 @@ import assert from 'node:assert/strict';
 import {rateSquad} from '../../web/squad-rating-model.mjs';
 import {formatLabel, formatForOvers} from '../../web/formats.mjs';
 import {readSelection} from '../../web/squad-ratings.mjs';
+import {GUEST_BASE_POINTERS, readGuestBase} from '../../web/engine-layout.mjs';
 
 const players = Array.from({length:12}, (_, i) => ({id:String(i), slot:100 + i,
   ratings:{batting:60, bowling:40, confidence:'established'}, legalBalls:i >= 6 ? 300 : 0, bowls:i >= 6}));
@@ -42,7 +43,21 @@ assert.equal(formatLabel(50), 'ODI');assert.equal(formatLabel(-1), 'TEST');
 assert.equal(formatLabel(30), '30 OVERS');assert.equal(formatLabel(0), 'MATCH');
 
 const buffer = new ArrayBuffer(0x1100000), v = new DataView(buffer), base = 0x1000, root = 0xa00000;
-v.setUint32(559428, base, true);v.setUint32(base + 0x95bfe8, root, true);
+assert.equal(readGuestBase(buffer), null, 'Uninitialized runtime has no guest base');
+assert.equal(readGuestBase(new ArrayBuffer(4)), null, 'Small/loading buffers are safe');
+v.setUint16(base + 0x400000, 0x5a4d, true);
+v.setUint32(base + 0x40003c, 0x128, true);
+v.setUint16(base + 0x487930, 0xe8b8, true);
+for (const pointer of GUEST_BASE_POINTERS) {
+  v.setUint32(pointer, base, true);
+  assert.equal(readGuestBase(buffer), base, 'Both verified runtimes find the loaded executable');
+  v.setUint32(pointer, 0xffffffff, true);
+  assert.equal(readGuestBase(buffer), null, 'Invalid pointers never select memory to modify');
+  v.setUint32(pointer, 0, true);
+}
+for (const pointer of GUEST_BASE_POINTERS) {
+v.setUint32(pointer, base, true);
+v.setUint32(base + 0x95bfe8, root, true);
 v.setUint16(base + root + 4, 11, true);
 v.setUint32(base + 0x92f8e8, 13, true);v.setUint32(base + 0x9303e0, 0, true);
 v.setInt32(base + 0x930eb4, 5, true);
@@ -53,4 +68,6 @@ for (const screen of [1,9,12]) {
   v.setUint16(base + root + 4, screen, true);assert.equal(readSelection(buffer, true), null);
 }
 v.setUint32(base + 0x95bfe8, 0xffffffff, true);assert.equal(readSelection(buffer, true), null);
+for (const p of GUEST_BASE_POINTERS) v.setUint32(p, 0, true);
+}
 console.log('Squad model, actual-overs labels and selection visibility passed.');
