@@ -25,6 +25,8 @@ def main():
     loader=(ROOT/'play/c07.js').read_text()
     assert '.revamp-hashes.json' in loader
     assert 'window.revampAttach(M)' in loader
+    assert 'volume.gain.value = 0.01;' in loader, 'Hosted game must start at 1% master volume'
+    assert 'node.connect(ctx.destination);' not in loader, 'Game audio must pass through the master gain'
     print('Complete hosted game verified: all chunks, hashes, audio, runtime and three roster formats.')
     print((ROOT/'deployment-report.json').read_text())
 

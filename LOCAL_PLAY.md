@@ -10,7 +10,7 @@ python -m roster.server --broadcast-ui
 
 Open http://localhost:8007/play/ and press **Play Solo**. There is no launcher format dropdown. Confirm your settings on the in-game Stadium Select screen: **1–20 overs → T20 international**, **50 overs → ODI**, **Unlimited Overs → Test**. The matching database is applied before squad selection, including when changing formats between Play Now matches. Each fresh launch refreshes the available match data and prepares all three databases.
 
-The local launcher plays all game audio at 1% master volume, the lowest nonzero whole-percent level. Music, commentary and effects remain enabled.
+Both the local launcher and the Vercel build play all game audio at 1% master volume, the lowest nonzero whole-percent level. The gain is set before audio connects to the speakers, including the first sound after loading. Music, commentary and effects remain enabled.
 
 `--broadcast-ui` enables the translucent score strip, dismissal cards, chase requirements and brief shot-timing feedback during live batting. The canvas fills the stage; a smaller bottom-right overlay leaves the native gauge area clear without adding black bands. See [broadcast UI](BROADCAST_UI.md) for the timing labels and run-rate calculation.
 
