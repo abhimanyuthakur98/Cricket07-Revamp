@@ -40,6 +40,18 @@ def chunk_file(source,folder,relative):
             'hash':digest,'part':PART,'parts':sizes}
 
 
+def quiet_audio(loader):
+    """Set the mixed game output to 1% before it can reach the speakers."""
+    audio_output='  node.connect(ctx.destination);'
+    if loader.count(audio_output)!=1:
+        raise ValueError('Unsupported browser audio output; expected one mixed game audio connection')
+    return loader.replace(audio_output,
+        '  const volume = ctx.createGain();\n'
+        '  volume.gain.value = 0.01;\n'
+        '  node.connect(volume);\n'
+        '  volume.connect(ctx.destination);')
+
+
 def main():
     try:
         import PIL
@@ -86,9 +98,11 @@ def main():
     source=source.replace('<span id="visits">2,693,467 visits</span>','')
     source=source.replace('</head>','<link rel="stylesheet" href="/game-layout.css"><link rel="stylesheet" href="/broadcast.css"><style>#go-online{display:none!important}</style></head>')
     source=source.replace('<body>','<body data-broadcast-ui="true"><div style="position:fixed;top:12px;left:12px;z-index:30;background:#111c16;padding:10px;border-radius:8px"><a href="/rosters.html" style="color:#6de1b0">Player preview</a><p id="revamp-message" style="font-size:12px">Playtest · squads follow the in-game overs.</p></div>')
-    source=source.replace('<script src="c07.js"></script>','<script src="/local-launch.js"></script><script src="c07.js"></script>')
+    source=source.replace('<script src="c07.js"></script>','<script src="/local-launch.js"></script><script src="c07.js?v=quiet-audio-v1"></script>')
     (play/'index.html').write_text(source,encoding='utf-8')
-    loader=(runtime/'c07.js').read_text(encoding='utf-8')
+    # Match the local server: attenuate the mixed game audio before its first
+    # connection to the speakers. Fail the build if upstream changes this path.
+    loader=quiet_audio((runtime/'c07.js').read_text(encoding='utf-8'))
     if loader.count('window.c07 = M;')!=1 or loader.count('async function run(session) {')!=1:
         raise ValueError('Unsupported browser launcher')
     loader=loader.replace('window.c07 = M;','window.c07 = M; window.revampAttach(M);')
