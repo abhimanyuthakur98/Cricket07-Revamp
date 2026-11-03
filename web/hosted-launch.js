@@ -11,9 +11,16 @@ window.revampBeforeLaunch=async function(){
     if(data.length!==620140)throw new Error('Incomplete '+format+' squad database.');
     return [format,data];
   })));
+  const ratings=await fetch(config.squadRatings+'?v='+config.version,{cache:'no-store'});
+  if(!ratings.ok)throw new Error('Squad strength data unavailable. Reload the page.');
+  window.revampSquadRatings=await ratings.json();
   document.getElementById('revamp-message').textContent='Playtest · squads follow your confirmed overs.';
 };
 window.revampAttach=async function(M){
   const {attach}=await import('/roster-runtime.js');window.revampStop=attach(M);
-  const {attachBroadcast}=await import('/broadcast.js');window.revampStopBroadcast=attachBroadcast(M);
+  window.revampStopSquadRatings?.();
+  const {attachSquadRatings}=await import('/squad-ratings.mjs?v=wide-broadcast-v16');
+  window.revampStopSquadRatings=attachSquadRatings(M,window.revampSquadRatings);
+  window.revampStopBroadcast?.();
+  const {attachBroadcast}=await import('/broadcast.js?v=result-feedback-v18');window.revampStopBroadcast=attachBroadcast(M);
 };

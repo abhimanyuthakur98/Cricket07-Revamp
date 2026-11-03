@@ -18,14 +18,21 @@ window.revampBeforeLaunch = async function () {
     if (!response.ok) throw new Error('Missing '+format+' roster');
     return [format,new Uint8Array(await response.arrayBuffer())];
   })));
+  const ratings=await fetch('/local-game/squad-ratings.json?v='+result.hash,{cache:'no-store'});
+  if (!ratings.ok) throw new Error('Squad strength data unavailable');
+  window.revampSquadRatings=await ratings.json();
   document.getElementById('revamp-message').textContent=result.warning||'T20 international · squads follow the confirmed in-game overs';
 };
 
 window.revampAttach = async function (M) {
   const {attach}=await import('/roster-runtime.js');
   window.revampStop=attach(M);
+  window.revampStopSquadRatings?.();
+  const {attachSquadRatings}=await import('/squad-ratings.mjs?v=wide-broadcast-v16');
+  window.revampStopSquadRatings=attachSquadRatings(M,window.revampSquadRatings);
   if (document.body.dataset.broadcastUi === 'true') {
-    const {attachBroadcast}=await import('/broadcast.js');
+    window.revampStopBroadcast?.();
+    const {attachBroadcast}=await import('/broadcast.js?v=result-feedback-v18');
     window.revampStopBroadcast=attachBroadcast(M);
   }
 };

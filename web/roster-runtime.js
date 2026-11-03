@@ -1,14 +1,10 @@
 // Verified against executable SHA-1 prefix 9e9d0deeeab9. Stadium selection commits
 // its overs value before Match Conditions and Selections are constructed.
-export function formatForOvers(overs) {
-  if (overs === -1) return 'Test';
-  if (overs > 0 && overs <= 20) return 'T20';
-  if (overs === 50) return 'ODI';
-  return null;
-}
+import {formatForOvers, formatLabel} from './formats.mjs';
+export {formatForOvers};
 
 export function attach(M) {
-  let base = -1, active = null, probeAt = 0;
+  let base = -1, active = null, probeAt = 0, previousOvers = null;
   const message = document.getElementById('revamp-message');
   function tick() {
     const memory = new Uint8Array(M.wasmMemory.buffer);
@@ -29,6 +25,10 @@ export function attach(M) {
     const view=new DataView(memory.buffer);
     const overs=view.getInt32(base+0x930eb4,true);
     const format=formatForOvers(overs);
+    if (format && overs !== previousOvers) {
+      previousOvers = overs;
+      message.textContent=`${formatLabel(overs)} · latest available ${format} match squads`;
+    }
     if (!format || format===active) return;
     const database=window.revampDatabases[format];
     if (database?.length!==620140) throw new Error('Unsupported roster layout');
@@ -54,7 +54,6 @@ export function attach(M) {
       }
     }
     active=format;
-    message.textContent=`${format==='T20'?'T20 international':format} · latest available match squads`;
     console.info('REVAMP roster selected',format,'overs',overs);
   }
   const timer=setInterval(tick,16);

@@ -1,0 +1,14 @@
+#stage.revamp-stage{container-type:inline-size}
+#stage.revamp-stage:not(.broadcast-stage){--score-height:0px}
+#stage.revamp-stage>canvas,#stage.revamp-stage.broadcast-stage>canvas{height:100%;width:100%;margin:0}
+/* Ratings and broadcast are overlays; neither reserves a band around the game. */
+#stage.revamp-stage[data-squad-ratings="true"]{--score-height:0px}
+#team-badge-ratings{position:absolute;z-index:13;pointer-events:none;font-family:Inter,"Segoe UI",sans-serif;font-variant-numeric:tabular-nums;color:#f1e2b4;text-shadow:0 2px 4px #000b;background:none;border:0;box-shadow:none;padding:0}
+#team-badge-ratings[hidden]{display:none!important}
+#team-badge-ratings .squad-rating-team{display:grid;grid-template-columns:1fr;gap:calc(4*var(--rating-unit));position:absolute;top:39%;left:calc(50% - 256*var(--rating-unit));width:calc(80*var(--rating-unit));margin:0;transform:translate(-50%,-50%);pointer-events:auto}
+#team-badge-ratings .squad-rating-team:nth-child(2){left:calc(50% + 256*var(--rating-unit))}
+#team-badge-ratings .squad-rating-team>div{display:flex;flex-direction:column;align-items:center;gap:calc(3*var(--rating-unit));line-height:1.15;white-space:nowrap;color:#e4decf}
+#team-badge-ratings dt{font-size:calc(8*var(--rating-unit));font-weight:600;letter-spacing:.025em}
+#team-badge-ratings dd{font-size:calc(18*var(--rating-unit));font-weight:700;margin:0}
+#team-badge-ratings sup{font-size:calc(5*var(--rating-unit));vertical-align:super;color:#d8cfae}
+#team-badge-ratings [data-active="true"]{color:#ffe256!important}

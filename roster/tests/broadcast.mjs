@@ -2,7 +2,8 @@ import assert from 'node:assert/strict';
 import {execFileSync} from 'node:child_process';
 import {readFileSync} from 'node:fs';
 const source=readFileSync(new URL('../../web/broadcast-state.js',import.meta.url));
-const {readMatch,readDeliveries,overCells,nativeStripVisible,BowlerDeliveries,oversText,MATCH}=await import('data:text/javascript;base64,'+source.toString('base64'));
+const {readMatch,readDeliveries,readNativePanel,readShot,readDismissal,readBallStart,readBattingZone,liveMatchVisible,playerBatting,chaseState,timingForZone,TimingStats,ShotFeedback,DismissalNotice,
+  PANEL_IDS,PANEL_STATE,SHOT,WICKET,SPEED,overCells,nativeStripVisible,readDeliverySpeed,BowlerDeliveries,oversText,MATCH}=await import('data:text/javascript;base64,'+source.toString('base64'));
 const code=execFileSync('python',['-c','from roster.tests.test_ui import delivery_fixture; import sys; sys.stdout.buffer.write(delivery_fixture())']);
 const memory=new WebAssembly.Memory({initial:256});
 const {instance}=await WebAssembly.instantiate(code,{env:{memory}});
@@ -24,13 +25,146 @@ assert.equal(s.runs,42);assert.equal(s.wickets,1);assert.equal(s.striker.runs,30
 assert.equal(s.bowler.conceded,12);assert.equal(s.bowler.wickets,1);assert.equal(oversText(s.legalBalls),'1.2');
 const shared=new SharedArrayBuffer(memory.buffer.byteLength);new Uint8Array(shared).set(b);
 assert.equal(readMatch(shared,0).striker.name,'RG Sharma','Real browser engine uses SharedArrayBuffer');
+assert.equal(s.target,null,'No chase target in first innings');
+const chase={...s,innings:1,target:151,runs:100,legalBalls:86,limit:20};
+assert.deepEqual(chaseState(chase),{target:151,needed:51,balls:34,rate:9,finished:false});
+assert.equal(chaseState({...chase,legalBalls:87}).rate,51*6/33);
+assert.equal(chaseState({...chase,runs:101}).balls,34,'A wide adds runs without consuming a legal ball');
+assert.equal(chaseState({...chase,runs:151}).rate,0,'Successful chase never shows a negative requirement');
+assert.equal(chaseState({...chase,legalBalls:120}).rate,null,'No infinity at the end of an innings');
+assert.equal(chaseState({...chase,wickets:10}).finished,true);
+assert.equal(chaseState({...chase,limit:-1}).balls,null,'Tests do not invent a remaining-ball quota');
+assert.equal(chaseState({...chase,limit:-1}).rate,null);
+b[MATCH+0x58c9]=1;v.setUint16(MATCH+0x5878,150,true);
+assert.equal(readMatch(memory.buffer,0).target,151,'Chase uses opponent aggregate plus one');
+b[MATCH+0x58c9]=3;v.setInt16(MATCH+0x58c4,-1,true);
+v.setUint16(MATCH+0x5874,220,true);v.setUint16(MATCH+0x5878,300,true);v.setUint16(MATCH+0x58dc+6,20,true);
+assert.equal(readMatch(memory.buffer,0).target,101,'Fourth innings accounts for both previous innings');
+b[MATCH+0x58c9]=0;v.setInt16(MATCH+0x58c4,20,true);
+const app=0x410000,team=0x414000,batter=0x415000;
+v.setUint32(0x817580,app,true);v.setUint32(app+0x2740,team,true);v.setUint32(team+0xb8,batter,true);v.setUint32(batter+0x2d8,3,true);
 const before=b.slice(MATCH,MATCH+0x21300);
 for(const [flags,wicket,runs,kind] of [[16,0,4,1],[2,0,1,2],[1,0,2,3],[0,1,0,4]]){
  b[MATCH+0x21218]=flags;b[MATCH+0x2121c]=wicket;v.setUint16(MATCH+0x21216,runs,true);
  const snapshot=b.slice(MATCH,MATCH+0x21300);instance.exports.run(0);
  assert.deepEqual(b.slice(MATCH,MATCH+0x21300),snapshot,'Hook must never write native state');
  const event=readDeliveries(memory.buffer,0).at(-1);assert.equal(event.kind,kind);assert.equal(event.runs,runs);assert.equal(event.bowler,3);
+ assert.equal(event.timing,3,'Record the actual native timing zone');
 }
+assert.equal(readDismissal(memory.buffer,0).player.id,2,'A non-striker run-out identifies the departing player');
+v.setUint32(p2+0xa4,42<<20,true);v.setUint32(p2+0xa0,28<<21,true);
+const out=readDismissal(memory.buffer,0),notice=new DismissalNotice();
+const dismissalMatch={batting:13,innings:0},dismissalPanel={id:103,texts:[]};
+const dismissalBall={sequence:10,innings:0};
+assert.equal(notice.update(out,dismissalMatch,null,{ball:dismissalBall}).active,false,'Wicket commit alone must not open a card over celebrations or replays');
+assert.equal(notice.update(out,dismissalMatch,dismissalPanel,{ball:dismissalBall}).player.runs,42,'Native dismissal scene opens with the final figures');
+v.setUint32(MATCH+0xd538,bowl,true);
+assert.equal(readDismissal(memory.buffer,0).player.id,2,'Incoming striker changes cannot change the dismissed player');
+assert.equal(notice.update({...out,player:{id:99,name:'New Batter',runs:0,balls:0}},dismissalMatch,dismissalPanel,{ball:dismissalBall}).player.name,'V Kohli','Freeze dismissal figures');
+for(let i=0;i<1000;i++)assert.equal(notice.update(out,dismissalMatch,dismissalPanel,{ball:dismissalBall}).active,true,'Only the native presentation controls duration');
+assert.equal(notice.update(out,dismissalMatch,dismissalPanel,{ball:dismissalBall,inMenu:true}).active,false,'Pause hides the card');
+assert.equal(notice.update(out,dismissalMatch,dismissalPanel,{ball:dismissalBall}).active,true,'Resume follows the still-visible native scene');
+assert.equal(notice.update(out,dismissalMatch,null,{ball:dismissalBall}).active,false,'Skip hides the card in the same update');
+assert.equal(notice.update(out,dismissalMatch,dismissalPanel,{ball:dismissalBall}).active,false,'A dismissed native scene cannot repeat from stale text');
+const nextWicket={...out,sequence:out.sequence+1,player:{...out.player,runs:0}},duckNotice=new DismissalNotice();
+assert.equal(duckNotice.update(nextWicket,dismissalMatch,dismissalPanel,{ball:dismissalBall}).player.runs,0,'Duck dismissals keep zero rather than substituting the incoming batter');
+assert.equal(duckNotice.update(nextWicket,dismissalMatch,dismissalPanel,{ball:{...dismissalBall,sequence:11}}).active,false,'A next-ball reset immediately clears an existing dismissal, even if its native text is stale');
+assert.equal(duckNotice.update(nextWicket,{batting:13,innings:1},dismissalPanel).active,false,'Old innings cannot show a dismissal card');
+const skippedNotice=new DismissalNotice();
+assert.equal(skippedNotice.update(out,dismissalMatch,null).active,false);
+assert.equal(skippedNotice.update(out,dismissalMatch,null,{ball:{...dismissalBall,sequence:11}}).active,false,'Skipping the entire presentation never starts a delayed card');
+const noPriorBall=new DismissalNotice();
+assert.equal(noPriorBall.update(out,dismissalMatch,dismissalPanel).active,true);
+assert.equal(noPriorBall.update(out,dismissalMatch,dismissalPanel,{ball:dismissalBall}).active,false,'First next-ball pulse also clears a card opened without prior ball telemetry');
+v.setUint32(MATCH+0xd538,p1,true);b[MATCH+0x2121b]=1;instance.exports.run(0);
+assert.equal(readDismissal(memory.buffer,0).player.id,1,'Striker dismissals use the striker record');
+b[MATCH+0x2121c]=0;instance.exports.run(0);
+assert.equal(readDismissal(memory.buffer,0),null,'A normal next ball clears stale dismissal presentation');
+
+const feedback=new ShotFeedback(),feedbackMatch={key:'bat:0',innings:0};
+const firstBall={sequence:10,delivery:0,innings:0},secondBall={sequence:11,delivery:1,innings:0};
+const context={ball:firstBall,human:true,zone:7};
+const contactEvent={sequence:1,delivery:0,innings:0,zone:3,ball:10};
+assert.equal(feedback.update(feedbackMatch,[],null,0,true,context),null,'No feedback before a shot');
+assert.equal(feedback.update(feedbackMatch,[],contactEvent,100,true,context).label,'Ideal');
+assert.equal(feedback.update(feedbackMatch,[],contactEvent,4900,true,{...context,human:false}).label,'Ideal','Post-shot control handoff does not cancel human feedback');
+assert.equal(feedback.update(feedbackMatch,[],contactEvent,5100,true,context),null,'Timing lasts five seconds');
+const untilNext=new ShotFeedback();untilNext.update(feedbackMatch,[],null,0,true,context);
+untilNext.update(feedbackMatch,[],contactEvent,100,true,context);
+assert.equal(untilNext.update(feedbackMatch,[{sequence:0,innings:0,timing:3}],contactEvent,200,true,context).label,'Ideal','Completed contact does not become Miss');
+assert.equal(untilNext.update(feedbackMatch,[{sequence:0,innings:0,timing:3}],contactEvent,400,true,{...context,ball:secondBall}),null,'Next-ball reset clears feedback before five seconds');
+assert.equal(untilNext.update(feedbackMatch,[{sequence:0,innings:0,timing:3}],{...contactEvent,sequence:2},500,true,{...context,ball:secondBall}),null,'Late telemetry from the preceding ball cannot reappear');
+const missed=new ShotFeedback();missed.update(feedbackMatch,[],null,0,true,context);
+for(const zone of [0,5,4,3,2,1,6,7])assert.equal(missed.update(feedbackMatch,[],null,100,true,{...context,zone}),null,'Release-time zones and queued swings cannot display shot timing');
+assert.equal(missed.update(feedbackMatch,[{sequence:0,innings:0,timing:5}],null,1000,true,{...context,zone:5}).label,'Miss');
+assert.equal(missed.update(feedbackMatch,[{sequence:0,innings:0,timing:5}],null,5900,true,context).label,'Miss','Miss timer starts when the delivery result is known');
+assert.equal(missed.update(feedbackMatch,[{sequence:0,innings:0,timing:5}],null,6000,true,context),null,'Polling a completed miss does not restart its timer');
+const lateMiss=new ShotFeedback();lateMiss.update(feedbackMatch,[],null,0,true,context);
+assert.equal(lateMiss.update(feedbackMatch,[],null,100,true,{...context,zone:6}),null,'Late input cannot show feedback before the ball passes');
+assert.equal(lateMiss.update(feedbackMatch,[{sequence:0,innings:0,timing:6}],null,500,true,{...context,zone:6}).label,'Late Miss');
+const cpuFeedback=new ShotFeedback();cpuFeedback.update(feedbackMatch,[],null,0,true,{...context,human:false});
+assert.equal(cpuFeedback.update(feedbackMatch,[],null,50,true,{...context,human:false,zone:3}),null,'An AI planned shot at release is not a completed shot');
+assert.equal(cpuFeedback.update(feedbackMatch,[],contactEvent,100,true,{...context,human:false,zone:3}).label,'Ideal','Actual AI contact produces timing just like player contact');
+const cpuMiss=new ShotFeedback();cpuMiss.update(feedbackMatch,[],null,0,true,{...context,human:false});
+assert.equal(cpuMiss.update(feedbackMatch,[{sequence:0,innings:0,timing:4}],null,1000,true,{...context,human:false}).label,'Miss','AI misses receive feedback');
+for(const human of [true,false]){
+ const left=new ShotFeedback();left.update(feedbackMatch,[],null,0,true,{...context,human});
+ assert.equal(left.update(feedbackMatch,[],null,500,true,{...context,human,zone:7}),null,'A leave is not displayed during the delivery');
+ assert.deepEqual(left.update(feedbackMatch,[{sequence:0,innings:0,timing:7}],null,1000,true,{...context,human}),{kind:'leave',label:'Leave'},'Completed leaves receive neutral feedback for both player and AI');
+}
+const switched=new ShotFeedback();switched.update(feedbackMatch,[],null,0,true,context);
+switched.update(feedbackMatch,[],null,100,false,context);
+assert.equal(switched.update(feedbackMatch,[],contactEvent,200,true,{...context,human:false,zone:3}).label,'Ideal','Switching to AI does not disable new contact feedback');
+assert.equal(untilNext.update(feedbackMatch,[],null,600,true,{...context,ball:{...firstBall,sequence:1}}),null,'A new match resetting native counters clears previous-match state');
+assert.equal(feedback.update(feedbackMatch,[],{...contactEvent,sequence:2,delivery:1},6000,false),null,'Menus, dismissal and replay hide timing');
+assert.equal(feedback.update(feedbackMatch,[],{...contactEvent,sequence:2,delivery:1},6100,true),null,'Returning does not replay an old shot');
+assert.equal(new ShotFeedback().update(feedbackMatch,[{sequence:2,innings:0,timing:3}],null,0,true),null,'Attaching to a match does not replay its existing history');
+
+const actor=0x416000,control=0x417000;
+b[team+6]=0;v.setUint32(team+0x44,actor,true);v.setUint32(actor+4,control,true);v.setUint32(control+0x2570,0,true);
+assert.equal(playerBatting(memory.buffer,0),true,'Live human batting control');
+v.setUint32(control+0x2570,8,true);assert.equal(playerBatting(memory.buffer,0),true,'Native type 8 is keyboard input, not AI');
+v.setUint32(control+0x2570,9,true);assert.equal(playerBatting(memory.buffer,0),true,'Native type 9 is mouse input');
+v.setUint32(control+0x2570,8,true);
+const keyboardFeedback=new ShotFeedback(),keyboardContext={ball:firstBall,human:playerBatting(memory.buffer,0),zone:7};
+keyboardFeedback.update(feedbackMatch,[],null,0,true,keyboardContext);
+assert.equal(keyboardFeedback.update(feedbackMatch,[],{...contactEvent,ball:firstBall.sequence},100,true,{...keyboardContext,zone:3}).label,'Ideal','A real keyboard controller reaches the shot feedback display');
+v.setUint32(actor+4,0,true);assert.equal(playerBatting(memory.buffer,0),false,'AI actor has no input device');v.setUint32(actor+4,control,true);
+v.setUint32(control+0x2570,255,true);assert.equal(playerBatting(memory.buffer,0),false,'Unknown input kind is not a human controller');
+b[team+6]=255;assert.equal(playerBatting(memory.buffer,0),false,'No active batter controller');
+const stats=new TimingStats(),timed=[0,5,4,3,2,1,6,7].map((timing,sequence)=>({sequence,timing,innings:0}));
+const timingMatch={key:'innings:0',innings:0};
+assert.deepEqual(stats.update(timingMatch,timed),{bad:2,early:1,good:2,perfect:1,late:1});
+assert.deepEqual(stats.update(timingMatch,timed),{bad:2,early:1,good:2,perfect:1,late:1},'Polling never counts a shot twice');
+assert.equal(timingForZone(7),null,'Leaving or defending without a timing result is not a bad shot');
+assert.equal(timingForZone(3).label,'Ideal');assert.equal(timingForZone(4).detail,'Early side');
+assert.deepEqual([0,5,4,3,2,1,6].map(z=>timingForZone(z).label),['Too Early','Early','Good','Ideal','Good','Late','Too Late']);
+assert.equal(timingForZone(2).detail,'Late side');
+assert.deepEqual(stats.update({...timingMatch,key:'innings:1',innings:1},[]),{bad:0,early:0,good:0,perfect:0,late:0});
+const shotWasm=execFileSync('python',['-c','from roster.tests.test_ui import shot_fixture; import sys; sys.stdout.buffer.write(shot_fixture())']);
+const {instance:contact}=await WebAssembly.instantiate(shotWasm,{env:{memory}});
+v.setUint32(0x1004,batter,true);v.setUint32(0x1010,0x2000,true);v.setUint32(batter+0x2d8,4,true);
+const nativeBefore=b.slice(batter,batter+0x400),cpuBefore=b.slice(0x1000,0x1040);
+contact.exports.run(0x1000);
+assert.equal(readShot(memory.buffer,0).zone,4);
+assert.deepEqual(b.slice(batter,batter+0x400),nativeBefore,'Contact hook leaves native batter data unchanged');
+assert.deepEqual(b.slice(0x1000,0x1040),cpuBefore,'Contact hook preserves all CPU registers');
+const shotCount=v.getUint32(SHOT+4,true);b[0xb00080]=0;contact.exports.run(0x1000);
+assert.equal(v.getUint32(SHOT+4,true),shotCount,'Disabled telemetry leaves the game alone');b[0xb00080]=1;
+b[0x2008]=1;contact.exports.run(0x1000);
+assert.equal(v.getUint32(SHOT+4,true),shotCount,'Trajectory prediction is not an actual contact');b[0x2008]=0;
+const ballWasm=execFileSync('python',['-c','from roster.tests.test_ui import ball_start_fixture; import sys; sys.stdout.buffer.write(ball_start_fixture())']);
+const {instance:ballStart}=await WebAssembly.instantiate(ballWasm,{env:{memory}});
+const beforeBall=b.slice(batter,batter+0x400),beforeBallCpu=b.slice(0x1000,0x1040);
+ballStart.exports.run(0x1000);
+assert.equal(readBallStart(memory.buffer,0).sequence,1);
+assert.equal(readBallStart(memory.buffer,0).delivery,v.getUint32(0xb01004,true));
+assert.deepEqual(b.slice(batter,batter+0x400),beforeBall,'Ball-start hook is read-only');
+assert.deepEqual(b.slice(0x1000,0x1040),beforeBallCpu,'Ball-start hook preserves CPU registers');
+v.setUint32(0x1004,batter+0x400,true);ballStart.exports.run(0x1000);
+assert.equal(readBallStart(memory.buffer,0).sequence,1,'Non-striker reset does not clear striker feedback');
+v.setUint32(0x1004,batter,true);
+assert.equal(readBattingZone(memory.buffer,0),4);
 // Ring wrap and disabled hook; no lost or duplicated events through polling.
 for(let i=0;i<140;i++)instance.exports.run(0);
 assert.equal(readDeliveries(memory.buffer,0).length,128);
@@ -46,26 +180,32 @@ assert.equal(tracker.update(state,history).length,1);
 state.bowler.id=4;assert.equal(tracker.update(state,history).length,0,'New bowler clears delivery row');
 history.push({sequence:1,innings:0,bowler:4,over:1,flags:2});assert.equal(tracker.update(state,history).length,1);
 state.bowler.id=3;assert.equal(tracker.update(state,history).length,0,'Returning bowler does not restore old over');
-for(const graphic of [false]){
- const wasm=execFileSync('python',['-c',`from roster.tests.test_ui import render_fixture; import sys; sys.stdout.buffer.write(render_fixture(${graphic?'True':'False'}))`]);
+for(const children of [false,true]){
+ const wasm=execFileSync('python',['-c',`from roster.tests.test_ui import render_fixture; import sys; sys.stdout.buffer.write(render_fixture(${children?'True':'False'}))`]);
  const {instance:draw}=await WebAssembly.instantiate(wasm,{env:{memory}});
  const cpu=0x1000,scene=0x400100,node=0x400200;
  v.setUint32(0x95bfe8,scene,true);v.setUint16(scene+4,1,true);v.setUint32(cpu+4,node,true);b[0xb00081]=1;
  v.setUint32(0xb00094,20,true);
- for(const [id,hidden] of [[10,true],[330,true],[420,true],[20,false],[40,false],[50,false]]){
+ for(const [id,replaced] of [[10,true],[330,true],[335,true],[420,true],...PANEL_IDS.map(id=>[id,id!==310]),[20,false],[40,false],[50,false]]){
+  const hidden=children&&replaced;
   v.setUint16(node+4,id,true);v.setFloat32(node+8,-92,true);v.setUint32(cpu+16,0x500000,true);v.setUint32(0xb000a0,0,true);
   const pulse=v.getUint32(0xb00084,true);draw.exports.run(cpu);
   assert.equal(v.getUint32(0xb000a0,true),hidden?0:1,`Native draw gate ${id}`);
   if(hidden)assert.equal(v.getUint32(cpu+16,true),0x500008,'Native ret 4 stack balance');
-  if(id===10)assert.equal(v.getUint32(0xb00084,true),pulse+1);
+  if(!children&&id===10)assert.equal(v.getUint32(0xb00084,true),pulse+1);
+  if(!children&&PANEL_IDS.includes(id))assert.equal(v.getUint32(PANEL_STATE+PANEL_IDS.indexOf(id)*8+4,true),node,'Publish the native information panel');
+  if(!children)assert.equal(v.getUint32(0xb000a0,true),1,'Window callbacks/transforms remain reachable');
+  if(id===310)assert.equal(v.getUint32(0xb000a0,true),1,'Original duck graphic and its frame callback remain native in both phases');
  }
- if(graphic){v.setUint32(0xb00094,50,true);v.setUint16(node+4,4,true);v.setUint32(0xb000a0,0,true);draw.exports.run(cpu);assert.equal(v.getUint32(0xb000a0,true),1,'Radar graphic with same ID remains');}
- b[0xb00081]=0;v.setUint16(node+4,graphic?1000:10,true);v.setUint32(0xb000a0,0,true);draw.exports.run(cpu);
+ if(children){v.setUint32(0xb00094,50,true);v.setUint16(node+4,4,true);v.setUint32(0xb000a0,0,true);draw.exports.run(cpu);assert.equal(v.getUint32(0xb000a0,true),1,'Radar graphic with same ID remains');}
+ b[0xb00081]=0;v.setUint16(node+4,children?1000:10,true);v.setUint32(0xb000a0,0,true);draw.exports.run(cpu);
  assert.equal(v.getUint32(0xb000a0,true),1,'Other native screens are untouched');
 }
 v.setUint32(MATCH+0xd538,0xfffffff0,true);assert.equal(readMatch(memory.buffer,0),null);
 const root=0x400100,win=0x400300,list=0x400400,backdrop=0x400500;
 v.setUint32(0x95bfe8,root,true);v.setUint16(root+4,1,true);
+assert.equal(liveMatchVisible(memory.buffer,0),true);
+v.setUint32(MATCH+0x211fc,1,true);assert.equal(liveMatchVisible(memory.buffer,0),false,'Replays hide shot feedback');v.setUint32(MATCH+0x211fc,0,true);
 v.setUint32(0xb00088,win,true);v.setUint16(win+4,10,true);v.setUint32(win+0x34,list,true);
 v.setUint32(list+8,backdrop,true);v.setUint32(list+16,list,true);v.setUint16(backdrop+4,299,true);
 b[backdrop+0x35]=4;b[backdrop+0x67]=255;v.setFloat32(backdrop+8,-92,true);
@@ -73,4 +213,59 @@ assert.equal(nativeStripVisible(memory.buffer,0),true);
 v.setFloat32(backdrop+8,-946,true);assert.equal(nativeStripVisible(memory.buffer,0),false,'Native slide-out hides replacement');
 v.setFloat32(backdrop+8,-92,true);b[backdrop+0x67]=0;assert.equal(nativeStripVisible(memory.buffer,0),false,'Native fade-out hides replacement');
 b[backdrop+0x67]=255;v.setUint16(root+4,32,true);assert.equal(nativeStripVisible(memory.buffer,0),false,'Coin toss does not show ticker');
+assert.equal(liveMatchVisible(memory.buffer,0),false,'Intros do not show shot feedback');
+// Native text is copied as text, with its own presentation lifecycle and bounded lists.
+const info=0x420000,graphicNode=0x420100,textNode=0x420200,item1=0x420300,item2=0x420320,text=0x420400;
+v.setUint16(info+4,103,true);v.setUint32(info+0x30,2,true);v.setUint32(info+0x34,item1,true);v.setFloat32(info+8,190,true);v.setFloat32(info+12,395,true);
+v.setUint32(item1+8,graphicNode,true);v.setUint32(item1+16,item2,true);v.setUint32(item2+8,textNode,true);v.setUint32(item2+16,item1,true);
+v.setUint32(graphicNode,0x7936d8,true);v.setUint16(graphicNode+4,10,true);b[graphicNode+0x35]=4;b[graphicNode+0x53]=180;
+v.setUint32(textNode,0x7936b4,true);v.setUint16(textNode+4,11,true);b[textNode+0x35]=4;b[textNode+0x67]=255;
+v.setUint32(textNode+0x7c,text,true);b.set(new TextEncoder().encode('V Kohli 42 (28)\0'),text);
+assert.deepEqual(readNativePanel(memory.buffer,0,info),{id:103,texts:[{id:11,text:'V Kohli 42 (28)'}]});
+b.fill(0,text,text+40);b.set(new TextEncoder().encode('$849'),text);
+assert.equal(readNativePanel(memory.buffer,0,info).texts[0].text,'RUNS','Resolve native score labels before displaying them');
+v.setUint32(info+0x30,3,true);assert.equal(readNativePanel(memory.buffer,0,info),null,'Native skip/hide state overrides old text and opaque graphics');v.setUint32(info+0x30,2,true);
+b[graphicNode+0x53]=0;assert.equal(readNativePanel(memory.buffer,0,info),null,'Faded native panel is not recreated as a stale card');
+assert.equal(readNativePanel(memory.buffer,0,0xfffffff0),null,'Bad pointers do not crash panel decoding');
+// Duck window 310 has an animated graphic rather than text. Keep it native,
+// while exposing its real visibility so the broadcast can get out of its way.
+v.setUint16(info+4,310,true);v.setUint16(graphicNode+4,0,true);b[graphicNode+0x53]=255;b[textNode+0x67]=0;
+v.setFloat32(info+8,100,true);v.setFloat32(info+12,220,true);
+assert.deepEqual(readNativePanel(memory.buffer,0,info),{id:310,texts:[]},'Original duck is visible without inventing an HTML timeout or icon');
+v.setFloat32(info+8,-500,true);assert.equal(readNativePanel(memory.buffer,0,info),null,'Offscreen duck does not suppress live play');
+v.setFloat32(info+8,100,true);v.setUint32(info+0x30,3,true);assert.equal(readNativePanel(memory.buffer,0,info),null,'Duck clears on the original hide state');
+// Event 65 carries real release speeds before scoring. It is independent of
+// input type, native text (which becomes RUN RATE) and the score strip's fade.
+const speedWasm=execFileSync('python',['-c','from roster.tests.test_ui import speed_fixture; import sys; sys.stdout.buffer.write(speed_fixture())']);
+const {instance:release}=await WebAssembly.instantiate(speedWasm,{env:{memory}});
+const packet=0x450000,bowlingActor=0x450100;
+v.setUint32(0x1010,0x2000,true);v.setUint32(0x2004,packet,true);v.setUint32(packet,65,true);v.setUint32(packet+4,bowlingActor,true);
+v.setUint32(MATCH+0xd540,bowl,true);v.setUint32(MATCH+0x211fc,0,true);b[0xb00080]=1;b[0x9dc51c]=0;
+v.setFloat32(bowlingActor+0x340,85.9955,true);v.setFloat32(bowlingActor+0x344,138.4,true);
+const releaseContext={match:{innings:0,bowler:{id:3}},ball:readBallStart(memory.buffer,0)};
+assert.equal(readDeliverySpeed(memory.buffer,0),null,'No speed before a real release');
+for(const human of [true,false]){
+ v.setUint32(actor+4,human?control:0,true);
+ const nativeBefore=b.slice(0,0xb00000),cpuBeforeSpeed=b.slice(0x1000,0x1040);
+ release.exports.run(0x1000);
+ assert.deepEqual(b.slice(0,0xb00000),nativeBefore,'Speed hook never modifies native state, device state or simulation');
+ assert.deepEqual(b.slice(0x1000,0x1040),cpuBeforeSpeed,'Speed hook preserves CPU registers');
+ assert.equal(readDeliverySpeed(memory.buffer,0,releaseContext),'138.4 km/h','Release speed for both player and computer bowling');
+}
+const speedSnapshot=b.slice();readDeliverySpeed(memory.buffer,0);assert.deepEqual(b,speedSnapshot,'Speed reader never writes game state');
+v.setUint32(0xb00088,0,true);assert.equal(readDeliverySpeed(memory.buffer,0,releaseContext),'138.4 km/h','No dependency on the suppressed native speed text');
+b[0x9dc51c]=32;release.exports.run(0x1000);assert.equal(readDeliverySpeed(memory.buffer,0),'86 mph','Respect native MPH preference');
+b[0x9dc51c]=0;v.setFloat32(bowlingActor+0x344,92.5,true);release.exports.run(0x1000);
+assert.equal(readDeliverySpeed(memory.buffer,0),'92.5 km/h','New ball speed updates before the score changes');
+assert.equal(readDeliverySpeed(memory.buffer,0,{...releaseContext,ball:{sequence:999}}),null,'New-ball reset clears old speed');
+assert.equal(readDeliverySpeed(memory.buffer,0,{match:{innings:1,bowler:{id:3}}}),null,'New innings cannot display old speed');
+assert.equal(readDeliverySpeed(memory.buffer,0,{match:{innings:0,bowler:{id:4}}}),null,'New bowler cannot display old speed');
+let releaseCount=v.getUint32(SPEED+4,true);
+v.setUint32(packet,64,true);release.exports.run(0x1000);assert.equal(v.getUint32(SPEED+4,true),releaseCount,'Unrelated game events cannot manufacture a speed');v.setUint32(packet,65,true);
+v.setUint32(MATCH+0x211fc,1,true);release.exports.run(0x1000);assert.equal(v.getUint32(SPEED+4,true),releaseCount,'Replay release events are excluded');v.setUint32(MATCH+0x211fc,0,true);
+b[0xb00080]=0;release.exports.run(0x1000);assert.equal(v.getUint32(SPEED+4,true),releaseCount,'Disabled telemetry does not publish speed');b[0xb00080]=1;
+for(const value of [0,-10,NaN,Infinity,999]){
+ v.setFloat32(bowlingActor+0x344,value,true);release.exports.run(0x1000);assert.equal(readDeliverySpeed(memory.buffer,0),null,'Invalid release speed excluded');
+}
+assert.equal(readDeliverySpeed(new ArrayBuffer(32),0),null,'Uninitialized engine is safe');
 console.log('Broadcast native delivery hook, ring, score reader and read-only safety passed.');

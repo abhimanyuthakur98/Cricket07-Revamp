@@ -1,7 +1,8 @@
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
-const source=readFileSync(new URL('../../web/roster-runtime.js',import.meta.url));
-const {formatForOvers,attach}=await import('data:text/javascript;base64,'+source.toString('base64'));
+const source=readFileSync(new URL('../../web/roster-runtime.js',import.meta.url),'utf8')
+  .replace("'./formats.mjs'",JSON.stringify(new URL('../../web/formats.mjs',import.meta.url).href));
+const {formatForOvers,attach}=await import('data:text/javascript;base64,'+Buffer.from(source).toString('base64'));
 for (const n of [1,5,10,15,20]) assert.equal(formatForOvers(n),'T20');
 assert.equal(formatForOvers(50),'ODI');
 assert.equal(formatForOvers(-1),'Test');
@@ -15,7 +16,8 @@ view.setUint32(0x9303b8+40,13,true);
 let callback, inMenu=true;
 globalThis.setInterval=f=>{callback=f;return 1;};
 globalThis.clearInterval=()=>{};
-globalThis.document={getElementById:()=>({textContent:''})};
+const message={textContent:''};
+globalThis.document={getElementById:()=>message};
 globalThis.window={revampDatabases:{}};
 for (const [format,marker] of [['T20',20],['ODI',50],['Test',99]]) {
   const data=new Uint8Array(620140), v=new DataView(data.buffer);
@@ -29,6 +31,9 @@ for (const [format,marker] of [['T20',20],['ODI',50],['Test',99]]) {
 view.setInt32(0x930eb4,20,true);
 const stop=attach({wasmMemory:{buffer},_c07_in_menu:()=>inMenu});
 assert.equal(memory[0x845c30+4],20);
+view.setInt32(0x930eb4,5,true);callback();
+assert.equal(memory[0x845c30+4],20);
+assert.match(message.textContent,/^T5 ·/);
 view.setInt32(0x930eb4,50,true);callback();
 assert.equal(memory[0x845c30+4],50);
 assert.equal(view.getUint16(0x9303b8,true),50);
