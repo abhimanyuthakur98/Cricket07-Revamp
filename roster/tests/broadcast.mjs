@@ -4,11 +4,13 @@ import {readFileSync} from 'node:fs';
 const source=readFileSync(new URL('../../web/broadcast-state.js',import.meta.url));
 const {readMatch,readDeliveries,readNativePanel,readShot,readDismissal,readBallStart,readBattingZone,liveMatchVisible,playerBatting,chaseState,timingForZone,TimingStats,ShotFeedback,DismissalNotice,
   PANEL_IDS,PANEL_STATE,SHOT,WICKET,SPEED,overCells,nativeStripVisible,readDeliverySpeed,BowlerDeliveries,oversText,MATCH}=await import('data:text/javascript;base64,'+source.toString('base64'));
-const code=execFileSync('python',['-c','from roster.tests.test_ui import delivery_fixture; import sys; sys.stdout.buffer.write(delivery_fixture())']);
+for (const basePointer of [559428,559636]) {
+const code=execFileSync('python',['-c',`from roster.tests.test_ui import delivery_fixture; import sys; sys.stdout.buffer.write(delivery_fixture(${basePointer}))`]);
 const memory=new WebAssembly.Memory({initial:256});
 const {instance}=await WebAssembly.instantiate(code,{env:{memory}});
 const v=new DataView(memory.buffer),b=new Uint8Array(memory.buffer);
-v.setUint32(559428,0,true); // Synthetic fixture uses guest base zero.
+v.setUint32(basePointer===559428?559636:559428,0x1000,true);
+v.setUint32(basePointer,0,true); // Wrong-layout hooks see a poisoned base instead.
 b[0xb00080]=1;
 v.setUint32(MATCH+0x1c20,13,true);v.setUint32(MATCH+0xd564,13,true);v.setUint32(MATCH+0xd568,27,true);
 v.setInt16(MATCH+0x58c4,20,true);
@@ -141,7 +143,7 @@ assert.equal(timingForZone(3).label,'Ideal');assert.equal(timingForZone(4).detai
 assert.deepEqual([0,5,4,3,2,1,6].map(z=>timingForZone(z).label),['Too Early','Early','Good','Ideal','Good','Late','Too Late']);
 assert.equal(timingForZone(2).detail,'Late side');
 assert.deepEqual(stats.update({...timingMatch,key:'innings:1',innings:1},[]),{bad:0,early:0,good:0,perfect:0,late:0});
-const shotWasm=execFileSync('python',['-c','from roster.tests.test_ui import shot_fixture; import sys; sys.stdout.buffer.write(shot_fixture())']);
+const shotWasm=execFileSync('python',['-c',`from roster.tests.test_ui import shot_fixture; import sys; sys.stdout.buffer.write(shot_fixture(${basePointer}))`]);
 const {instance:contact}=await WebAssembly.instantiate(shotWasm,{env:{memory}});
 v.setUint32(0x1004,batter,true);v.setUint32(0x1010,0x2000,true);v.setUint32(batter+0x2d8,4,true);
 const nativeBefore=b.slice(batter,batter+0x400),cpuBefore=b.slice(0x1000,0x1040);
@@ -153,7 +155,7 @@ const shotCount=v.getUint32(SHOT+4,true);b[0xb00080]=0;contact.exports.run(0x100
 assert.equal(v.getUint32(SHOT+4,true),shotCount,'Disabled telemetry leaves the game alone');b[0xb00080]=1;
 b[0x2008]=1;contact.exports.run(0x1000);
 assert.equal(v.getUint32(SHOT+4,true),shotCount,'Trajectory prediction is not an actual contact');b[0x2008]=0;
-const ballWasm=execFileSync('python',['-c','from roster.tests.test_ui import ball_start_fixture; import sys; sys.stdout.buffer.write(ball_start_fixture())']);
+const ballWasm=execFileSync('python',['-c',`from roster.tests.test_ui import ball_start_fixture; import sys; sys.stdout.buffer.write(ball_start_fixture(${basePointer}))`]);
 const {instance:ballStart}=await WebAssembly.instantiate(ballWasm,{env:{memory}});
 const beforeBall=b.slice(batter,batter+0x400),beforeBallCpu=b.slice(0x1000,0x1040);
 ballStart.exports.run(0x1000);
@@ -181,7 +183,7 @@ state.bowler.id=4;assert.equal(tracker.update(state,history).length,0,'New bowle
 history.push({sequence:1,innings:0,bowler:4,over:1,flags:2});assert.equal(tracker.update(state,history).length,1);
 state.bowler.id=3;assert.equal(tracker.update(state,history).length,0,'Returning bowler does not restore old over');
 for(const children of [false,true]){
- const wasm=execFileSync('python',['-c',`from roster.tests.test_ui import render_fixture; import sys; sys.stdout.buffer.write(render_fixture(${children?'True':'False'}))`]);
+ const wasm=execFileSync('python',['-c',`from roster.tests.test_ui import render_fixture; import sys; sys.stdout.buffer.write(render_fixture(${children?'True':'False'},${basePointer}))`]);
  const {instance:draw}=await WebAssembly.instantiate(wasm,{env:{memory}});
  const cpu=0x1000,scene=0x400100,node=0x400200;
  v.setUint32(0x95bfe8,scene,true);v.setUint16(scene+4,1,true);v.setUint32(cpu+4,node,true);b[0xb00081]=1;
@@ -236,7 +238,7 @@ v.setFloat32(info+8,-500,true);assert.equal(readNativePanel(memory.buffer,0,info
 v.setFloat32(info+8,100,true);v.setUint32(info+0x30,3,true);assert.equal(readNativePanel(memory.buffer,0,info),null,'Duck clears on the original hide state');
 // Event 65 carries real release speeds before scoring. It is independent of
 // input type, native text (which becomes RUN RATE) and the score strip's fade.
-const speedWasm=execFileSync('python',['-c','from roster.tests.test_ui import speed_fixture; import sys; sys.stdout.buffer.write(speed_fixture())']);
+const speedWasm=execFileSync('python',['-c',`from roster.tests.test_ui import speed_fixture; import sys; sys.stdout.buffer.write(speed_fixture(${basePointer}))`]);
 const {instance:release}=await WebAssembly.instantiate(speedWasm,{env:{memory}});
 const packet=0x450000,bowlingActor=0x450100;
 v.setUint32(0x1010,0x2000,true);v.setUint32(0x2004,packet,true);v.setUint32(packet,65,true);v.setUint32(packet+4,bowlingActor,true);
@@ -268,4 +270,5 @@ for(const value of [0,-10,NaN,Infinity,999]){
  v.setFloat32(bowlingActor+0x344,value,true);release.exports.run(0x1000);assert.equal(readDeliverySpeed(memory.buffer,0),null,'Invalid release speed excluded');
 }
 assert.equal(readDeliverySpeed(new ArrayBuffer(32),0),null,'Uninitialized engine is safe');
+}
 console.log('Broadcast native delivery hook, ring, score reader and read-only safety passed.');

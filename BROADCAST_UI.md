@@ -59,7 +59,10 @@ cached from https://flagcdn.com/ and are served locally.
 `broadcast-state.js` decodes the supported native match layout. `ui_engine.py`
 adds a gated delivery ring in reserved guest memory at score commit; it never
 writes native match fields or registers. The regular engine does not include
-the delivery hook. Unsupported runtime versions are rejected.
+the delivery hook. `roster/engine_layout.py` pins each verified runtime and its
+guest-base pointer; `engine-layout.mjs` resolves the matching loaded executable
+for both the broadcast and selection ratings. Unsupported runtime versions are
+rejected, and prepared engines are invalidated when their source changes.
 
 During a limited-overs chase the ticker shows the target, runs needed, legal balls
 remaining and required run rate: `runs needed × 6 / balls remaining`

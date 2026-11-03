@@ -28,6 +28,19 @@ python -m roster.server --broadcast-ui
 
 `setup_local.py` downloads the public playable site's runtime and game assets, including **full music and commentary**, verifying the manifest's SHA-1 content prefixes and sizes. Movies are omitted. Run setup again to upgrade an earlier Lite installation; the new manifest version makes the browser install the missing audio. These large files stay in ignored `local_runtime/` and are not uploaded to GitHub. Download source: https://cricket07.dhaiwat.com/ and its published manifest. The adapter recognizes the 620,140-byte database and supported executable; source MIT attribution remains in LICENSE while author branding is removed from the game launcher.
 
+## Vercel builds
+
+`python3 tools/build_vercel.py` downloads the browser runtime, prepares all three
+squad formats and packages the static playtest in `dist-vercel/`.
+`python3 tools/check_vercel_build.py` verifies its game chunks and launch assets.
+
+Engine compatibility is pinned by SHA-256 in `roster/engine_layout.py`. Both the
+earlier runtime and the November 2026 runtime are supported, including their
+different guest-base pointer locations. The broadcast and team-rating readers
+verify the loaded guest executable before accessing it. Prepared engines are
+cached by source fingerprint and output hash. An unrecognized upstream update
+still fails with its actual SHA-256 so it can be checked before adding support.
+
 ## Existing teams only
 
 The allowlist was checked against the actual game's team metadata: Australia, Bangladesh, Bermuda, Canada, England, India, Ireland, Kenya, Namibia, Netherlands, New Zealand, Pakistan, Scotland, South Africa, Sri Lanka, United States of America, West Indies and Zimbabwe. No additional national teams are created. Teams without a complete recent XI retain their original squad. County/state teams and World XIs remain in the game but are not separate refresh targets. Some share player IDs with national teams and inherit changes to those reused IDs.

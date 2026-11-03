@@ -67,7 +67,7 @@ def main():
     for name in ['assets','data']:
         shutil.copytree(web/name,OUT/name,dirs_exist_ok=True)
     for name in ['rosters.html','rosters.js','roster-runtime.js','broadcast.js','broadcast-state.js','broadcast.css',
-                 'formats.mjs','squad-ratings.mjs','squad-rating-model.mjs','game-layout.mjs','game-layout.css']:
+                 'formats.mjs','squad-ratings.mjs','squad-rating-model.mjs','game-layout.mjs','game-layout.css','engine-layout.mjs']:
         shutil.copy2(web/name,OUT/name)
     shutil.copy2(web/'hosted-launch.js',OUT/'local-launch.js')
     runtime=ROOT/'local_runtime/web'

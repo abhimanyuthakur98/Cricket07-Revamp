@@ -1,14 +1,15 @@
 import {rateSquad} from './squad-rating-model.mjs';
 import {formatForOvers} from './formats.mjs';
 import {attachGameLayout} from './game-layout.mjs?v=wide-broadcast-v16';
+import {readGuestBase} from './engine-layout.mjs?v=engine-compat-v19';
 
 // The Play Now screen has two opposing badges and native rating positions.
 // Stadium and XI menus must not receive an overlay in those same positions.
 const SELECTION_SCREENS = new Set([11]);
 export function readSelection(buffer, inMenu) {
-  if (!inMenu || buffer.byteLength <= 559432) return null;
-  const view = new DataView(buffer), base = view.getUint32(559428, true);
-  if (!base || base + 0x95bfec > buffer.byteLength) return null;
+  if (!inMenu) return null;
+  const view = new DataView(buffer), base = readGuestBase(buffer);
+  if (base === null) return null;
   const screen = view.getUint32(base + 0x95bfe8, true);
   if (!screen || base + screen + 6 > buffer.byteLength) return null;
   if (!SELECTION_SCREENS.has(view.getUint16(base + screen + 4, true))) return null;

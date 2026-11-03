@@ -5,8 +5,10 @@ result, before its counters reset or batters change ends. Only reserved memory
 is written; CPU registers, native locals and simulation memory are untouched.
 """
 import hashlib
+import json
 import struct
-from .engine_patch import (ROOT, SUPPORTED_SHA256, patch, sections, function_names,
+from .engine_layout import LEGACY_BASE_POINTER, guest_base_pointer
+from .engine_patch import (ROOT, patch, sections, function_names,
                            imported_functions, read_uint, uint, c, get, put, load,
                            store, ADD, MUL, AND, IF, END)
 
@@ -18,12 +20,12 @@ SHOT = 0xb000c0
 WICKET = 0xb00200
 BALL_START = 0xb00240
 SPEED = 0xb00280
-VERSION = 'broadcast-live-feedback-v17'
+VERSION = 'broadcast-engine-compat-v18'
 
 
-def delivery_hook():
+def delivery_hook(base_pointer=LEGACY_BASE_POINTER):
     # f_00472690's original locals are 1..18; ours are 19..25.
-    b = c(559428)+load()+put(19)
+    b = c(base_pointer)+load()+put(19)
     b += get(19)+c(ENABLE)+ADD+load(op=0x2d)+c(1)+b'\x46'+IF
     b += get(19)+c(0x9a48b0)+ADD+put(20)
     b += get(20)+load(0x211fc)+b'\x45'+IF
@@ -75,10 +77,10 @@ def delivery_hook():
     return b
 
 
-def shot_hook(first_local):
+def shot_hook(first_local, base_pointer=LEGACY_BASE_POINTER):
     """Snapshot the actual contact zone before f_005566f0 clamps it to 1..5."""
     base, batter = first_local, first_local+1
-    b = c(559428)+load()+put(base)
+    b = c(base_pointer)+load()+put(base)
     b += get(base)+c(ENABLE)+ADD+load(op=0x2d)+c(1)+b'\x46'+IF
     # The real collision passes false at [esp+8]. Trajectory prediction calls
     # pass true and must not manufacture a player shot/contact notification.
@@ -95,10 +97,10 @@ def shot_hook(first_local):
     return b
 
 
-def ball_start_hook(first_local):
+def ball_start_hook(first_local, base_pointer=LEGACY_BASE_POINTER):
     """Publish the active batter's per-ball reset, without changing the game."""
     base, actor = first_local, first_local+1
-    b = c(559428)+load()+put(base)
+    b = c(base_pointer)+load()+put(base)
     b += get(base)+c(ENABLE)+ADD+load(op=0x2d)+c(1)+b'\x46'+IF
     b += get(base)+c(0x817580)+ADD+load()+put(actor)
     b += get(actor)+IF
@@ -116,14 +118,14 @@ def ball_start_hook(first_local):
     return b
 
 
-def speed_hook(first_local):
+def speed_hook(first_local, base_pointer=LEGACY_BASE_POINTER):
     """Capture native delivery event 65 after the bowler writes MPH and KPH.
 
     f_0056cee0 writes actor+0x340 (MPH), +0x344 (KPH), then calls
     f_0059eb10 with {event:65, actor}. Prediction and UI text are not involved.
     """
     base, packet, actor, record = range(first_local, first_local+4)
-    b = c(559428)+load()+put(base)
+    b = c(base_pointer)+load()+put(base)
     b += get(base)+c(ENABLE)+ADD+load(op=0x2d)+c(1)+b'\x46'+IF
     b += get(base)+c(0x9a48b0+0x211fc)+ADD+load()+b'\x45'+IF
     b += get(base)+get(0)+load(16)+ADD+load(4)+put(packet)
@@ -150,7 +152,7 @@ def speed_hook(first_local):
     return b+END+END+END+END+END
 
 
-def render_hook(first_local, children=False):
+def render_hook(first_local, children=False, base_pointer=LEGACY_BASE_POINTER):
     """Replace score/information windows; retain native controls and animations.
 
     Both window methods use thiscall/ret 4. Keep f_00723160's callbacks and
@@ -160,7 +162,7 @@ def render_hook(first_local, children=False):
     replacement. No blanket gameplay visibility or simulation state changes.
     """
     base,node,ident,scene=range(first_local,first_local+4)
-    b=c(559428)+load()+put(base)
+    b=c(base_pointer)+load()+put(base)
     b+=get(base)+c(ENABLE+1)+ADD+load(op=0x2d)+c(1)+b'\x46'+IF
     b+=get(base)+c(0x95bfe8)+ADD+load()+put(scene)
     b+=get(scene)+IF
@@ -194,7 +196,7 @@ def render_hook(first_local, children=False):
     return b
 
 
-def patch_delivery(data):
+def patch_delivery(data, base_pointer=LEGACY_BASE_POINTER):
     parts=sections(data)
     names=function_names(parts)
     target=names['f_00472690']-imported_functions(next(p for k,p in parts if k==2))
@@ -217,22 +219,22 @@ def patch_delivery(data):
                     n,cursor=read_uint(body,cursor)
                     if groups!=1 or n!=18 or body[cursor]!=0x7f:
                         raise ValueError('Unsupported native delivery routine')
-                    body=uint(1)+uint(25)+b'\x7f'+delivery_hook()+body[cursor+1:]
+                    body=uint(1)+uint(25)+b'\x7f'+delivery_hook(base_pointer)+body[cursor+1:]
                 elif index==reset_target:
                     groups,cursor=read_uint(body,0)
                     for _ in range(groups):
                         _,cursor=read_uint(body,cursor)
                         cursor+=1
-                    reset=c(559428)+load()+c(RING)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(RING+4)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(SHOT)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(SHOT+4)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(WICKET)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(WICKET+4)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(BALL_START)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(BALL_START+4)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(SPEED)+ADD+c(0)+store()
-                    reset+=c(559428)+load()+c(SPEED+4)+ADD+c(0)+store()
+                    reset=c(base_pointer)+load()+c(RING)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(RING+4)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(SHOT)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(SHOT+4)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(WICKET)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(WICKET+4)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(BALL_START)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(BALL_START+4)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(SPEED)+ADD+c(0)+store()
+                    reset+=c(base_pointer)+load()+c(SPEED+4)+ADD+c(0)+store()
                     body=body[:cursor]+reset+body[cursor:]
                 elif index in (shot_target, ball_target, speed_target):
                     groups,cursor=read_uint(body,0)
@@ -244,7 +246,7 @@ def patch_delivery(data):
                     extra=4 if index==speed_target else 2
                     header=uint(groups+1)+body[len(uint(groups)):cursor]+uint(extra)+b'\x7f'
                     hook={shot_target:shot_hook,ball_target:ball_start_hook,speed_target:speed_hook}[index]
-                    body=header+hook(locals_count+1)+body[cursor:]
+                    body=header+hook(locals_count+1,base_pointer)+body[cursor:]
                 elif index in render_targets:
                     groups,cursor=read_uint(body,0)
                     locals_count=0
@@ -254,7 +256,7 @@ def patch_delivery(data):
                         cursor+=1
                     # Keep every original local index; append four i32 locals.
                     header=uint(groups+1)+body[len(uint(groups)):cursor]+uint(4)+b'\x7f'
-                    body=header+render_hook(locals_count+1,render_targets[index])+body[cursor:]
+                    body=header+render_hook(locals_count+1,render_targets[index],base_pointer)+body[cursor:]
                 bodies.append(uint(len(body))+body)
                 pos=start+size
             payload=uint(count)+b''.join(bodies)
@@ -264,13 +266,23 @@ def patch_delivery(data):
 
 def prepare():
     original=(ROOT/'local_runtime/web/build/cricket07.wasm').read_bytes()
-    if hashlib.sha256(original).hexdigest()!=SUPPORTED_SHA256:
-        raise ValueError('Unsupported broadcast engine')
+    base_pointer=guest_base_pointer(original)
+    source_hash=hashlib.sha256(original).hexdigest()
     target=ROOT/'local_runtime/prepared-ui/cricket07.wasm'
     stamp=target.with_suffix('.version')
-    if target.exists() and stamp.exists() and stamp.read_text()==VERSION:
-        return target
+    if target.exists() and stamp.exists():
+        try:
+            saved=json.loads(stamp.read_text())
+            if (saved.get('version')==VERSION and saved.get('sourceSha256')==source_hash
+                    and saved.get('sha256')==hashlib.sha256(target.read_bytes()).hexdigest()):
+                return target
+        except ValueError:
+            pass
     target.parent.mkdir(parents=True,exist_ok=True)
-    target.write_bytes(patch_delivery(patch(original)))
-    stamp.write_text(VERSION)
+    data=patch_delivery(patch(original),base_pointer)
+    temporary=target.with_suffix('.tmp')
+    temporary.write_bytes(data)
+    temporary.replace(target)
+    stamp.write_text(json.dumps({'version':VERSION,'sourceSha256':source_hash,
+                                 'sha256':hashlib.sha256(data).hexdigest()}))
     return target

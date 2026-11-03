@@ -19,7 +19,7 @@ def main():
         assert digest.hexdigest().startswith(f['hash']),f['path']
     for f in ('T20','ODI','Test'):
         assert (ROOT/'play/rosters'/f'{f}.cdf').stat().st_size==620140
-    for p in ('play/index.html','play/c07.js','play/build/cricket07.js','play/build/cricket07.wasm','play/inter-latin.woff2','local-launch.js','broadcast.js','broadcast-state.js','broadcast.css','data/playtest.json'):
+    for p in ('play/index.html','play/c07.js','play/build/cricket07.js','play/build/cricket07.wasm','play/inter-latin.woff2','local-launch.js','broadcast.js','broadcast-state.js','broadcast.css','engine-layout.mjs','squad-ratings.mjs','data/playtest.json'):
         assert (ROOT/p).stat().st_size>0,p
     assert b'\0asm'==(ROOT/'play/build/cricket07.wasm').read_bytes()[:4]
     loader=(ROOT/'play/c07.js').read_text()

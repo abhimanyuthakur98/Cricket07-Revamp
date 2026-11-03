@@ -2,6 +2,7 @@ import {readMatch,readDeliveries,readShot,readDismissal,readNativePanel,readBall
   PANEL_IDS,PANEL_STATE,overCells,nativeStripVisible,readDeliverySpeed,BowlerDeliveries,TEAMS,oversText} from './broadcast-state.js?v=result-feedback-v18';
 import {formatLabel} from './formats.mjs';
 import {attachGameLayout} from './game-layout.mjs?v=wide-broadcast-v16';
+import {readGuestBase} from './engine-layout.mjs?v=engine-compat-v19';
 
 export function attachBroadcast(M){
   const stage=document.getElementById('stage');
@@ -97,7 +98,8 @@ export function attachBroadcast(M){
   function tick(){
     try{
       const buffer=M.wasmMemory.buffer,v=new DataView(buffer);
-      const base=v.getUint32(559428,true);
+      const base=readGuestBase(buffer);
+      if(base===null){bar.hidden=true;card.hidden=true;timing.hidden=true;return;}
       if(base>0 && base+0xb02010<buffer.byteLength && !initialized){
         if(v.getUint8(base+0xb00080)!==1){
           new Uint8Array(buffer).fill(0,base+0xb01000,base+0xb02010);
