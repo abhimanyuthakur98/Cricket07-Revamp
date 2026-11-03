@@ -59,18 +59,21 @@ def main():
     result=prepare(snapshot,'T20',broadcast_ui=True)
     for f in ('ODI','Test'):
         prepare(snapshot,f,database_only=True,broadcast_ui=True)
+    from roster.squad_ratings import prepare_ratings
+    ratings=prepare_ratings(snapshot,broadcast_ui=True)
     wasm=engine()
     OUT.mkdir(parents=True,exist_ok=True)
     web=ROOT/'web'
     for name in ['assets','data']:
         shutil.copytree(web/name,OUT/name,dirs_exist_ok=True)
-    for name in ['rosters.html','rosters.js','roster-runtime.js','broadcast.js','broadcast-state.js','broadcast.css']:
+    for name in ['rosters.html','rosters.js','roster-runtime.js','broadcast.js','broadcast-state.js','broadcast.css',
+                 'formats.mjs','squad-ratings.mjs','squad-rating-model.mjs','game-layout.mjs','game-layout.css']:
         shutil.copy2(web/name,OUT/name)
     shutil.copy2(web/'hosted-launch.js',OUT/'local-launch.js')
     runtime=ROOT/'local_runtime/web'
     play=OUT/'play';play.mkdir(exist_ok=True)
     for path in runtime.iterdir():
-        if path.is_file() and path.name not in ('index.html','c07.js'):
+        if path.is_file() and path.name not in ('index.html','c07.js') and not path.name.endswith('-preview.html'):
             shutil.copy2(path,play/path.name)
     (play/'build').mkdir(exist_ok=True)
     shutil.copy2(runtime/'build/cricket07.js',play/'build/cricket07.js')
@@ -81,7 +84,7 @@ def main():
     source=re.sub(r'<script type="module" src="https://static.cloudflareinsights.com/[^>]+></script>','',source)
     source=source.replace('<title>Cricket 07</title>','<title>Cricket 07 Revamp · Playtest</title>')
     source=source.replace('<span id="visits">2,693,467 visits</span>','')
-    source=source.replace('</head>','<link rel="stylesheet" href="/broadcast.css"><style>#go-online{display:none!important}</style></head>')
+    source=source.replace('</head>','<link rel="stylesheet" href="/game-layout.css"><link rel="stylesheet" href="/broadcast.css"><style>#go-online{display:none!important}</style></head>')
     source=source.replace('<body>','<body data-broadcast-ui="true"><div style="position:fixed;top:12px;left:12px;z-index:30;background:#111c16;padding:10px;border-radius:8px"><a href="/rosters.html" style="color:#6de1b0">Player preview</a><p id="revamp-message" style="font-size:12px">Playtest · squads follow the in-game overs.</p></div>')
     source=source.replace('<script src="c07.js"></script>','<script src="/local-launch.js"></script><script src="c07.js"></script>')
     (play/'index.html').write_text(source,encoding='utf-8')
@@ -104,6 +107,7 @@ def main():
     loader=loader.replace('await downloadAll(files, prog);',install)
     (play/'c07.js').write_text(loader,encoding='utf-8')
     roster_dir=play/'rosters';roster_dir.mkdir(exist_ok=True)
+    shutil.copy2(ratings,roster_dir/ratings.name)
     formats={}
     for f in ('T20','ODI','Test'):
         data=ROOT/'local_runtime/prepared-ui'/f'{f}.cdf'
@@ -119,7 +123,8 @@ def main():
         files.append(chunk_file(src,game,rel))
     version=hashlib.sha256((json.dumps(files)+hashlib.sha256(wasm.read_bytes()).hexdigest()+json.dumps(formats)).encode()).hexdigest()[:20]
     write_json(game/'manifest.json',{'version':'revamp-'+version,'files':files})
-    write_json(OUT/'data/playtest.json',{'version':version,'asOf':snapshot['asOf'],'formats':formats})
+    write_json(OUT/'data/playtest.json',{'version':version,'asOf':snapshot['asOf'],'formats':formats,
+                                     'squadRatings':'/play/rosters/'+ratings.name})
     write_json(OUT/'deployment-report.json',{'version':version,'gameFiles':len(files),'downloadBytes':sum(sum(f['parts']) for f in files),'largestChunkBytes':max(max(f['parts']) for f in files),'formats':list(formats),'broadcast':True})
     print('Complete Vercel playtest build:',OUT,flush=True)
 

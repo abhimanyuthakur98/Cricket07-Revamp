@@ -230,6 +230,11 @@ def prepare(snapshot, format_name, *, database_only=False, broadcast_ui=False):
                                  lambda m: b'' if int(m[1]) in changed else m[0], speeds)
     from .logos import logo_replacements
     replacements.update(logo_replacements(archive))
+    from .selection_ui import selection_replacements
+    replacements.update(selection_replacements(archive))
+    if broadcast_ui:
+        from .bowling_ui import bowling_replacements
+        replacements.update(bowling_replacements(archive))
     target = prepared / 'Data/data.gob'
     target.parent.mkdir(parents=True, exist_ok=True)
     temporary = target.with_suffix('.tmp')

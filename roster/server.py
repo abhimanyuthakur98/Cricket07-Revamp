@@ -68,6 +68,8 @@ class Handler(GameHandler):
             for other in ('T20', 'ODI', 'Test'):
                 if other != format_name:
                     prepare(snapshot, other, database_only=True, broadcast_ui=self.server.broadcast_ui)
+            from .squad_ratings import prepare_ratings
+            prepare_ratings(snapshot, broadcast_ui=self.server.broadcast_ui)
             result['warning'] = warning
             self.reply_json(200, result)
         except Exception as error:
@@ -115,9 +117,18 @@ class Handler(GameHandler):
                 return
             source = target.read_text(encoding='utf-8')
             if path.endswith('c07.js'):
+                # Lowest nonzero whole-percent volume for all game audio.
+                source = source.replace(
+                    '  node.connect(ctx.destination);',
+                    '  const volume = ctx.createGain();\n'
+                    '  volume.gain.value = 0.01;\n'
+                    '  node.connect(volume);\n'
+                    '  volume.connect(ctx.destination);',
+                )
                 source = source.replace('window.c07 = M;', 'window.c07 = M; window.revampAttach(M);')
                 source = source.replace("async function run(session) {", "async function run(session) {\n  if (window.revampLaunching) return;\n  window.revampLaunching = true;\n  if (session) throw new Error('Local roster testing supports solo play.');\n  $('play').disabled = true;\n  try { await window.revampBeforeLaunch(); } catch (error) { window.revampLaunching = false; $('play').disabled = false; throw error; }")
             else:
+                source = source.replace('</head>', '<link rel="stylesheet" href="/game-layout.css"></head>')
                 if self.server.broadcast_ui:
                     source = source.replace('</head>', '<link rel="stylesheet" href="/broadcast.css"></head>')
                 controls = '<div style="position:fixed;top:12px;left:12px;z-index:30;background:#111c16;padding:10px;border-radius:8px"><a href="/rosters.html" style="color:#6de1b0">Player preview</a><p id="revamp-message" style="font-size:12px">Rosters follow your in-game overs selection.</p></div>'
