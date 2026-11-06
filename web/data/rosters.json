@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-05",
-  "generatedAt": "2026-11-05T04:30:04.298448+00:00",
+  "asOf": "2026-11-06",
+  "generatedAt": "2026-11-06T04:29:22.599203+00:00",
   "source": {
     "name": "Cricsheet",
     "url": "https://cricsheet.org/",
@@ -136,7 +136,7 @@
               },
               "ratings": {
                 "batting": 61,
-                "bowling": 46,
+                "bowling": 47,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -162,7 +162,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 62,
+                "batting": 61,
                 "bowling": null,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -1099,7 +1099,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 60,
+                "batting": 59,
                 "bowling": null,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -1343,7 +1343,7 @@
               },
               "ratings": {
                 "batting": 49,
-                "bowling": 46,
+                "bowling": 47,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -1689,7 +1689,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 67,
+                "batting": 66,
                 "bowling": 50,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -1825,7 +1825,7 @@
               },
               "ratings": {
                 "batting": 49,
-                "bowling": 44,
+                "bowling": 45,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -2248,7 +2248,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 55,
+                "batting": 54,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -4203,7 +4203,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 65,
+                "batting": 64,
                 "bowling": null,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -6911,7 +6911,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 74,
+                "batting": 73,
                 "bowling": null,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -7447,7 +7447,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 86,
+                "batting": 85,
                 "bowling": null,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -7528,7 +7528,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 72,
+                "batting": 71,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -8866,7 +8866,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 69,
+                "batting": 68,
                 "bowling": 47,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -9056,7 +9056,7 @@
               },
               "ratings": {
                 "batting": 51,
-                "bowling": 45,
+                "bowling": 46,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -9485,7 +9485,7 @@
               "ratings": {
                 "batting": 48,
                 "bowling": 53,
-                "confidence": "established",
+                "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
               "startingXI": true,
@@ -9754,7 +9754,7 @@
               },
               "ratings": {
                 "batting": 49,
-                "bowling": 55,
+                "bowling": 54,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -10127,7 +10127,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 50,
+                "batting": 49,
                 "bowling": 50,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -11762,8 +11762,8 @@
                 "openingSpells": 4
               },
               "ratings": {
-                "batting": 57,
-                "bowling": 46,
+                "batting": 56,
+                "bowling": 47,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -12326,7 +12326,7 @@
               },
               "ratings": {
                 "batting": 47,
-                "bowling": 48,
+                "bowling": 49,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -13557,7 +13557,7 @@
               "ratings": {
                 "batting": 53,
                 "bowling": null,
-                "confidence": "established",
+                "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
               "startingXI": true,
@@ -14605,7 +14605,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 45,
+                "batting": 46,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -15115,7 +15115,7 @@
               },
               "ratings": {
                 "batting": 61,
-                "bowling": 65,
+                "bowling": 64,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -15249,7 +15249,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 48,
+                "batting": 49,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -15358,7 +15358,7 @@
               },
               "ratings": {
                 "batting": 49,
-                "bowling": 59,
+                "bowling": 58,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -16187,7 +16187,7 @@
               },
               "ratings": {
                 "batting": 50,
-                "bowling": 59,
+                "bowling": 58,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -16830,7 +16830,7 @@
                 "openingSpells": 3
               },
               "ratings": {
-                "batting": 45,
+                "batting": 46,
                 "bowling": 48,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -17579,7 +17579,7 @@
               },
               "ratings": {
                 "batting": 68,
-                "bowling": 60,
+                "bowling": 59,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -17660,7 +17660,7 @@
               },
               "ratings": {
                 "batting": 48,
-                "bowling": 70,
+                "bowling": 69,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -18222,7 +18222,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 56,
+                "batting": 55,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -19225,18 +19225,18 @@
               "id": "e38bce7a",
               "name": "MG Bracewell",
               "lastPlayed": "2026-11-01",
-              "matches": 10,
+              "matches": 9,
               "stats": {
-                "runs": 99,
-                "ballsFaced": 52,
-                "dismissals": 4,
+                "runs": 98,
+                "ballsFaced": 49,
+                "dismissals": 3,
                 "legalBalls": 114,
                 "conceded": 194,
                 "wickets": 4,
                 "catches": 4,
                 "stumpings": 0,
-                "battingInnings": 6,
-                "battingPositionTotal": 36,
+                "battingInnings": 5,
+                "battingPositionTotal": 30,
                 "openingSpells": 0
               },
               "ratings": {
@@ -19333,19 +19333,19 @@
               "id": "dadbdb68",
               "name": "JA Duffy",
               "lastPlayed": "2026-11-01",
-              "matches": 18,
+              "matches": 17,
               "stats": {
-                "runs": 19,
-                "ballsFaced": 15,
+                "runs": 18,
+                "ballsFaced": 14,
                 "dismissals": 1,
-                "legalBalls": 363,
-                "conceded": 578,
-                "wickets": 23,
+                "legalBalls": 339,
+                "conceded": 559,
+                "wickets": 21,
                 "catches": 1,
                 "stumpings": 0,
-                "battingInnings": 5,
-                "battingPositionTotal": 55,
-                "openingSpells": 16
+                "battingInnings": 4,
+                "battingPositionTotal": 44,
+                "openingSpells": 15
               },
               "ratings": {
                 "batting": 50,
@@ -19414,19 +19414,19 @@
               "id": "68c56d09",
               "name": "KA Jamieson",
               "lastPlayed": "2026-10-27",
-              "matches": 15,
+              "matches": 14,
               "stats": {
-                "runs": 38,
-                "ballsFaced": 37,
-                "dismissals": 6,
-                "legalBalls": 305,
-                "conceded": 524,
-                "wickets": 15,
+                "runs": 36,
+                "ballsFaced": 34,
+                "dismissals": 5,
+                "legalBalls": 281,
+                "conceded": 494,
+                "wickets": 14,
                 "catches": 1,
                 "stumpings": 0,
-                "battingInnings": 8,
-                "battingPositionTotal": 74,
-                "openingSpells": 12
+                "battingInnings": 7,
+                "battingPositionTotal": 64,
+                "openingSpells": 11
               },
               "ratings": {
                 "batting": 50,
@@ -20659,8 +20659,8 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 59,
-                "bowling": 51,
+                "batting": 58,
+                "bowling": 50,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -22132,7 +22132,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 79,
+                "batting": 78,
                 "bowling": null,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -22252,18 +22252,18 @@
               "id": "c5aef772",
               "name": "R Shepherd",
               "lastPlayed": "2026-10-17",
-              "matches": 19,
+              "matches": 18,
               "stats": {
-                "runs": 270,
-                "ballsFaced": 161,
+                "runs": 261,
+                "ballsFaced": 156,
                 "dismissals": 6,
-                "legalBalls": 238,
-                "conceded": 440,
-                "wickets": 11,
+                "legalBalls": 220,
+                "conceded": 414,
+                "wickets": 10,
                 "catches": 1,
                 "stumpings": 0,
-                "battingInnings": 14,
-                "battingPositionTotal": 101,
+                "battingInnings": 13,
+                "battingPositionTotal": 93,
                 "openingSpells": 3
               },
               "ratings": {
@@ -22279,18 +22279,18 @@
               "id": "3feda4fa",
               "name": "RL Chase",
               "lastPlayed": "2026-10-17",
-              "matches": 20,
+              "matches": 19,
               "stats": {
-                "runs": 237,
-                "ballsFaced": 214,
-                "dismissals": 11,
-                "legalBalls": 352,
-                "conceded": 504,
-                "wickets": 18,
+                "runs": 209,
+                "ballsFaced": 187,
+                "dismissals": 10,
+                "legalBalls": 328,
+                "conceded": 478,
+                "wickets": 15,
                 "catches": 5,
                 "stumpings": 0,
-                "battingInnings": 12,
-                "battingPositionTotal": 61,
+                "battingInnings": 11,
+                "battingPositionTotal": 56,
                 "openingSpells": 2
               },
               "ratings": {
@@ -22468,14 +22468,14 @@
               "id": "4d7f517e",
               "name": "AJ Hosein",
               "lastPlayed": "2026-10-09",
-              "matches": 17,
+              "matches": 16,
               "stats": {
                 "runs": 31,
                 "ballsFaced": 17,
                 "dismissals": 2,
-                "legalBalls": 300,
-                "conceded": 490,
-                "wickets": 13,
+                "legalBalls": 294,
+                "conceded": 486,
+                "wickets": 12,
                 "catches": 2,
                 "stumpings": 0,
                 "battingInnings": 4,
@@ -22495,19 +22495,19 @@
               "id": "83d17bbc",
               "name": "MW Forde",
               "lastPlayed": "2026-10-06",
-              "matches": 18,
+              "matches": 17,
               "stats": {
                 "runs": 88,
                 "ballsFaced": 63,
                 "dismissals": 6,
-                "legalBalls": 313,
-                "conceded": 404,
-                "wickets": 14,
-                "catches": 10,
+                "legalBalls": 289,
+                "conceded": 372,
+                "wickets": 13,
+                "catches": 7,
                 "stumpings": 0,
                 "battingInnings": 10,
                 "battingPositionTotal": 77,
-                "openingSpells": 16
+                "openingSpells": 15
               },
               "ratings": {
                 "batting": 49,
@@ -22522,18 +22522,18 @@
               "id": "7fca84b7",
               "name": "BA King",
               "lastPlayed": "2026-06-14",
-              "matches": 13,
+              "matches": 12,
               "stats": {
-                "runs": 226,
-                "ballsFaced": 177,
-                "dismissals": 13,
+                "runs": 223,
+                "ballsFaced": 173,
+                "dismissals": 12,
                 "legalBalls": 0,
                 "conceded": 0,
                 "wickets": 0,
                 "catches": 3,
                 "stumpings": 0,
-                "battingInnings": 13,
-                "battingPositionTotal": 13,
+                "battingInnings": 12,
+                "battingPositionTotal": 12,
                 "openingSpells": 0
               },
               "ratings": {
@@ -22549,18 +22549,18 @@
               "id": "4b167ede",
               "name": "AWJ Auguste",
               "lastPlayed": "2026-06-14",
-              "matches": 6,
+              "matches": 5,
               "stats": {
-                "runs": 42,
-                "ballsFaced": 43,
-                "dismissals": 5,
+                "runs": 40,
+                "ballsFaced": 35,
+                "dismissals": 4,
                 "legalBalls": 0,
                 "conceded": 0,
                 "wickets": 0,
                 "catches": 1,
                 "stumpings": 0,
-                "battingInnings": 5,
-                "battingPositionTotal": 19,
+                "battingInnings": 4,
+                "battingPositionTotal": 15,
                 "openingSpells": 0
               },
               "ratings": {
@@ -22576,18 +22576,18 @@
               "id": "0f721006",
               "name": "JO Holder",
               "lastPlayed": "2026-06-14",
-              "matches": 17,
+              "matches": 16,
               "stats": {
-                "runs": 207,
-                "ballsFaced": 126,
+                "runs": 202,
+                "ballsFaced": 121,
                 "dismissals": 8,
-                "legalBalls": 323,
-                "conceded": 486,
+                "legalBalls": 299,
+                "conceded": 451,
                 "wickets": 18,
-                "catches": 9,
+                "catches": 7,
                 "stumpings": 0,
-                "battingInnings": 11,
-                "battingPositionTotal": 75,
+                "battingInnings": 10,
+                "battingPositionTotal": 68,
                 "openingSpells": 3
               },
               "ratings": {
