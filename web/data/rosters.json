@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-07",
-  "generatedAt": "2026-11-07T04:23:35.411435+00:00",
+  "asOf": "2026-11-08",
+  "generatedAt": "2026-11-08T04:27:46.243664+00:00",
   "source": {
     "name": "Cricsheet",
     "url": "https://cricsheet.org/",
@@ -82,7 +82,7 @@
               },
               "ratings": {
                 "batting": 57,
-                "bowling": 44,
+                "bowling": 45,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -109,7 +109,7 @@
               },
               "ratings": {
                 "batting": 48,
-                "bowling": 47,
+                "bowling": 48,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -538,7 +538,7 @@
               "ratings": {
                 "batting": 46,
                 "bowling": null,
-                "confidence": "established",
+                "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
               "startingXI": true,
@@ -700,7 +700,7 @@
               "ratings": {
                 "batting": 52,
                 "bowling": 49,
-                "confidence": "established",
+                "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
               "startingXI": true,
@@ -888,7 +888,7 @@
               },
               "ratings": {
                 "batting": 49,
-                "bowling": 43,
+                "bowling": 44,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -2118,7 +2118,7 @@
               },
               "ratings": {
                 "batting": 50,
-                "bowling": 46,
+                "bowling": 47,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -3829,7 +3829,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 86,
+                "batting": 85,
                 "bowling": 43,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -5307,7 +5307,7 @@
                 "openingSpells": 3
               },
               "ratings": {
-                "batting": 48,
+                "batting": 49,
                 "bowling": 50,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -7128,7 +7128,7 @@
               },
               "ratings": {
                 "batting": 50,
-                "bowling": 48,
+                "bowling": 49,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -7528,7 +7528,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 71,
+                "batting": 70,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -8334,7 +8334,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 64,
+                "batting": 63,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -9966,7 +9966,7 @@
               },
               "ratings": {
                 "batting": 49,
-                "bowling": 53,
+                "bowling": 52,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -11438,7 +11438,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 59,
+                "batting": 58,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -11628,7 +11628,7 @@
               },
               "ratings": {
                 "batting": 50,
-                "bowling": 47,
+                "bowling": 48,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -12056,7 +12056,7 @@
               },
               "ratings": {
                 "batting": 60,
-                "bowling": 36,
+                "bowling": 37,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -13370,7 +13370,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 51,
+                "batting": 50,
                 "bowling": 50,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -15195,7 +15195,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 52,
+                "batting": 51,
                 "bowling": 50,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -15304,7 +15304,7 @@
               },
               "ratings": {
                 "batting": 50,
-                "bowling": 62,
+                "bowling": 61,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -16051,7 +16051,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 71,
+                "batting": 70,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -16322,7 +16322,7 @@
               },
               "ratings": {
                 "batting": 50,
-                "bowling": 54,
+                "bowling": 53,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -17794,7 +17794,7 @@
                 "openingSpells": 2
               },
               "ratings": {
-                "batting": 47,
+                "batting": 48,
                 "bowling": 63,
                 "confidence": "established",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -19132,7 +19132,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 55,
+                "batting": 54,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -19240,7 +19240,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 62,
+                "batting": 61,
                 "bowling": 42,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
@@ -19322,7 +19322,7 @@
               },
               "ratings": {
                 "batting": 50,
-                "bowling": 56,
+                "bowling": 55,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
               },
@@ -20929,7 +20929,7 @@
                 "openingSpells": 0
               },
               "ratings": {
-                "batting": 61,
+                "batting": 60,
                 "bowling": null,
                 "confidence": "limited",
                 "scale": "1–99; mapped to 1–62 in the game"
